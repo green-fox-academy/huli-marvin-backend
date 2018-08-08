@@ -25,7 +25,7 @@ namespace Schedule_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string connectionStringToDoDB = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MarvinDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionStringToDoDB = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MarvinDB;Integrated Security=True;";
             services.AddMvc();
             services.AddDbContext<EventContext>(options =>
                 options.UseSqlServer(connectionStringToDoDB));
