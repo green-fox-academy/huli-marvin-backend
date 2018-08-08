@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScheduleAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,12 +8,12 @@ namespace ScheduleAPI.Repositories
 {
     public class EventRepository
     {
-        //private ContextName eventContextObj;
+        private EventContext eventContextObj;
 
-        //public EventRepository(ContextName ContextObj)
-        //{
-        //    this.eventContextObj = ContextObj;
-        //}
+        public EventRepository(EventContext eventContextObj)
+        {
+            this.eventContextObj = eventContextObj;
+        }
 
         //public void Create(tableclass eventClassObj)
         //{
