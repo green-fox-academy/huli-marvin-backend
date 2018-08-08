@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ScheduleAPI.Models;
 
 namespace Schedule_API
 {
@@ -23,7 +25,11 @@ namespace Schedule_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connectionStringToDoDB = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MarvinDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.AddMvc();
+            services.AddDbContext<EventContext>(options =>
+                options.UseSqlServer(connectionStringToDoDB));
+            services.AddTransient<EventContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,7 +39,6 @@ namespace Schedule_API
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseMvc();
         }
     }
