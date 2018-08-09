@@ -15,33 +15,33 @@ namespace ScheduleAPI.Repositories
             this.eventContextObj = eventContextObj;
         }
 
-        //public void Create(tableclass eventClassObj)
-        //{
-        //    eventContextObj.Add(eventClassObj);
-        //    eventContextObj.SaveChanges();
-        //}
+        public void Create(Events eventClassObj)
+        {
+            eventContextObj.Add(eventClassObj);
+            eventContextObj.SaveChanges();
+        }
 
-        //public List<tableclass> Read()
-        //{
-        //    return eventContextObj.tableName.ToList();
-        //}
+        public List<Events> Read()
+        {
+            return eventContextObj.Events.ToList();
+        }
 
-        //public void Update(tableclass classObj)
-        //{
-        //    eventContextObj.Update(classObj);
-        //    eventContextObj.SaveChanges();
-        //}
+        public void Update(Events classObj)
+        {
+            eventContextObj.Update(classObj);
+            eventContextObj.SaveChanges();
+        }
 
-        //public void Delete(int id)
-        //{
-        //    var removable = eventContextObj.tableName.ToList().FirstOrDefault(x => x.Id == id);
-        //    eventContextObj.Remove(removable);
-        //    eventContextObj.SaveChanges();
-        //}
+        public void Delete(int id)
+        {
+            var removable = eventContextObj.Events.ToList().FirstOrDefault(x => x.Id == id);
+            eventContextObj.Remove(removable);
+            eventContextObj.SaveChanges();
+        }
 
-        //public tableclass GetTodoById(long id)
-        //{
-        //    return eventContextObj.tableName.ToList().FirstOrDefault(x => x.Id == id);
-        //}
+        public Events GetItemById(long id)
+        {
+            return eventContextObj.Events.ToList().FirstOrDefault(x => x.Id == id);
+        }
     }
 }
