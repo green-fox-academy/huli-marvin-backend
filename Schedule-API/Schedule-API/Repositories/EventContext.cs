@@ -1,13 +1,17 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 namespace ScheduleAPI.Models
 {
     public partial class EventContext : DbContext
     {
-        public EventContext()
+        public IConfiguration Configuration { get; }
+
+        public EventContext(IConfiguration configuration)
         {
+            Configuration = configuration;
         }
 
         public EventContext(DbContextOptions<EventContext> options)
@@ -22,8 +26,7 @@ namespace ScheduleAPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MarvinDB;Integrated Security=True;");
+                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("connString"));
             }
         }
 
