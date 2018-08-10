@@ -1,12 +1,10 @@
 ﻿using ScheduleAPI.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ScheduleAPI.Repositories
 {
-    public class EventRepository : IGenericRepository<Events>
+    public class EventRepository : IGenericRepository<Event>
     {
         private EventContext eventContextObj;
 
@@ -15,20 +13,20 @@ namespace ScheduleAPI.Repositories
             this.eventContextObj = eventContextObj;
         }
 
-        public void Create(Events events)
+        public void Create(Event occurrence)
         {
-            eventContextObj.Add(events);
+            eventContextObj.Add(occurrence);
             eventContextObj.SaveChanges();
         }
 
-        public List<Events> Read()
+        public List<Event> Read()
         {
             return eventContextObj.Events.ToList();
         }
 
-        public void Update(Events events)
+        public void Update(Event occurrence)
         {
-            eventContextObj.Update(events);
+            eventContextObj.Update(occurrence);
             eventContextObj.SaveChanges();
         }
 
@@ -39,7 +37,7 @@ namespace ScheduleAPI.Repositories
             eventContextObj.SaveChanges();
         }
 
-        public Events GetItemById(int id)
+        public Event GetItemById(int id)
         {
             return eventContextObj.Events.ToList().FirstOrDefault(x => x.Id == id);
         }

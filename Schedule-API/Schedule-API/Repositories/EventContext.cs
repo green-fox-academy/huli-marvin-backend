@@ -19,8 +19,8 @@ namespace ScheduleAPI.Models
         {
         }
 
-        public virtual DbSet<Events> Events { get; set; }
-        public virtual DbSet<EventTemplates> EventTemplates { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
+        public virtual DbSet<EventTemplate> EventTemplates { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,7 +32,7 @@ namespace ScheduleAPI.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Events>(entity =>
+            modelBuilder.Entity<Event>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
@@ -44,7 +44,7 @@ namespace ScheduleAPI.Models
                     .HasConstraintName("FK_Events_ToEventTemplates");
             });
 
-            modelBuilder.Entity<EventTemplates>(entity =>
+            modelBuilder.Entity<EventTemplate>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
