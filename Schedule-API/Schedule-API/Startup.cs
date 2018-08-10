@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using ScheduleAPI.Models;
+using ScheduleAPI.Repositories;
+using ScheduleAPI.Services;
 
 namespace Schedule_API
 {
@@ -30,6 +32,8 @@ namespace Schedule_API
             services.AddDbContext<EventContext>(options =>
                 options.UseSqlServer(connectionStringToDoDB));
             services.AddTransient<EventContext>();
+            services.AddTransient<EventRepository>();
+            services.AddTransient<EventService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
