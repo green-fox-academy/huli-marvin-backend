@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScheduleAPI.Repositories
 {
-    public class EventTemplateRepository
+    public class EventTemplateRepository : IGenericRepository<EventTemplates>
     {
         private EventContext ContextObj;
 
@@ -15,9 +15,9 @@ namespace ScheduleAPI.Repositories
             this.ContextObj = ContextObj;
         }
 
-        public void Create(EventTemplates classObj)
+        public void Create(EventTemplates eventTemplates)
         {
-            ContextObj.Add(classObj);
+            ContextObj.Add(eventTemplates);
             ContextObj.SaveChanges();
         }
 
@@ -26,9 +26,9 @@ namespace ScheduleAPI.Repositories
             return ContextObj.EventTemplates.ToList();
         }
 
-        public void Update(EventTemplates classObj)
+        public void Update(EventTemplates eventTemplates)
         {
-            ContextObj.Update(classObj);
+            ContextObj.Update(eventTemplates);
             ContextObj.SaveChanges();
         }
 
@@ -39,7 +39,7 @@ namespace ScheduleAPI.Repositories
             ContextObj.SaveChanges();
         }
 
-        public EventTemplates GetItemById(long id)
+        public EventTemplates GetItemById(int id)
         {
             return ContextObj.EventTemplates.ToList().FirstOrDefault(xItem => xItem.Id == id);
         }
