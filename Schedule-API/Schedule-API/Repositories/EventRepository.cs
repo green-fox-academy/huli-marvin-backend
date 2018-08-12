@@ -32,14 +32,14 @@ namespace ScheduleAPI.Repositories
 
         public void Delete(int id)
         {
-            var removable = eventContext.Events.ToList().FirstOrDefault(x => x.Id == id);
+            var removable = eventContext.Events.ToList().FirstOrDefault(x => x.EventId == id);
             eventContext.Remove(removable);
             eventContext.SaveChanges();
         }
 
         public Event GetItemById(int id)
         {
-            return eventContext.Events.ToList().FirstOrDefault(x => x.Id == id);
+            return eventContext.Events.ToList().FirstOrDefault(x => x.EventId == id);
         }
 
         public List<Event> GetAll()

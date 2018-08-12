@@ -10,8 +10,8 @@ using ScheduleAPI.Models;
 namespace ScheduleAPI.Migrations
 {
     [DbContext(typeof(EventContext))]
-    [Migration("20180812132809_AddDBToLocal1")]
-    partial class AddDBToLocal1
+    [Migration("20180812140057_AddDBToLocal")]
+    partial class AddDBToLocal
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace ScheduleAPI.Migrations
 
             modelBuilder.Entity("ScheduleAPI.Models.Event", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("EventId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -31,7 +31,7 @@ namespace ScheduleAPI.Migrations
 
                     b.Property<int>("EventType");
 
-                    b.HasKey("Id");
+                    b.HasKey("EventId");
 
                     b.HasIndex("EventTemplateId");
 

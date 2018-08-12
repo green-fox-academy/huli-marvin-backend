@@ -24,15 +24,14 @@ namespace ScheduleAPI.Migrations
                 name: "Events",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    EventId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    EventTypeId = table.Column<int>(nullable: false),
                     EventType = table.Column<int>(nullable: false),
                     EventTemplateId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Events", x => x.Id);
+                    table.PrimaryKey("PK_Events", x => x.EventId);
                     table.ForeignKey(
                         name: "FK_Events_EventTemplates_EventTemplateId",
                         column: x => x.EventTemplateId,

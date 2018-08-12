@@ -21,7 +21,7 @@ namespace ScheduleAPI.Migrations
 
             modelBuilder.Entity("ScheduleAPI.Models.Event", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("EventId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -29,7 +29,7 @@ namespace ScheduleAPI.Migrations
 
                     b.Property<int>("EventType");
 
-                    b.HasKey("Id");
+                    b.HasKey("EventId");
 
                     b.HasIndex("EventTemplateId");
 
