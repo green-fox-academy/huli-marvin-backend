@@ -1,4 +1,6 @@
-﻿namespace ScheduleAPI.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ScheduleAPI.Models
 {
     public partial class Event
     {
@@ -15,9 +17,8 @@
             }
         }
         public EventTypes EventType { get; set; }
-        public int? Template { get; set; }
-
-        public EventTemplate TemplateNavigation { get; set; }
+        [ForeignKey("EventTemplateID")]
+        public EventTemplate EventTemplateID { get; set; }
     }
 
     public enum EventTypes
