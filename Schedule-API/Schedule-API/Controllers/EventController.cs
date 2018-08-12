@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleAPI.Models;
 using ScheduleAPI.Repositories;
+using ScheduleAPI.Services;
 using ScheduleAPI.ViewModels;
 
 namespace ScheduleAPI.Controllers
@@ -11,13 +12,15 @@ namespace ScheduleAPI.Controllers
         private EventViewModel eventViewModel;
         private EventRepository eventRepository;
         private EventTemplateRepository eventTemplateRepository;
+        private EventService eventService;
 
-        public EventController(EventContext eventContext, EventViewModel eventViewModel, EventRepository eventRepository, EventTemplateRepository eventTemplateRepository)
+        public EventController(EventContext eventContext, EventViewModel eventViewModel, EventRepository eventRepository, EventTemplateRepository eventTemplateRepository, EventService eventService)
         {
             this.eventContext = eventContext;
             this.eventViewModel = eventViewModel;
             this.eventRepository = eventRepository;
             this.eventTemplateRepository = eventTemplateRepository;
+            this.eventService = eventService;
             eventViewModel.Events = eventRepository.GetAll();
             eventViewModel.EventTemplates = eventTemplateRepository.GetAll();
         }
@@ -25,7 +28,21 @@ namespace ScheduleAPI.Controllers
         [HttpGet("api/Events")]
         public IActionResult GetAllEvents()
         {
-            return View("TestView", eventViewModel);
+            try
+            {
+                if (eventService.GetAllIsValid())
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (System.Exception e)
+            {
+                return NotFound();
+            }
         }
 
         [HttpGet("api/Events/{id}")]

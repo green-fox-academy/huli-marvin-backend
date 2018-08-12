@@ -1,4 +1,8 @@
-﻿using ScheduleAPI.Repositories;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using ScheduleAPI.Models;
+using ScheduleAPI.Repositories;
 
 namespace ScheduleAPI.Services
 {
@@ -9,6 +13,13 @@ namespace ScheduleAPI.Services
         public EventService(EventRepository eventRepository)
         {
             this.eventRepository = eventRepository;
+        }
+
+        internal bool GetAllIsValid()
+        {
+            List<Event> eventsFromDb = new List<Event>();
+            eventsFromDb = eventRepository.GetAll();
+            return eventsFromDb.Count > 0 ? true : false;
         }
     }
 }
