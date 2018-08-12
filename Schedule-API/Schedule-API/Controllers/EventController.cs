@@ -32,20 +32,20 @@ namespace ScheduleAPI.Controllers
         [HttpGet("api/events/{id}")]
         public IActionResult GetEvent(int id)
         {
-            Event xEvent = eventRepository.GetItemById(id);
+            Event occurrence = eventRepository.GetItemById(id);
 
-            if (xEvent == null)
+            if (occurrence == null)
             {
                 return NotFound("No item found for your id...");
             }
             else
             {
-                return Json(xEvent);
+                return Json(occurrence);
             }
         }
 
         [HttpPost("api/events")]
-        public IActionResult PostEvent([FromBody]Event xEvent)
+        public IActionResult PostEvent([FromBody]Event occurrence)
         {
             if (!ModelState.IsValid)
             {
@@ -53,40 +53,50 @@ namespace ScheduleAPI.Controllers
             }
             else
             {
-                eventRepository.Update(xEvent);
-                return Created("DB Updated",xEvent);
+                eventRepository.Update(occurrence);
+                return Created("DB Updated", occurrence);
             }
         }
 
         [HttpPut("api/events/{id}")]
-        public IActionResult AddEvent(int id, [FromBody]Event xEvent)
+        public IActionResult AddEvent(int id, [FromBody]Event occurrence)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != xEvent.EventId)
+            if (id != occurrence.EventId)
             {
                 return BadRequest();
             }
 
             try
             {
-                eventRepository.Update(xEvent);
+                eventRepository.Update(occurrence);
             }
             catch (System.Exception)
             {
-                return NotFound("There is no item with the given Id...");
+                return NotFound("There is no event with the given Id...");
             }
 
-            return Ok("Product has been updated");
+            return Ok("Event has been updated");
         }
 
         [HttpDelete("api/events/{id}")]
-        public IActionResult DeleteEvent()
+        public IActionResult DeleteEvent(int id)
         {
-            return View("TestView", eventViewModel);
+            Event occurrence = eventRepository.GetItemById(id);
+
+            if (occurrence == null)
+            {
+                return NotFound("No event found for your id...");
+            }
+            else
+            {
+            eventRepository.Delete(id);
+            return Ok("Event deleted...");
+            }
         }
     }
 }
