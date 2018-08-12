@@ -34,6 +34,7 @@ namespace Schedule_API
                 options.UseSqlServer(connectionStringToDoDB));
             services.AddTransient<EventContext>();
             services.AddTransient<EventRepository>();
+            services.AddTransient<EventTemplateRepository>();
             services.AddTransient<EventService>();
             services.AddTransient<EventViewModel>();
         }
@@ -45,14 +46,7 @@ namespace Schedule_API
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute
-                (
-                    name: "default",
-                    template: "{controller=Event}/{action=GetEvent}/{id?}"
-                );
-            });
+            app.UseMvc();
         }
     }
 }

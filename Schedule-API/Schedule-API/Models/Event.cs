@@ -1,10 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace ScheduleAPI.Models
+﻿namespace ScheduleAPI.Models
 {
     public partial class Event
     {
-        public int Id { get; set; }
+        public int EventId { get; set; }
         public EventTypes EventType { get; set; }
         public int? EventTemplateId { get; set; }
 
