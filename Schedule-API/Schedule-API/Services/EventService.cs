@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using ScheduleAPI.Models;
 using ScheduleAPI.Repositories;
 
@@ -15,7 +16,7 @@ namespace ScheduleAPI.Services
             this.eventRepository = eventRepository;
         }
 
-        internal bool GetAllIsValid()
+        public bool GetAllIsValid()
         {
             List<Event> eventsFromDb = new List<Event>();
             eventsFromDb = eventRepository.GetAll();

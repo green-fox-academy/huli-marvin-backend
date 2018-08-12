@@ -59,9 +59,28 @@ namespace ScheduleAPI.Controllers
         }
 
         [HttpPut("api/events/{id}")]
-        public IActionResult AddEvent()
+        public IActionResult AddEvent(int id, [FromBody]Event xEvent)
         {
-            return View("TestView", eventViewModel);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != xEvent.EventId)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                eventRepository.Update(xEvent);
+            }
+            catch (System.Exception)
+            {
+                return NotFound("There is no item with the given Id...");
+            }
+
+            return Ok("Product has been updated");
         }
 
         [HttpDelete("api/events/{id}")]
