@@ -23,31 +23,31 @@ namespace ScheduleAPI.Controllers
         }
 
         [HttpGet("api/Events")]
-        public IActionResult Index()
+        public IActionResult GetAllEvents()
         {
             return View("TestView", eventViewModel);
         }
 
         [HttpGet("api/Events/{id}")]
-        public IActionResult Index()
+        public IActionResult GetEvent()
         {
             return View("TestView", eventViewModel);
         }
 
         [HttpPost("api/Events")]
-        public IActionResult Index()
+        public IActionResult PostEvent()
         {
             return View("TestView", eventViewModel);
         }
 
         [HttpPut("api/Events/{id}")]
-        public IActionResult Index()
+        public IActionResult AddEvent()
         {
             return View("TestView", eventViewModel);
         }
 
         [HttpDelete("api/Events/{id}")]
-        public IActionResult Index()
+        public IActionResult DeleteEvent()
         {
             return View("TestView", eventViewModel);
         }
