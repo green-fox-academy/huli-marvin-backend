@@ -22,7 +22,31 @@ namespace ScheduleAPI.Controllers
             eventViewModel.EventTemplates = eventTemplateRepository.GetAll();
         }
 
-        [HttpGet("")]
+        [HttpGet("api/Events")]
+        public IActionResult Index()
+        {
+            return View("TestView", eventViewModel);
+        }
+
+        [HttpGet("api/Events/{id}")]
+        public IActionResult Index()
+        {
+            return View("TestView", eventViewModel);
+        }
+
+        [HttpPost("api/Events")]
+        public IActionResult Index()
+        {
+            return View("TestView", eventViewModel);
+        }
+
+        [HttpPut("api/Events/{id}")]
+        public IActionResult Index()
+        {
+            return View("TestView", eventViewModel);
+        }
+
+        [HttpDelete("api/Events/{id}")]
         public IActionResult Index()
         {
             return View("TestView", eventViewModel);
