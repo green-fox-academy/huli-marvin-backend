@@ -45,7 +45,14 @@ namespace Schedule_API
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute
+                (
+                    name: "default",
+                    template: "{controller=Event}/{action=GetEvent}/{id?}"
+                );
+            });
         }
     }
 }
