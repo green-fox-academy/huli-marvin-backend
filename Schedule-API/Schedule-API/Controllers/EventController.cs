@@ -45,9 +45,17 @@ namespace ScheduleAPI.Controllers
         }
 
         [HttpPost("api/events")]
-        public IActionResult PostEvent()
+        public IActionResult PostEvent([FromBody]Event xEvent)
         {
-            return View("TestView", eventViewModel);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            else
+            {
+                eventRepository.Update(xEvent);
+                return Created("DB Updated",xEvent);
+            }
         }
 
         [HttpPut("api/events/{id}")]
