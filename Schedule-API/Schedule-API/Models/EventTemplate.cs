@@ -5,7 +5,7 @@ namespace ScheduleAPI.Models
 {
     public partial class EventTemplate
     {
-        public int EventTemplateID { get; set; }
+        public int EventTemplateId { get; set; }
         public string EventTemplateName { get; set; }
 
         public ICollection<Event> Events { get; set; }

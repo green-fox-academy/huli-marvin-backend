@@ -3,5 +3,5 @@
 <!DOCTYPE html>
 @foreach (ScheduleAPI.Models.Event xEvent in Model.Events)
 {
-    <p>@xEvent.Id - @xEvent.Template</p>
+    <p>@xEvent.Id - @xEvent.EventType - @xEvent.EventTemplateId - @xEvent.EventTemplate.EventTemplateName</p>
 }

@@ -16,11 +16,11 @@ namespace ScheduleAPI.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Event>()
-                .HasOne(e => e.Template)
-                .WithMany(c => c.Events)
-                .HasForeignKey(e => e.Template)
-                .HasConstraintName("FK_Events_ToEventTemplates");
+            //modelBuilder.Entity<Event>()
+            //    .HasOne(e => e.EventTemplate)
+            //    .WithMany(c => c.Events)
+            //    .HasForeignKey(e => e.EventTemplateId)
+            //    .HasConstraintName("FK_Events_ToEventTemplates");
         }
     }
 }

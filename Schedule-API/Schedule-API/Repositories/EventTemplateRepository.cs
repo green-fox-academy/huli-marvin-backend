@@ -41,7 +41,7 @@ namespace ScheduleAPI.Repositories
 
         public EventTemplate GetItemById(int id)
         {
-            return eventContext.EventTemplates.ToList().FirstOrDefault(xItem => xItem.Id == id);
+            return eventContext.EventTemplates.ToList().FirstOrDefault(xItem => xItem.EventTemplateId == id);
         }
 
         public List<EventTemplate> GetAll()
