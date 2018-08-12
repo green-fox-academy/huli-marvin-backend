@@ -8,15 +8,13 @@ namespace ScheduleAPI.Controllers
 {
     public class EventController : Controller
     {
-        private EventContext eventContext;
         private EventViewModel eventViewModel;
         private EventRepository eventRepository;
         private EventTemplateRepository eventTemplateRepository;
         private EventService eventService;
 
-        public EventController(EventContext eventContext, EventViewModel eventViewModel, EventRepository eventRepository, EventTemplateRepository eventTemplateRepository, EventService eventService)
+        public EventController(EventViewModel eventViewModel, EventRepository eventRepository, EventTemplateRepository eventTemplateRepository, EventService eventService)
         {
-            this.eventContext = eventContext;
             this.eventViewModel = eventViewModel;
             this.eventRepository = eventRepository;
             this.eventTemplateRepository = eventTemplateRepository;
@@ -25,45 +23,40 @@ namespace ScheduleAPI.Controllers
             eventViewModel.EventTemplates = eventTemplateRepository.GetAll();
         }
 
-        [HttpGet("api/Events")]
+        [HttpGet("api/events")]
         public IActionResult GetAllEvents()
         {
-            try
-            {
-                if (eventService.GetAllIsValid())
-                {
-                    return Ok();
-                }
-                else
-                {
-                    return NotFound();
-                }
-            }
-            catch (System.Exception e)
-            {
-                return NotFound();
-            }
+            return Json(eventRepository.GetAll());
         }
 
-        [HttpGet("api/Events/{id}")]
-        public IActionResult GetEvent()
+        [HttpGet("api/events/{id}")]
+        public IActionResult GetEvent(int id)
         {
-            return View("TestView", eventViewModel);
+            Event xEvent = eventRepository.GetItemById(id);
+
+            if (xEvent == null)
+            {
+                return NotFound("No item found for your id...");
+            }
+            else
+            {
+                return Json(xEvent);
+            }
         }
 
-        [HttpPost("api/Events")]
+        [HttpPost("api/events")]
         public IActionResult PostEvent()
         {
             return View("TestView", eventViewModel);
         }
 
-        [HttpPut("api/Events/{id}")]
+        [HttpPut("api/events/{id}")]
         public IActionResult AddEvent()
         {
             return View("TestView", eventViewModel);
         }
 
-        [HttpDelete("api/Events/{id}")]
+        [HttpDelete("api/events/{id}")]
         public IActionResult DeleteEvent()
         {
             return View("TestView", eventViewModel);

@@ -5,7 +5,6 @@ namespace ScheduleAPI.Models
 {
     public partial class EventContext : DbContext
     {
-        public IConfiguration Configuration { get; }
         public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<EventTemplate> EventTemplates { get; set; }
 
