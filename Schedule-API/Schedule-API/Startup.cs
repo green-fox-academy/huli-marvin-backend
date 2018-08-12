@@ -12,6 +12,7 @@ using Microsoft.Extensions.Options;
 using ScheduleAPI.Models;
 using ScheduleAPI.Repositories;
 using ScheduleAPI.Services;
+using ScheduleAPI.ViewModels;
 
 namespace Schedule_API
 {
@@ -34,6 +35,7 @@ namespace Schedule_API
             services.AddTransient<EventContext>();
             services.AddTransient<EventRepository>();
             services.AddTransient<EventService>();
+            services.AddTransient<EventViewModel>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

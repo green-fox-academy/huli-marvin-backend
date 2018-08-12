@@ -4,14 +4,13 @@ namespace ScheduleAPI.Models
 {
     public partial class EventTemplate
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public ICollection<Event> Events { get; set; }
+
         public EventTemplate()
         {
             Events = new HashSet<Event>();
         }
-
-        public int Id { get; set; }
-        public string Name { get; set; }
-
-        public ICollection<Event> Events { get; set; }
     }
 }

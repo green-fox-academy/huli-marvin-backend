@@ -8,40 +8,45 @@ namespace ScheduleAPI.Repositories
 {
     public class EventTemplateRepository : IGenericRepository<EventTemplate>
     {
-        private EventContext ContextObj;
+        private EventContext eventContext;
 
-        public EventTemplateRepository(EventContext ContextObj)
+        public EventTemplateRepository(EventContext eventContext)
         {
-            this.ContextObj = ContextObj;
+            this.eventContext = eventContext;
         }
 
         public void Create(EventTemplate eventTemplates)
         {
-            ContextObj.Add(eventTemplates);
-            ContextObj.SaveChanges();
+            eventContext.Add(eventTemplates);
+            eventContext.SaveChanges();
         }
 
         public List<EventTemplate> Read()
         {
-            return ContextObj.EventTemplates.ToList();
+            return eventContext.EventTemplates.ToList();
         }
 
         public void Update(EventTemplate eventTemplates)
         {
-            ContextObj.Update(eventTemplates);
-            ContextObj.SaveChanges();
+            eventContext.Update(eventTemplates);
+            eventContext.SaveChanges();
         }
 
         public void Delete(int id)
         {
             var removable = GetItemById(id);
-            ContextObj.Remove(removable);
-            ContextObj.SaveChanges();
+            eventContext.Remove(removable);
+            eventContext.SaveChanges();
         }
 
         public EventTemplate GetItemById(int id)
         {
-            return ContextObj.EventTemplates.ToList().FirstOrDefault(xItem => xItem.Id == id);
+            return eventContext.EventTemplates.ToList().FirstOrDefault(xItem => xItem.Id == id);
+        }
+
+        public List<EventTemplate> GetAll()
+        {
+            return eventContext.EventTemplates.ToList();
         }
     }
 }

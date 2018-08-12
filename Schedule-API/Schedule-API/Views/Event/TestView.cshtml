@@ -1,0 +1,7 @@
+﻿@model ScheduleAPI.ViewModels.EventViewModel
+
+<!DOCTYPE html>
+@foreach (ScheduleAPI.Models.Event xEvent in Model.Events)
+{
+    <p>@xEvent.Id - @xEvent.Template</p>
+}

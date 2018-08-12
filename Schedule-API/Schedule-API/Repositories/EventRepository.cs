@@ -6,40 +6,45 @@ namespace ScheduleAPI.Repositories
 {
     public class EventRepository : IGenericRepository<Event>
     {
-        private EventContext eventContextObj;
+        private EventContext eventContext;
 
-        public EventRepository(EventContext eventContextObj)
+        public EventRepository(EventContext eventContext)
         {
-            this.eventContextObj = eventContextObj;
+            this.eventContext = eventContext;
         }
 
         public void Create(Event occurrence)
         {
-            eventContextObj.Add(occurrence);
-            eventContextObj.SaveChanges();
+            eventContext.Add(occurrence);
+            eventContext.SaveChanges();
         }
 
         public List<Event> Read()
         {
-            return eventContextObj.Events.ToList();
+            return eventContext.Events.ToList();
         }
 
         public void Update(Event occurrence)
         {
-            eventContextObj.Update(occurrence);
-            eventContextObj.SaveChanges();
+            eventContext.Update(occurrence);
+            eventContext.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            var removable = eventContextObj.Events.ToList().FirstOrDefault(x => x.Id == id);
-            eventContextObj.Remove(removable);
-            eventContextObj.SaveChanges();
+            var removable = eventContext.Events.ToList().FirstOrDefault(x => x.Id == id);
+            eventContext.Remove(removable);
+            eventContext.SaveChanges();
         }
 
         public Event GetItemById(int id)
         {
-            return eventContextObj.Events.ToList().FirstOrDefault(x => x.Id == id);
+            return eventContext.Events.ToList().FirstOrDefault(x => x.Id == id);
+        }
+
+        public List<Event> GetAll()
+        {
+            return eventContext.Events.ToList();
         }
     }
 }
