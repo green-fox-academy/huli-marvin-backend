@@ -94,8 +94,8 @@ namespace ScheduleAPI.Controllers
             }
             else
             {
-            eventRepository.Delete(id);
-            return Ok("Event deleted...");
+                eventRepository.Delete(id);
+                return Ok("Event deleted...");
             }
         }
     }
