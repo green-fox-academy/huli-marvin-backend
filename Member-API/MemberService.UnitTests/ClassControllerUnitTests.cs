@@ -47,10 +47,9 @@ namespace MemberService.UnitTests
         [Fact]
         public async Task ListClasses_Should_ReturnClassDTOs_InJson()
         {
-            var result = await classController.ListClasses();
+            var result = await classController.FindClass(testClassDTO.Id);
             var jsonResult = result as JsonResult;
-            var expected = classDTOs;
-            jsonResult.Value.ShouldBeEquivalentTo(expected);
+            jsonResult.Value.ShouldBeEquivalentTo(testClassDTO);
         }
 
         [Fact]
