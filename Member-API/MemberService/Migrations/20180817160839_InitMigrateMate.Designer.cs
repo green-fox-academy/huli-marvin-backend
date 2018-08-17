@@ -12,8 +12,8 @@ using System;
 namespace MemberService.Migrations
 {
     [DbContext(typeof(MemberContext))]
-    [Migration("20180816064152_initdb")]
-    partial class initdb
+    [Migration("20180817160839_InitMigrateMate")]
+    partial class InitMigrateMate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

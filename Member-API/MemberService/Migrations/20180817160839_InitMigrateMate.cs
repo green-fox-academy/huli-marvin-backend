@@ -5,16 +5,32 @@ using System.Collections.Generic;
 
 namespace MemberService.Migrations
 {
-    public partial class LocalInitialisation : Migration
+    public partial class InitMigrateMate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Attendances",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DayOff = table.Column<int>(nullable: false),
+                    Late = table.Column<int>(nullable: false),
+                    SickUnverified = table.Column<int>(nullable: false),
+                    SickVerified = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Attendances", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Departments",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Address = table.Column<string>(nullable: true),
                     Country = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
@@ -32,7 +48,7 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DepartmentId = table.Column<long>(nullable: true),
                     FinishDate = table.Column<DateTime>(nullable: false),
                     Name = table.Column<string>(nullable: true),
@@ -55,7 +71,7 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DepartmentId = table.Column<long>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Status = table.Column<int>(nullable: false)
@@ -76,7 +92,7 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DepartmentId = table.Column<long>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true)
@@ -93,24 +109,14 @@ namespace MemberService.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClassProfile",
-                columns: table => new
-                {
-                    ClassId = table.Column<long>(nullable: false),
-                    ProfileId = table.Column<long>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ClassProfile", x => new { x.ClassId, x.ProfileId });
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Profiles",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    AttendanceInfoId = table.Column<long>(nullable: true),
                     ClassApprenticeId = table.Column<long>(nullable: true),
+                    CohortApprenticeId = table.Column<long>(nullable: true),
                     DateOfBirth = table.Column<DateTime>(nullable: false),
                     Education = table.Column<int>(nullable: false),
                     Email = table.Column<string>(nullable: true),
@@ -121,13 +127,34 @@ namespace MemberService.Migrations
                     LinkedIn = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Payment = table.Column<int>(nullable: false),
+                    Phase = table.Column<int>(nullable: false),
                     PhoneNumber = table.Column<string>(nullable: true),
+                    Picture = table.Column<string>(nullable: true),
+                    ProjectId = table.Column<long>(nullable: true),
                     SlackUser = table.Column<string>(nullable: true),
                     TeamApprenticeId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Profiles", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Profiles_Attendances_AttendanceInfoId",
+                        column: x => x.AttendanceInfoId,
+                        principalTable: "Attendances",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Profiles_Cohorts_CohortApprenticeId",
+                        column: x => x.CohortApprenticeId,
+                        principalTable: "Cohorts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Profiles_Projects_ProjectId",
+                        column: x => x.ProjectId,
+                        principalTable: "Projects",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -135,7 +162,7 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CalendarId = table.Column<long>(nullable: false),
                     ClassAdminId = table.Column<long>(nullable: true),
                     ClassLeadId = table.Column<long>(nullable: true),
@@ -180,7 +207,7 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     ProfileId = table.Column<long>(nullable: true)
                 },
@@ -200,7 +227,7 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     ProductOwnerId = table.Column<long>(nullable: true),
                     ProjectId = table.Column<long>(nullable: true),
@@ -227,6 +254,30 @@ namespace MemberService.Migrations
                         principalTable: "Profiles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClassProfile",
+                columns: table => new
+                {
+                    ClassId = table.Column<long>(nullable: false),
+                    ProfileId = table.Column<long>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClassProfile", x => new { x.ClassId, x.ProfileId });
+                    table.ForeignKey(
+                        name: "FK_ClassProfile_Classes_ClassId",
+                        column: x => x.ClassId,
+                        principalTable: "Classes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ClassProfile_Profiles_ProfileId",
+                        column: x => x.ProfileId,
+                        principalTable: "Profiles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -270,9 +321,24 @@ namespace MemberService.Migrations
                 column: "ProfileId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Profiles_AttendanceInfoId",
+                table: "Profiles",
+                column: "AttendanceInfoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Profiles_ClassApprenticeId",
                 table: "Profiles",
                 column: "ClassApprenticeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Profiles_CohortApprenticeId",
+                table: "Profiles",
+                column: "CohortApprenticeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Profiles_ProjectId",
+                table: "Profiles",
+                column: "ProjectId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Profiles_TeamApprenticeId",
@@ -298,22 +364,6 @@ namespace MemberService.Migrations
                 name: "IX_Teams_ScrumMasterId",
                 table: "Teams",
                 column: "ScrumMasterId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_ClassProfile_Profiles_ProfileId",
-                table: "ClassProfile",
-                column: "ProfileId",
-                principalTable: "Profiles",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_ClassProfile_Classes_ClassId",
-                table: "ClassProfile",
-                column: "ClassId",
-                principalTable: "Classes",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Profiles_Classes_ClassApprenticeId",
@@ -358,6 +408,9 @@ namespace MemberService.Migrations
 
             migrationBuilder.DropTable(
                 name: "Profiles");
+
+            migrationBuilder.DropTable(
+                name: "Attendances");
 
             migrationBuilder.DropTable(
                 name: "Classes");
