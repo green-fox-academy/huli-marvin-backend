@@ -14,7 +14,7 @@ using Xunit;
 
 namespace MemberService.UnitTests
 {
-    public class JobHistoryServiceTests
+    public class JobHistoryServiceUnitTests
     {
         private readonly JobHistory testJobHistory = (JobHistory)ModelFactory.Creator<JobHistory>();
         private readonly JobHistoryDTO testJobHistoryDTO = (JobHistoryDTO)ModelFactory.Creator<JobHistoryDTO>();
@@ -22,7 +22,7 @@ namespace MemberService.UnitTests
         private readonly IEnumerable<JobHistory> jobHistories;
         private readonly Mock<ICrudRepository<JobHistory>> mockJobHistoryRepo = new Mock<ICrudRepository<JobHistory>>();
 
-        public JobHistoryServiceTests()
+        public JobHistoryServiceUnitTests()
         {
             jobHistories = new List<JobHistory>() { testJobHistory };
 

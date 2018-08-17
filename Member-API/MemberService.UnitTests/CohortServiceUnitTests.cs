@@ -14,7 +14,7 @@ using Xunit;
 
 namespace MemberService.UnitTests
 {
-    public class CohortServiceTests
+    public class CohortServiceUnitTests
     {
         private readonly Cohort testCohort = (Cohort)ModelFactory.Creator<Cohort>();
         private readonly CohortDTO testCohortDTO = (CohortDTO)ModelFactory.Creator<CohortDTO>();
@@ -22,7 +22,7 @@ namespace MemberService.UnitTests
         private readonly IEnumerable<Cohort> cohorts;
         private readonly Mock<ICrudRepository<Cohort>> mockCohortRepo = new Mock<ICrudRepository<Cohort>>();
         
-        public CohortServiceTests()
+        public CohortServiceUnitTests()
         {
             cohorts = new List<Cohort>() { testCohort };
 

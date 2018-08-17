@@ -13,7 +13,7 @@ using Xunit;
 
 namespace MemberService.UnitTests
 {
-    public class ProfileServiceTests
+    public class ProfileServiceUnitTests
     {
         private readonly Profile testProfile = (Profile)ModelFactory.Creator<Profile>();
         private readonly ProfileDTO testProfileDTO = (ProfileDTO)ModelFactory.Creator<ProfileDTO>();
@@ -21,7 +21,7 @@ namespace MemberService.UnitTests
         private readonly IEnumerable<Profile> profiles;
         private readonly Mock<ICrudRepository<Profile>> mockProfileRepo = new Mock<ICrudRepository<Profile>>();
 
-        public ProfileServiceTests()
+        public ProfileServiceUnitTests()
         {
             profiles = new List<Profile>() { testProfile };
 
