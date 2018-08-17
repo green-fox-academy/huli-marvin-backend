@@ -13101,23 +13101,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eleka\\.nuget\\packages\\": {},
+    "C:\\Users\\eleka_000\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eleka\\Documents\\Repositories\\huli-marvin-backend\\Schedule-API\\Schedule-API\\ScheduleAPI.csproj",
+      "projectUniqueName": "C:\\Repositories\\Marvin\\huli-marvin-backend\\Schedule-API\\Schedule-API\\ScheduleAPI.csproj",
       "projectName": "ScheduleAPI",
-      "projectPath": "C:\\Users\\eleka\\Documents\\Repositories\\huli-marvin-backend\\Schedule-API\\Schedule-API\\ScheduleAPI.csproj",
-      "packagesPath": "C:\\Users\\eleka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eleka\\Documents\\Repositories\\huli-marvin-backend\\Schedule-API\\Schedule-API\\obj\\",
+      "projectPath": "C:\\Repositories\\Marvin\\huli-marvin-backend\\Schedule-API\\Schedule-API\\ScheduleAPI.csproj",
+      "packagesPath": "C:\\Users\\eleka_000\\.nuget\\packages\\",
+      "outputPath": "C:\\Repositories\\Marvin\\huli-marvin-backend\\Schedule-API\\Schedule-API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\eleka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\eleka_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
