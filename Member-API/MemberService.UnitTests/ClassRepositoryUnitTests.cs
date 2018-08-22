@@ -9,14 +9,14 @@ using Xunit;
 
 namespace MemberService.UnitTests
 {
-    public class ClassRepositoryTests
+    public class ClassRepositoryUnitTests
     {
         private readonly MemberContext context;
 
         private Class testClass1 = (Class)ModelFactory.Creator<Class>();
         private Class testClass2 = (Class)ModelFactory.Creator<Class>();
 
-        public ClassRepositoryTests()
+        public ClassRepositoryUnitTests()
         {
             var optionsBuilder = new DbContextOptionsBuilder<MemberContext>()
                 .UseInMemoryDatabase("testdatabase");
