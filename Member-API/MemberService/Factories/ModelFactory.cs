@@ -53,7 +53,6 @@ namespace MemberService.Factories
                 Status = (Status)1,
                 CalendarId = id,
                 SlackChannelId = id,
-                Course = new CollapsedModell(id + 10, $"Course{id + 10}"),
                 Cohort = new CollapsedModell(id + 20, $"Cohort{id + 20}"),
                 ClassLead = new CollapsedModell(id + 30, $"ClassLead{id + 30}"),
                 ClassAdmin = new CollapsedModell(id + 40, $"ClassAdmin{id + 40}"),

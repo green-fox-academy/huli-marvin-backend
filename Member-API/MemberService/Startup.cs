@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace MemberService
 {
@@ -34,6 +34,11 @@ namespace MemberService
             services.AddServices();
             services.AddRepositories();
             services.AddMapper();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
+
             //services.AddStorage(Configuration);
 
             services.AddDbContext<MemberContext>(options => options.BuildConnection(Configuration));
@@ -66,6 +71,12 @@ namespace MemberService
 
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.RoutePrefix = string.Empty;
+            });
         }
     }
 }
