@@ -34,7 +34,6 @@ namespace MemberService
             services.AddServices();
             services.AddRepositories();
             services.AddMapper();
-            //services.AddStorage(Configuration);
 
             services.AddDbContext<MemberContext>(options => options.BuildConnection(Configuration));
             services.AddAuth(Configuration);
