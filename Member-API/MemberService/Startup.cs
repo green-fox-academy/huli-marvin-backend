@@ -37,7 +37,7 @@ namespace MemberService
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "Marvin API", Version = "v1" });
             });
 
             services.AddDbContext<MemberContext>(options => options.BuildConnection(Configuration));
