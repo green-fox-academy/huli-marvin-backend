@@ -646,6 +646,20 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll": {}
         }
       },
+      "Microsoft.AspNetCore.HealthChecks/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting": "1.0.2",
+          "Microsoft.Extensions.HealthChecks": "1.0.0",
+          "Microsoft.NETCore.App": "1.0.5"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/Microsoft.AspNetCore.HealthChecks.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/Microsoft.AspNetCore.HealthChecks.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Hosting/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -2113,6 +2127,56 @@
           "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {}
         }
       },
+      "Microsoft.Extensions.HealthChecks/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "1.0.2",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Diagnostics.Process": "4.3.0",
+          "System.Threading.Tasks.Extensions": "4.3.0",
+          "System.Threading.Tasks.Parallel": "4.3.0",
+          "System.Threading.Thread": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.Extensions.HealthChecks.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.Extensions.HealthChecks.dll": {}
+        }
+      },
+      "Microsoft.Extensions.HealthChecks.AzureStorage/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting": "1.0.2",
+          "Microsoft.Extensions.HealthChecks": "1.0.0",
+          "NETStandard.Library": "1.6.1",
+          "System.Threading.Tasks.Extensions": "4.3.0",
+          "System.Threading.Tasks.Parallel": "4.3.0",
+          "System.Threading.Thread": "4.3.0",
+          "WindowsAzure.Storage": "7.2.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.Extensions.HealthChecks.AzureStorage.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.Extensions.HealthChecks.AzureStorage.dll": {}
+        }
+      },
+      "Microsoft.Extensions.HealthChecks.SqlServer/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.HealthChecks": "1.0.0",
+          "NETStandard.Library": "1.6.1",
+          "System.Data.SqlClient": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.Extensions.HealthChecks.SqlServer.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.Extensions.HealthChecks.SqlServer.dll": {}
+        }
+      },
       "Microsoft.Extensions.Hosting.Abstractions/2.0.3": {
         "type": "package",
         "compile": {
@@ -3243,6 +3307,68 @@
           "lib/netstandard1.5/StackExchange.Redis.StrongName.dll": {}
         }
       },
+      "Swashbuckle.AspNetCore/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Swashbuckle.AspNetCore.Swagger": "3.0.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "3.0.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.4",
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.4",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.ApiExplorer": "1.0.4",
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.4",
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.4",
+          "NETStandard.Library": "1.6.1",
+          "Swashbuckle.AspNetCore.Swagger": "3.0.0",
+          "System.Xml.XPath": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Routing": "1.0.4",
+          "Microsoft.AspNetCore.StaticFiles": "1.0.4",
+          "Microsoft.Extensions.FileProviders.Embedded": "1.0.1",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3557,6 +3683,49 @@
             "rid": "unix"
           },
           "runtimes/win/lib/netstandard1.3/System.Diagnostics.FileVersionInfo.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Diagnostics.Process/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.Win32.Primitives": "4.3.0",
+          "Microsoft.Win32.Registry": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Handles": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0",
+          "System.Threading.Thread": "4.3.0",
+          "System.Threading.ThreadPool": "4.3.0",
+          "runtime.native.System": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.4/System.Diagnostics.Process.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux/lib/netstandard1.4/System.Diagnostics.Process.dll": {
+            "assetType": "runtime",
+            "rid": "linux"
+          },
+          "runtimes/osx/lib/netstandard1.4/System.Diagnostics.Process.dll": {
+            "assetType": "runtime",
+            "rid": "osx"
+          },
+          "runtimes/win/lib/netstandard1.4/System.Diagnostics.Process.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -4921,7 +5090,7 @@
           "System.Xml.ReaderWriter": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Xml.XPath.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.dll": {}
@@ -5407,6 +5576,16 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.xml",
         "microsoft.aspnetcore.diagnostics.entityframeworkcore.2.0.3.nupkg.sha512",
         "microsoft.aspnetcore.diagnostics.entityframeworkcore.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.HealthChecks/1.0.0": {
+      "sha512": "skfSWx0dJWPc5NKePzPYp8sse4/li4LTrMrM1qDQK4Eq/eEn/syz1rjAQ7K0CwvLeS+7vdERUJ3v//c0oFUuIg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.healthchecks/1.0.0",
+      "files": [
+        "lib/netcoreapp1.0/Microsoft.AspNetCore.HealthChecks.dll",
+        "microsoft.aspnetcore.healthchecks.1.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.healthchecks.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Hosting/2.0.3": {
@@ -6812,6 +6991,36 @@
         "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.xml",
         "microsoft.extensions.filesystemglobbing.2.1.1.nupkg.sha512",
         "microsoft.extensions.filesystemglobbing.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.HealthChecks/1.0.0": {
+      "sha512": "75bbAOTUl0oBzjmPYdN+o0vReThrl4v/OVvIKsbuUlOhAjma7mOHYR/Nm1KabM36/xWbxgSX9lFCRvOaz/55Tg==",
+      "type": "package",
+      "path": "microsoft.extensions.healthchecks/1.0.0",
+      "files": [
+        "lib/netstandard1.3/Microsoft.Extensions.HealthChecks.dll",
+        "microsoft.extensions.healthchecks.1.0.0.nupkg.sha512",
+        "microsoft.extensions.healthchecks.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.HealthChecks.AzureStorage/1.0.0": {
+      "sha512": "Axt1wIkMMHu2nwdEpDIx72n07AKbX2FGxBHj2ASEuM8sdq+NQ2UusFQaw1qpAL5gPgL95JHYlOL7NK7jc1eQ1A==",
+      "type": "package",
+      "path": "microsoft.extensions.healthchecks.azurestorage/1.0.0",
+      "files": [
+        "lib/netstandard1.3/Microsoft.Extensions.HealthChecks.AzureStorage.dll",
+        "microsoft.extensions.healthchecks.azurestorage.1.0.0.nupkg.sha512",
+        "microsoft.extensions.healthchecks.azurestorage.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.HealthChecks.SqlServer/1.0.0": {
+      "sha512": "ORwoQusIMGpl5iRJ6lzamFbIyVMGQ5nbbNrHq8lCtfdIJjoXJJnDSTD6qUbiZf0hcNqXRRJTiJGeTJRArscNfg==",
+      "type": "package",
+      "path": "microsoft.extensions.healthchecks.sqlserver/1.0.0",
+      "files": [
+        "lib/netstandard1.3/Microsoft.Extensions.HealthChecks.SqlServer.dll",
+        "microsoft.extensions.healthchecks.sqlserver.1.0.0.nupkg.sha512",
+        "microsoft.extensions.healthchecks.sqlserver.nuspec"
       ]
     },
     "Microsoft.Extensions.Hosting.Abstractions/2.0.3": {
@@ -8532,6 +8741,56 @@
         "stackexchange.redis.strongname.nuspec"
       ]
     },
+    "Swashbuckle.AspNetCore/3.0.0": {
+      "sha512": "aM17YeBlYLIftD+4xCUPw/yT+FLjCyOCFinikXj42hntFYkkAuTRGLm9x+t7kfC13/OBiMJ1XEjl3MGeknx1cw==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore/3.0.0",
+      "files": [
+        "lib/net451/Swashbuckle.AspNetCore.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.dll",
+        "swashbuckle.aspnetcore.3.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.Swagger/3.0.0": {
+      "sha512": "smrewcRU7HK+3WRZWNYFXVAqD1apyIEwcYEdzVu23tNJek8GQM1V8yqIlj41D8CbYoqaeF+fDhkUDY6FSXUDuw==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swagger/3.0.0",
+      "files": [
+        "lib/net451/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/net451/Swashbuckle.AspNetCore.Swagger.xml",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.xml",
+        "swashbuckle.aspnetcore.swagger.3.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swagger.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/3.0.0": {
+      "sha512": "DjGV/s6dUi+Xg4ofc2/TCDJlFhGAstvStCBAJ8F2mllIRAtf+s0HsfAIPmFy+W0gOzo1/voRtMKU1uvINZtDFw==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggergen/3.0.0",
+      "files": [
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "swashbuckle.aspnetcore.swaggergen.3.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggergen.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/3.0.0": {
+      "sha512": "Gg3rELfq7qJOx8d4xO6hvqSdhMk9ofQCdtLVjBAAVyKehkJRCqiXUO+hJ+/GeEngkaLEglaK/+6an4gC/AxOlg==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggerui/3.0.0",
+      "files": [
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "swashbuckle.aspnetcore.swaggerui.3.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggerui.nuspec"
+      ]
+    },
     "System.AppContext/4.3.0": {
       "sha512": "fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
       "type": "package",
@@ -9295,6 +9554,61 @@
         "runtimes/win/lib/netstandard1.3/System.Diagnostics.FileVersionInfo.dll",
         "system.diagnostics.fileversioninfo.4.3.0.nupkg.sha512",
         "system.diagnostics.fileversioninfo.nuspec"
+      ]
+    },
+    "System.Diagnostics.Process/4.3.0": {
+      "sha512": "J0wOX07+QASQblsfxmIMFc9Iq7KTXYL3zs2G/Xc704Ylv3NpuVdo6gij6V3PGiptTxqsK0K7CdXenRvKUnkA2g==",
+      "type": "package",
+      "path": "system.diagnostics.process/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Diagnostics.Process.dll",
+        "lib/net461/System.Diagnostics.Process.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Diagnostics.Process.dll",
+        "ref/net461/System.Diagnostics.Process.dll",
+        "ref/netstandard1.3/System.Diagnostics.Process.dll",
+        "ref/netstandard1.3/System.Diagnostics.Process.xml",
+        "ref/netstandard1.3/de/System.Diagnostics.Process.xml",
+        "ref/netstandard1.3/es/System.Diagnostics.Process.xml",
+        "ref/netstandard1.3/fr/System.Diagnostics.Process.xml",
+        "ref/netstandard1.3/it/System.Diagnostics.Process.xml",
+        "ref/netstandard1.3/ja/System.Diagnostics.Process.xml",
+        "ref/netstandard1.3/ko/System.Diagnostics.Process.xml",
+        "ref/netstandard1.3/ru/System.Diagnostics.Process.xml",
+        "ref/netstandard1.3/zh-hans/System.Diagnostics.Process.xml",
+        "ref/netstandard1.3/zh-hant/System.Diagnostics.Process.xml",
+        "ref/netstandard1.4/System.Diagnostics.Process.dll",
+        "ref/netstandard1.4/System.Diagnostics.Process.xml",
+        "ref/netstandard1.4/de/System.Diagnostics.Process.xml",
+        "ref/netstandard1.4/es/System.Diagnostics.Process.xml",
+        "ref/netstandard1.4/fr/System.Diagnostics.Process.xml",
+        "ref/netstandard1.4/it/System.Diagnostics.Process.xml",
+        "ref/netstandard1.4/ja/System.Diagnostics.Process.xml",
+        "ref/netstandard1.4/ko/System.Diagnostics.Process.xml",
+        "ref/netstandard1.4/ru/System.Diagnostics.Process.xml",
+        "ref/netstandard1.4/zh-hans/System.Diagnostics.Process.xml",
+        "ref/netstandard1.4/zh-hant/System.Diagnostics.Process.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/linux/lib/netstandard1.4/System.Diagnostics.Process.dll",
+        "runtimes/osx/lib/netstandard1.4/System.Diagnostics.Process.dll",
+        "runtimes/win/lib/net46/System.Diagnostics.Process.dll",
+        "runtimes/win/lib/net461/System.Diagnostics.Process.dll",
+        "runtimes/win/lib/netstandard1.4/System.Diagnostics.Process.dll",
+        "runtimes/win7/lib/netcore50/_._",
+        "system.diagnostics.process.4.3.0.nupkg.sha512",
+        "system.diagnostics.process.nuspec"
       ]
     },
     "System.Diagnostics.StackTrace/4.3.0": {
@@ -11906,7 +12220,7 @@
       ]
     },
     "System.Security.Cryptography.Xml/4.4.2": {
-      "sha512": "q9Dren/YP5jhRCkDvLfuaPpMTQzP97ANvzq/OoGgwK8YdLRSTABS9oW5/23OKoM2DRCuBrh4qaecD2YNhPtuzQ==",
+      "sha512": "1m+fKVrApgKYMRuE0MF0vGjqy4XqAp1rCtyAzMXhJajMDDytMh/rHk9hp4M7KKk3QQZoWJUvyUY7xcw74w+JiQ==",
       "type": "package",
       "path": "system.security.cryptography.xml/4.4.2",
       "files": [
@@ -13092,32 +13406,36 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.8",
+      "Microsoft.AspNetCore.HealthChecks >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 2.1.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.1.1",
       "Microsoft.EntityFrameworkCore.Tools >= 2.1.1",
       "Microsoft.Extensions.Configuration.Json >= 2.1.1",
+      "Microsoft.Extensions.HealthChecks.AzureStorage >= 1.0.0",
+      "Microsoft.Extensions.HealthChecks.SqlServer >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.3"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.3",
+      "Swashbuckle.AspNetCore >= 3.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eleka_000\\.nuget\\packages\\": {},
+    "C:\\Users\\Nora\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repositories\\Marvin\\huli-marvin-backend\\Schedule-API\\Schedule-API\\ScheduleAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Nora\\Desktop\\greenfox\\húli\\huli-marvin-backend\\Schedule-API\\Schedule-API\\ScheduleAPI.csproj",
       "projectName": "ScheduleAPI",
-      "projectPath": "C:\\Repositories\\Marvin\\huli-marvin-backend\\Schedule-API\\Schedule-API\\ScheduleAPI.csproj",
-      "packagesPath": "C:\\Users\\eleka_000\\.nuget\\packages\\",
-      "outputPath": "C:\\Repositories\\Marvin\\huli-marvin-backend\\Schedule-API\\Schedule-API\\obj\\",
+      "projectPath": "C:\\Users\\Nora\\Desktop\\greenfox\\húli\\huli-marvin-backend\\Schedule-API\\Schedule-API\\ScheduleAPI.csproj",
+      "packagesPath": "C:\\Users\\Nora\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nora\\Desktop\\greenfox\\húli\\huli-marvin-backend\\Schedule-API\\Schedule-API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\eleka_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nora\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13145,6 +13463,10 @@
             "target": "Package",
             "version": "[2.0.8, )"
           },
+          "Microsoft.AspNetCore.HealthChecks": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[2.1.1, )"
@@ -13161,6 +13483,14 @@
             "target": "Package",
             "version": "[2.1.1, )"
           },
+          "Microsoft.Extensions.HealthChecks.AzureStorage": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "Microsoft.Extensions.HealthChecks.SqlServer": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "[2.0.0, )",
@@ -13169,6 +13499,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.0.3, )"
+          },
+          "Swashbuckle.AspNetCore": {
+            "target": "Package",
+            "version": "[3.0.0, )"
           }
         },
         "imports": [

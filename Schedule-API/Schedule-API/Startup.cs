@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.HealthChecks;
 using ScheduleAPI.Extensions;
 using ScheduleAPI.Models;
 using ScheduleAPI.Repositories;
@@ -44,6 +45,11 @@ namespace Schedule_API
             services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(ValidateMyModelAttribute));
+            });
+
+            services.AddHealthChecks(checks =>
+            {
+                checks.AddSqlCheck("MarvinDB", Configuration["connectionStringToDoDB"]);
             });
         }
 
