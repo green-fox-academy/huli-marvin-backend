@@ -1,0 +1,1169 @@
+2018-08-23T13:28:44.4597381+02:00 0HLG8TEAG9DN8:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:54102/  0 (ca22a1cb)
+2018-08-23T13:28:44.4597381+02:00 0HLG8TEAG9DN9:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/   (ca22a1cb)
+2018-08-23T13:28:44.7798700+02:00 0HLG8TEAG9DN8:00000001 [INF] Request finished in 804.5864ms 200  (791a596a)
+2018-08-23T13:28:47.9459966+02:00 0HLG8TEAG9DN9:00000001 [INF] Request finished in 3962.0821ms 404  (791a596a)
+2018-08-23T13:29:20.1081828+02:00 0HLG8TEAG9DN8:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/classes   (ca22a1cb)
+2018-08-23T13:29:20.8978804+02:00 0HLG8TEAG9DN8:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:29:20.9346604+02:00 0HLG8TEAG9DN8:00000002 [INF] Executing action method "MemberService.Controllers.EducationControllers.ClassController.ListClasses (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:29:21.1882125+02:00 0HLG8TEAG9DN8:00000002 [WRN] The LINQ expression '"where Invoke(__SearchFromQuery_0, [c])"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-23T13:29:25.3987466+02:00 0HLG8TEAG9DN8:00000002 [INF] Executed DbCommand ("656"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:29:25.8568330+02:00 0HLG8TEAG9DN8:00000002 [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.Class,MemberService.Models.DataTransferObjects.ClassDTO]". (7bb75e80)
+2018-08-23T13:29:26.3120416+02:00 0HLG8TEAG9DN8:00000002 [INF] Executed action "MemberService.Controllers.EducationControllers.ClassController.ListClasses (MemberService)" in 5823.2141ms (afa2e885)
+2018-08-23T13:29:26.3194747+02:00 0HLG8TEAG9DN8:00000002 [INF] Request finished in 6211.7563ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:29:27.0861262+02:00 0HLG8TEAG9DN9:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/favicon.ico   (ca22a1cb)
+2018-08-23T13:29:27.0913807+02:00 0HLG8TEAG9DN9:00000002 [INF] Request finished in 4.9894ms 404  (791a596a)
+2018-08-23T13:29:47.7322371+02:00 0HLG8TEAG9DN8:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/class/1   (ca22a1cb)
+2018-08-23T13:29:47.9229341+02:00 0HLG8TEAG9DN8:00000003 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:29:47.9671654+02:00 0HLG8TEAG9DN8:00000003 [INF] Executing action method "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:29:48.0896517+02:00 0HLG8TEAG9DN8:00000003 [INF] Executed DbCommand ("44"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[FinishDate], [c].[Name], [c].[StartDate], [c].[Status]
+FROM [Cohorts] AS [c]" (0723d8ff)
+2018-08-23T13:29:48.1776088+02:00 0HLG8TEAG9DN8:00000003 [INF] Executed DbCommand ("34"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[Name], [c].[Status]
+FROM [Courses] AS [c]" (0723d8ff)
+2018-08-23T13:29:48.2607776+02:00 0HLG8TEAG9DN8:00000003 [INF] Executed DbCommand ("61"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:29:48.2959645+02:00 0HLG8TEAG9DN8:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:29:48.3362647+02:00 0HLG8TEAG9DN8:00000003 [INF] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ClassId], [c].[ProfileId]
+FROM [ClassProfile] AS [c]" (0723d8ff)
+2018-08-23T13:29:48.5034888+02:00 0HLG8TEAG9DN8:00000003 [INF] Executed DbCommand ("82"ms) [Parameters=["@__get_Item_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[CalendarId], [e].[ClassAdminId], [e].[ClassLeadId], [e].[CohortId], [e].[Color], [e].[CourseId], [e].[Name], [e].[SlackChannelId], [e].[Status]
+FROM [Classes] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-23T13:29:48.8910743+02:00 0HLG8TEAG9DN8:00000003 [INF] Executed action "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" in 1002.7331ms (afa2e885)
+2018-08-23T13:29:49.2690907+02:00 0HLG8TEAG9DN8:00000003 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+MemberService.Models.Exceptions.NotFoundException: Exception of type 'MemberService.Models.Exceptions.NotFoundException' was thrown.
+   at MemberService.Repositories.ClassRepository.<SelectByIdAsync>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Repositories\ClassRepository.cs:line 47
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Services.ClassService.<GetByIdAsync>d__5.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Services\ClassService.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Controllers.EducationControllers.ClassController.<FindClass>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\ClassController.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:29:49.4126967+02:00 0HLG8TEAG9DN8:00000003 [INF] Request finished in 1678.846ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:29:56.1394510+02:00 0HLG8TEAG9DN9:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/class/2   (ca22a1cb)
+2018-08-23T13:29:56.1444893+02:00 0HLG8TEAG9DN9:00000003 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:29:56.1491618+02:00 0HLG8TEAG9DN9:00000003 [INF] Executing action method "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:29:56.1568305+02:00 0HLG8TEAG9DN9:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[FinishDate], [c].[Name], [c].[StartDate], [c].[Status]
+FROM [Cohorts] AS [c]" (0723d8ff)
+2018-08-23T13:29:56.1634783+02:00 0HLG8TEAG9DN9:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[Name], [c].[Status]
+FROM [Courses] AS [c]" (0723d8ff)
+2018-08-23T13:29:56.1685875+02:00 0HLG8TEAG9DN9:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:29:56.1747513+02:00 0HLG8TEAG9DN9:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:29:56.1797732+02:00 0HLG8TEAG9DN9:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ClassId], [c].[ProfileId]
+FROM [ClassProfile] AS [c]" (0723d8ff)
+2018-08-23T13:29:56.1863150+02:00 0HLG8TEAG9DN9:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[CalendarId], [e].[ClassAdminId], [e].[ClassLeadId], [e].[CohortId], [e].[Color], [e].[CourseId], [e].[Name], [e].[SlackChannelId], [e].[Status]
+FROM [Classes] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-23T13:29:56.2513184+02:00 0HLG8TEAG9DN9:00000003 [INF] Executed action "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" in 107.5483ms (afa2e885)
+2018-08-23T13:29:56.2876201+02:00 0HLG8TEAG9DN9:00000003 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+MemberService.Models.Exceptions.NotFoundException: Exception of type 'MemberService.Models.Exceptions.NotFoundException' was thrown.
+   at MemberService.Repositories.ClassRepository.<SelectByIdAsync>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Repositories\ClassRepository.cs:line 47
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Services.ClassService.<GetByIdAsync>d__5.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Services\ClassService.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Controllers.EducationControllers.ClassController.<FindClass>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\ClassController.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:29:56.3311877+02:00 0HLG8TEAG9DN9:00000003 [INF] Request finished in 193.9005ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:30:01.8409748+02:00 0HLG8TEAG9DN8:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/classes   (ca22a1cb)
+2018-08-23T13:30:01.8471671+02:00 0HLG8TEAG9DN8:00000004 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:30:01.8510409+02:00 0HLG8TEAG9DN8:00000004 [INF] Executing action method "MemberService.Controllers.EducationControllers.ClassController.ListClasses (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:30:01.8666010+02:00 0HLG8TEAG9DN8:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:30:01.8709780+02:00 0HLG8TEAG9DN8:00000004 [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.Class,MemberService.Models.DataTransferObjects.ClassDTO]". (7bb75e80)
+2018-08-23T13:30:01.8786724+02:00 0HLG8TEAG9DN8:00000004 [INF] Executed action "MemberService.Controllers.EducationControllers.ClassController.ListClasses (MemberService)" in 30.7384ms (afa2e885)
+2018-08-23T13:30:01.8858629+02:00 0HLG8TEAG9DN8:00000004 [INF] Request finished in 46.1963ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:30:07.5083217+02:00 0HLG8TEAG9DN9:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/class/8   (ca22a1cb)
+2018-08-23T13:30:07.5123762+02:00 0HLG8TEAG9DN9:00000004 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:30:07.5192371+02:00 0HLG8TEAG9DN9:00000004 [INF] Executing action method "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" with arguments (["8"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:30:07.5273834+02:00 0HLG8TEAG9DN9:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[FinishDate], [c].[Name], [c].[StartDate], [c].[Status]
+FROM [Cohorts] AS [c]" (0723d8ff)
+2018-08-23T13:30:07.5326419+02:00 0HLG8TEAG9DN9:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[Name], [c].[Status]
+FROM [Courses] AS [c]" (0723d8ff)
+2018-08-23T13:30:07.5404961+02:00 0HLG8TEAG9DN9:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:30:07.5454921+02:00 0HLG8TEAG9DN9:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:30:07.5499897+02:00 0HLG8TEAG9DN9:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ClassId], [c].[ProfileId]
+FROM [ClassProfile] AS [c]" (0723d8ff)
+2018-08-23T13:30:07.6963061+02:00 0HLG8TEAG9DN9:00000004 [INF] Executed action "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" in 183.6167ms (afa2e885)
+2018-08-23T13:30:07.7397428+02:00 0HLG8TEAG9DN9:00000004 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Class -> ClassDTO
+MemberService.Models.Class -> MemberService.Models.DataTransferObjects.ClassDTO
+
+Type Map configuration:
+Class -> ClassDTO
+MemberService.Models.Class -> MemberService.Models.DataTransferObjects.ClassDTO
+
+Property:
+Mentors ---> AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=====================================================================================
+ClassProfile -> CollapsedModell (Destination member list)
+MemberService.Models.JoinModels.ClassProfile -> MemberService.Models.CollapsedModell (Destination member list)
+
+Unmapped properties:
+Id
+Name
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps)
+   at lambda_method(Closure , Class , ClassDTO , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method(Closure , Class , ClassDTO , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   at MemberService.Services.ClassService.<GetByIdAsync>d__5.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Services\ClassService.cs:line 43
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Controllers.EducationControllers.ClassController.<FindClass>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\ClassController.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:30:07.7874993+02:00 0HLG8TEAG9DN9:00000004 [INF] Request finished in 276.8789ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:37:33.9238753+02:00 0HLG8TJ8LG72P:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:54102/  0 (ca22a1cb)
+2018-08-23T13:37:33.9238753+02:00 0HLG8TJ8LG72O:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/   (ca22a1cb)
+2018-08-23T13:37:33.9655287+02:00 0HLG8TJ8LG72P:00000001 [INF] Request finished in 123.8834ms 200  (791a596a)
+2018-08-23T13:37:34.1080408+02:00 0HLG8TJ8LG72O:00000001 [INF] Request finished in 268.1082ms 404  (791a596a)
+2018-08-23T13:38:42.3658806+02:00 0HLG8TJ8LG72Q:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/class/8   (ca22a1cb)
+2018-08-23T13:38:42.7341585+02:00 0HLG8TJ8LG72Q:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:38:42.7700420+02:00 0HLG8TJ8LG72Q:00000001 [INF] Executing action method "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" with arguments (["8"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:38:46.2705002+02:00 0HLG8TJ8LG72Q:00000001 [INF] Executed DbCommand ("165"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[FinishDate], [c].[Name], [c].[StartDate], [c].[Status]
+FROM [Cohorts] AS [c]" (0723d8ff)
+2018-08-23T13:38:46.3950175+02:00 0HLG8TJ8LG72Q:00000001 [INF] Executed DbCommand ("55"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[Name], [c].[Status]
+FROM [Courses] AS [c]" (0723d8ff)
+2018-08-23T13:38:46.6749534+02:00 0HLG8TJ8LG72Q:00000001 [INF] Executed DbCommand ("230"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:38:46.7235040+02:00 0HLG8TJ8LG72Q:00000001 [INF] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:38:46.7928612+02:00 0HLG8TJ8LG72Q:00000001 [INF] Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ClassId], [c].[ProfileId]
+FROM [ClassProfile] AS [c]" (0723d8ff)
+2018-08-23T13:38:46.8798642+02:00 0HLG8TJ8LG72Q:00000001 [INF] Executing JsonResult, writing value "MemberService.Models.DataTransferObjects.ClassDTO". (7bb75e80)
+2018-08-23T13:38:47.0525006+02:00 0HLG8TJ8LG72Q:00000001 [INF] Executed action "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" in 4618.3083ms (afa2e885)
+2018-08-23T13:38:47.0660666+02:00 0HLG8TJ8LG72Q:00000001 [INF] Request finished in 4714.216ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:38:47.2327919+02:00 0HLG8TJ8LG72Q:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/favicon.ico   (ca22a1cb)
+2018-08-23T13:38:47.2404563+02:00 0HLG8TJ8LG72Q:00000002 [INF] Request finished in 5.97ms 404  (791a596a)
+2018-08-23T13:47:59.3325951+02:00 0HLG8TP31NU0L:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/   (ca22a1cb)
+2018-08-23T13:47:59.3325956+02:00 0HLG8TP31NU0M:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:54102/  0 (ca22a1cb)
+2018-08-23T13:47:59.3733269+02:00 0HLG8TP31NU0M:00000001 [INF] Request finished in 126.9279ms 200  (791a596a)
+2018-08-23T13:47:59.5110386+02:00 0HLG8TP31NU0L:00000001 [INF] Request finished in 271.4127ms 404  (791a596a)
+2018-08-23T13:48:03.1705650+02:00 0HLG8TP31NU0M:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/projects   (ca22a1cb)
+2018-08-23T13:48:03.3507734+02:00 0HLG8TP31NU0M:00000002 [INF] Executing action method "MemberService.Controllers.HuliControllers.ProjectController.ListProjects (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:48:03.5566730+02:00 0HLG8TP31NU0M:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:48:03.6507281+02:00 0HLG8TP31NU0M:00000002 [WRN] The LINQ expression '"where Invoke(__SearchFromQuery_0, [p])"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-23T13:48:06.8333801+02:00 0HLG8TP31NU0M:00000002 [INF] Executed DbCommand ("75"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[DepartmentId], [p].[Description], [p].[Name]
+FROM [Projects] AS [p]" (0723d8ff)
+2018-08-23T13:48:06.9090076+02:00 0HLG8TP31NU0M:00000002 [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.Project,MemberService.Models.DataTransferObjects.ProjectDTO]". (7bb75e80)
+2018-08-23T13:48:07.1431802+02:00 0HLG8TP31NU0M:00000002 [INF] Executed action "MemberService.Controllers.HuliControllers.ProjectController.ListProjects (MemberService)" in 3892.0782ms (afa2e885)
+2018-08-23T13:48:07.1499949+02:00 0HLG8TP31NU0M:00000002 [INF] Request finished in 3981.4137ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:48:07.3752920+02:00 0HLG8TP31NU0L:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/class/8   (ca22a1cb)
+2018-08-23T13:48:07.4100222+02:00 0HLG8TP31NU0L:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:48:07.4375955+02:00 0HLG8TP31NU0L:00000002 [INF] Executing action method "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" with arguments (["8"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:48:07.4818157+02:00 0HLG8TP31NU0L:00000002 [INF] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[FinishDate], [c].[Name], [c].[StartDate], [c].[Status]
+FROM [Cohorts] AS [c]" (0723d8ff)
+2018-08-23T13:48:07.5147574+02:00 0HLG8TP31NU0L:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[Name], [c].[Status]
+FROM [Courses] AS [c]" (0723d8ff)
+2018-08-23T13:48:07.5481670+02:00 0HLG8TP31NU0L:00000002 [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:48:07.5948847+02:00 0HLG8TP31NU0L:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:48:07.6343985+02:00 0HLG8TP31NU0L:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ClassId], [c].[ProfileId]
+FROM [ClassProfile] AS [c]" (0723d8ff)
+2018-08-23T13:48:07.8128241+02:00 0HLG8TP31NU0L:00000002 [INF] Executed action "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" in 408.7278ms (afa2e885)
+2018-08-23T13:48:07.8928979+02:00 0HLG8TP31NU0L:00000002 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Class -> ClassDTO
+MemberService.Models.Class -> MemberService.Models.DataTransferObjects.ClassDTO
+
+Type Map configuration:
+Class -> ClassDTO
+MemberService.Models.Class -> MemberService.Models.DataTransferObjects.ClassDTO
+
+Property:
+Mentors ---> AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=====================================================================================
+ClassProfile -> CollapsedModell (Destination member list)
+MemberService.Models.JoinModels.ClassProfile -> MemberService.Models.CollapsedModell (Destination member list)
+
+Unmapped properties:
+Id
+Name
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps)
+   at lambda_method(Closure , Class , ClassDTO , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method(Closure , Class , ClassDTO , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   at MemberService.Services.ClassService.<GetByIdAsync>d__5.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Services\ClassService.cs:line 43
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Controllers.EducationControllers.ClassController.<FindClass>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\ClassController.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:48:07.9649553+02:00 0HLG8TP31NU0L:00000002 [INF] Request finished in 593.9064ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:48:08.1181881+02:00 0HLG8TP31NU0M:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:54102/favicon.ico   (ca22a1cb)
+2018-08-23T13:48:08.1337641+02:00 0HLG8TP31NU0M:00000003 [INF] Request finished in 8.704ms 404  (791a596a)
+2018-08-23T13:49:47.4304041+02:00 0HLG8TQ38HI9C:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/   (ca22a1cb)
+2018-08-23T13:49:47.4304041+02:00 0HLG8TQ38HI9B:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:54102/  0 (ca22a1cb)
+2018-08-23T13:49:47.4789479+02:00 0HLG8TQ38HI9B:00000001 [INF] Request finished in 133.4325ms 200  (791a596a)
+2018-08-23T13:49:47.6053583+02:00 0HLG8TQ38HI9C:00000001 [INF] Request finished in 266.2393ms 404  (791a596a)
+2018-08-23T13:49:52.7418636+02:00 0HLG8TQ38HI9B:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/projects   (ca22a1cb)
+2018-08-23T13:49:52.9156918+02:00 0HLG8TQ38HI9B:00000002 [INF] Executing action method "MemberService.Controllers.HuliControllers.ProjectController.ListProjects (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:49:53.1281572+02:00 0HLG8TQ38HI9B:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:49:53.2067975+02:00 0HLG8TQ38HI9B:00000002 [WRN] The LINQ expression '"where Invoke(__SearchFromQuery_0, [p])"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-23T13:49:56.2659992+02:00 0HLG8TQ38HI9B:00000002 [INF] Executed DbCommand ("337"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[DepartmentId], [p].[Description], [p].[Name]
+FROM [Projects] AS [p]" (0723d8ff)
+2018-08-23T13:49:56.3210112+02:00 0HLG8TQ38HI9B:00000002 [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.Project,MemberService.Models.DataTransferObjects.ProjectDTO]". (7bb75e80)
+2018-08-23T13:49:56.5108893+02:00 0HLG8TQ38HI9B:00000002 [INF] Executed action "MemberService.Controllers.HuliControllers.ProjectController.ListProjects (MemberService)" in 3694.8706ms (afa2e885)
+2018-08-23T13:49:56.5164471+02:00 0HLG8TQ38HI9B:00000002 [INF] Request finished in 3781.1655ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:49:57.5420866+02:00 0HLG8TQ38HI9C:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/class/8   (ca22a1cb)
+2018-08-23T13:49:57.5795682+02:00 0HLG8TQ38HI9C:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:49:57.6001786+02:00 0HLG8TQ38HI9C:00000002 [INF] Executing action method "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" with arguments (["8"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:49:57.6814780+02:00 0HLG8TQ38HI9C:00000002 [INF] Executed DbCommand ("55"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[FinishDate], [c].[Name], [c].[StartDate], [c].[Status]
+FROM [Cohorts] AS [c]" (0723d8ff)
+2018-08-23T13:49:57.7213520+02:00 0HLG8TQ38HI9C:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[Name], [c].[Status]
+FROM [Courses] AS [c]" (0723d8ff)
+2018-08-23T13:49:57.7552640+02:00 0HLG8TQ38HI9C:00000002 [INF] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:49:57.7948835+02:00 0HLG8TQ38HI9C:00000002 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:49:57.8203469+02:00 0HLG8TQ38HI9C:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[ClassId], [c].[ProfileId]
+FROM [ClassProfile] AS [c]" (0723d8ff)
+2018-08-23T13:49:57.9864457+02:00 0HLG8TQ38HI9C:00000002 [INF] Executed action "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" in 408.9224ms (afa2e885)
+2018-08-23T13:49:58.0647726+02:00 0HLG8TQ38HI9C:00000002 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Class -> ClassDTO
+MemberService.Models.Class -> MemberService.Models.DataTransferObjects.ClassDTO
+
+Type Map configuration:
+Class -> ClassDTO
+MemberService.Models.Class -> MemberService.Models.DataTransferObjects.ClassDTO
+
+Property:
+Mentors ---> AutoMapper.AutoMapperConfigurationException: 
+Unmapped members were found. Review the types and members below.
+Add a custom mapping expression, ignore, add a custom resolver, or modify the source/destination type
+For no matching constructor, add a no-arg ctor, add optional arguments, or map all of the constructor parameters
+=====================================================================================
+ClassProfile -> CollapsedModell (Destination member list)
+MemberService.Models.JoinModels.ClassProfile -> MemberService.Models.CollapsedModell (Destination member list)
+
+Unmapped properties:
+Id
+Name
+
+   at AutoMapper.ConfigurationValidator.AssertConfigurationIsValid(IEnumerable`1 typeMaps)
+   at lambda_method(Closure , Class , ClassDTO , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method(Closure , Class , ClassDTO , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   at MemberService.Services.ClassService.<GetByIdAsync>d__5.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Services\ClassService.cs:line 43
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Controllers.EducationControllers.ClassController.<FindClass>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\ClassController.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:49:58.1403474+02:00 0HLG8TQ38HI9C:00000002 [INF] Request finished in 599.1871ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:49:58.2328539+02:00 0HLG8TQ38HI9B:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:54102/favicon.ico   (ca22a1cb)
+2018-08-23T13:49:58.2373217+02:00 0HLG8TQ38HI9B:00000003 [INF] Request finished in 9.31ms 404  (791a596a)
+2018-08-23T13:53:42.7679371+02:00 0HLG8TS9C796O:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/   (ca22a1cb)
+2018-08-23T13:53:42.7679376+02:00 0HLG8TS9C796N:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:54102/  0 (ca22a1cb)
+2018-08-23T13:53:42.8135541+02:00 0HLG8TS9C796N:00000001 [INF] Request finished in 138.9513ms 200  (791a596a)
+2018-08-23T13:53:42.9636051+02:00 0HLG8TS9C796O:00000001 [INF] Request finished in 289.2834ms 404  (791a596a)
+2018-08-23T13:53:54.5707971+02:00 0HLG8TS9C796N:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/cohorts   (ca22a1cb)
+2018-08-23T13:53:54.7867872+02:00 0HLG8TS9C796N:00000002 [INF] Executing action method "MemberService.Controllers.EducationControllers.CohortController.ListAll (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:53:55.0608818+02:00 0HLG8TS9C796N:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:53:55.1495142+02:00 0HLG8TS9C796N:00000002 [WRN] The LINQ expression '"where Invoke(__SearchFromQuery_0, [c])"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-23T13:53:58.2309864+02:00 0HLG8TS9C796N:00000002 [INF] Executed DbCommand ("442"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[FinishDate], [c].[Name], [c].[StartDate], [c].[Status]
+FROM [Cohorts] AS [c]" (0723d8ff)
+2018-08-23T13:53:58.2939549+02:00 0HLG8TS9C796N:00000002 [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.Cohort,MemberService.Models.DataTransferObjects.CohortDTO]". (7bb75e80)
+2018-08-23T13:53:58.5481905+02:00 0HLG8TS9C796N:00000002 [INF] Executed action "MemberService.Controllers.EducationControllers.CohortController.ListAll (MemberService)" in 3893.3629ms (afa2e885)
+2018-08-23T13:53:58.5643336+02:00 0HLG8TS9C796N:00000002 [INF] Request finished in 3986.0439ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:53:58.6067384+02:00 0HLG8TS9C796O:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/favicon.ico   (ca22a1cb)
+2018-08-23T13:53:58.6151811+02:00 0HLG8TS9C796O:00000002 [INF] Request finished in 9.3104ms 404  (791a596a)
+2018-08-23T13:54:21.6069676+02:00 0HLG8TS9C796N:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/cohort/2   (ca22a1cb)
+2018-08-23T13:54:21.6578874+02:00 0HLG8TS9C796N:00000003 [INF] Executing action method "MemberService.Controllers.EducationControllers.CohortController.FindCohort (MemberService)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:54:21.6741100+02:00 0HLG8TS9C796N:00000003 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:54:21.6866676+02:00 0HLG8TS9C796N:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[FinishDate], [c].[Name], [c].[StartDate], [c].[Status]
+FROM [Cohorts] AS [c]" (0723d8ff)
+2018-08-23T13:54:21.7754330+02:00 0HLG8TS9C796N:00000003 [INF] Executed DbCommand ("73"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:54:21.8180286+02:00 0HLG8TS9C796N:00000003 [INF] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Address], [d].[Country], [d].[Email], [d].[Name], [d].[PhoneNumber], [d].[ZipNumber]
+FROM [Departments] AS [d]" (0723d8ff)
+2018-08-23T13:54:21.8621030+02:00 0HLG8TS9C796N:00000003 [INF] Executing JsonResult, writing value "MemberService.Models.DataTransferObjects.CohortDTO". (7bb75e80)
+2018-08-23T13:54:21.8669153+02:00 0HLG8TS9C796N:00000003 [INF] Executed action "MemberService.Controllers.EducationControllers.CohortController.FindCohort (MemberService)" in 229.4381ms (afa2e885)
+2018-08-23T13:54:21.8762797+02:00 0HLG8TS9C796N:00000003 [INF] Request finished in 266.4822ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:54:52.4042989+02:00 0HLG8TS9C796O:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/courses   (ca22a1cb)
+2018-08-23T13:54:52.4150651+02:00 0HLG8TS9C796O:00000003 [INF] Executing action method "MemberService.Controllers.EducationControllers.CourseController.ListCourses (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:54:52.4278275+02:00 0HLG8TS9C796O:00000003 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:54:52.4358850+02:00 0HLG8TS9C796O:00000003 [WRN] The LINQ expression '"where Invoke(__SearchFromQuery_0, [c])"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-23T13:54:52.4725237+02:00 0HLG8TS9C796O:00000003 [INF] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[Name], [c].[Status]
+FROM [Courses] AS [c]" (0723d8ff)
+2018-08-23T13:54:52.4869360+02:00 0HLG8TS9C796O:00000003 [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.Course,MemberService.Models.DataTransferObjects.CourseDTO]". (7bb75e80)
+2018-08-23T13:54:52.5099361+02:00 0HLG8TS9C796O:00000003 [INF] Executed action "MemberService.Controllers.EducationControllers.CourseController.ListCourses (MemberService)" in 94.2654ms (afa2e885)
+2018-08-23T13:54:52.5177613+02:00 0HLG8TS9C796O:00000003 [INF] Request finished in 112.6652ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:54:58.7022214+02:00 0HLG8TS9C796N:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/course/1   (ca22a1cb)
+2018-08-23T13:54:58.7146725+02:00 0HLG8TS9C796N:00000004 [INF] Executing action method "MemberService.Controllers.EducationControllers.CourseController.FindCourse (MemberService)" with arguments (["0"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:54:58.7255666+02:00 0HLG8TS9C796N:00000004 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:54:58.7761640+02:00 0HLG8TS9C796N:00000004 [INF] Executed DbCommand ("38"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Name], [t].[ProductOwnerId], [t].[ProjectId], [t].[ScrumMasterId]
+FROM [Teams] AS [t]" (0723d8ff)
+2018-08-23T13:54:58.7964564+02:00 0HLG8TS9C796N:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:54:58.8538279+02:00 0HLG8TS9C796N:00000004 [INF] Executed DbCommand ("44"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:54:58.8842409+02:00 0HLG8TS9C796N:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Address], [d].[Country], [d].[Email], [d].[Name], [d].[PhoneNumber], [d].[ZipNumber]
+FROM [Departments] AS [d]" (0723d8ff)
+2018-08-23T13:54:58.9410323+02:00 0HLG8TS9C796N:00000004 [INF] Executed DbCommand ("23"ms) [Parameters=["@__get_Item_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Name], [e].[Status]
+FROM [Courses] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-23T13:54:59.1306226+02:00 0HLG8TS9C796N:00000004 [INF] Executed action "MemberService.Controllers.EducationControllers.CourseController.FindCourse (MemberService)" in 418.0639ms (afa2e885)
+2018-08-23T13:54:59.2156927+02:00 0HLG8TS9C796N:00000004 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+MemberService.Models.Exceptions.NotFoundException: Exception of type 'MemberService.Models.Exceptions.NotFoundException' was thrown.
+   at MemberService.Repositories.CourseRepository.<SelectByIdAsync>d__3.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Repositories\CourseRepository.cs:line 44
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Services.CourseService.<GetByIdAsync>d__5.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Services\CourseService.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Controllers.EducationControllers.CourseController.<FindCourse>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\CourseController.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:54:59.3082907+02:00 0HLG8TS9C796N:00000004 [INF] Request finished in 604.0029ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:55:10.2567919+02:00 0HLG8TS9C796O:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/course/1   (ca22a1cb)
+2018-08-23T13:55:10.2640919+02:00 0HLG8TS9C796O:00000004 [INF] Executing action method "MemberService.Controllers.EducationControllers.CourseController.FindCourse (MemberService)" with arguments (["0"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:55:10.2689753+02:00 0HLG8TS9C796O:00000004 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:55:10.2778290+02:00 0HLG8TS9C796O:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Name], [t].[ProductOwnerId], [t].[ProjectId], [t].[ScrumMasterId]
+FROM [Teams] AS [t]" (0723d8ff)
+2018-08-23T13:55:10.2845196+02:00 0HLG8TS9C796O:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:55:10.2896626+02:00 0HLG8TS9C796O:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:55:10.2962309+02:00 0HLG8TS9C796O:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Address], [d].[Country], [d].[Email], [d].[Name], [d].[PhoneNumber], [d].[ZipNumber]
+FROM [Departments] AS [d]" (0723d8ff)
+2018-08-23T13:55:10.3030931+02:00 0HLG8TS9C796O:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Name], [e].[Status]
+FROM [Courses] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-23T13:55:10.3695781+02:00 0HLG8TS9C796O:00000004 [INF] Executed action "MemberService.Controllers.EducationControllers.CourseController.FindCourse (MemberService)" in 108.1086ms (afa2e885)
+2018-08-23T13:55:10.4046013+02:00 0HLG8TS9C796O:00000004 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+MemberService.Models.Exceptions.NotFoundException: Exception of type 'MemberService.Models.Exceptions.NotFoundException' was thrown.
+   at MemberService.Repositories.CourseRepository.<SelectByIdAsync>d__3.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Repositories\CourseRepository.cs:line 44
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Services.CourseService.<GetByIdAsync>d__5.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Services\CourseService.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Controllers.EducationControllers.CourseController.<FindCourse>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\CourseController.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:55:10.4527699+02:00 0HLG8TS9C796O:00000004 [INF] Request finished in 197.536ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:55:25.6706764+02:00 0HLG8TS9C796N:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/course/2   (ca22a1cb)
+2018-08-23T13:55:25.6753981+02:00 0HLG8TS9C796N:00000005 [INF] Executing action method "MemberService.Controllers.EducationControllers.CourseController.FindCourse (MemberService)" with arguments (["0"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:55:25.6812001+02:00 0HLG8TS9C796N:00000005 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:55:25.6922725+02:00 0HLG8TS9C796N:00000005 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Name], [t].[ProductOwnerId], [t].[ProjectId], [t].[ScrumMasterId]
+FROM [Teams] AS [t]" (0723d8ff)
+2018-08-23T13:55:25.6972140+02:00 0HLG8TS9C796N:00000005 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:55:25.7037238+02:00 0HLG8TS9C796N:00000005 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:55:25.7087076+02:00 0HLG8TS9C796N:00000005 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Address], [d].[Country], [d].[Email], [d].[Name], [d].[PhoneNumber], [d].[ZipNumber]
+FROM [Departments] AS [d]" (0723d8ff)
+2018-08-23T13:55:25.7143552+02:00 0HLG8TS9C796N:00000005 [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Name], [e].[Status]
+FROM [Courses] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-23T13:55:25.8966791+02:00 0HLG8TS9C796N:00000005 [INF] Executed action "MemberService.Controllers.EducationControllers.CourseController.FindCourse (MemberService)" in 222.3005ms (afa2e885)
+2018-08-23T13:55:25.9310471+02:00 0HLG8TS9C796N:00000005 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+MemberService.Models.Exceptions.NotFoundException: Exception of type 'MemberService.Models.Exceptions.NotFoundException' was thrown.
+   at MemberService.Repositories.CourseRepository.<SelectByIdAsync>d__3.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Repositories\CourseRepository.cs:line 44
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Services.CourseService.<GetByIdAsync>d__5.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Services\CourseService.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Controllers.EducationControllers.CourseController.<FindCourse>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\CourseController.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:55:25.9903070+02:00 0HLG8TS9C796N:00000005 [INF] Request finished in 312.1607ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:55:29.1774323+02:00 0HLG8TS9C796O:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/course/   (ca22a1cb)
+2018-08-23T13:55:29.1849414+02:00 0HLG8TS9C796O:00000005 [INF] Request finished in 3.6859ms 404  (791a596a)
+2018-08-23T13:55:33.5934841+02:00 0HLG8TS9C796N:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/courses   (ca22a1cb)
+2018-08-23T13:55:33.5974018+02:00 0HLG8TS9C796N:00000006 [INF] Executing action method "MemberService.Controllers.EducationControllers.CourseController.ListCourses (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:55:33.6031174+02:00 0HLG8TS9C796N:00000006 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:55:33.6151246+02:00 0HLG8TS9C796N:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[Name], [c].[Status]
+FROM [Courses] AS [c]" (0723d8ff)
+2018-08-23T13:55:33.6197052+02:00 0HLG8TS9C796N:00000006 [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.Course,MemberService.Models.DataTransferObjects.CourseDTO]". (7bb75e80)
+2018-08-23T13:55:33.6271451+02:00 0HLG8TS9C796N:00000006 [INF] Executed action "MemberService.Controllers.EducationControllers.CourseController.ListCourses (MemberService)" in 26.1924ms (afa2e885)
+2018-08-23T13:55:33.6336488+02:00 0HLG8TS9C796N:00000006 [INF] Request finished in 40.9182ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:55:54.1693200+02:00 0HLG8TS9C796O:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/departments   (ca22a1cb)
+2018-08-23T13:55:54.1932413+02:00 0HLG8TS9C796O:00000006 [INF] Executing action method "MemberService.Controllers.EducationControllers.DepartmentController.ListDepartments (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:55:54.2016037+02:00 0HLG8TS9C796O:00000006 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:55:54.2089379+02:00 0HLG8TS9C796O:00000006 [WRN] The LINQ expression '"where Invoke(__SearchFromQuery_0, [d])"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-23T13:55:54.2171018+02:00 0HLG8TS9C796O:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Address], [d].[Country], [d].[Email], [d].[Name], [d].[PhoneNumber], [d].[ZipNumber]
+FROM [Departments] AS [d]" (0723d8ff)
+2018-08-23T13:55:54.2240319+02:00 0HLG8TS9C796O:00000006 [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.Department,MemberService.Models.DataTransferObjects.DepartmentDTO]". (7bb75e80)
+2018-08-23T13:55:54.2477996+02:00 0HLG8TS9C796O:00000006 [INF] Executed action "MemberService.Controllers.EducationControllers.DepartmentController.ListDepartments (MemberService)" in 67.2852ms (afa2e885)
+2018-08-23T13:55:54.2525585+02:00 0HLG8TS9C796O:00000006 [INF] Request finished in 84.9306ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:55:59.7375507+02:00 0HLG8TS9C796N:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/department/1   (ca22a1cb)
+2018-08-23T13:55:59.7514832+02:00 0HLG8TS9C796N:00000007 [INF] Executing action method "MemberService.Controllers.EducationControllers.DepartmentController.FindDepartment (MemberService)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:55:59.7639065+02:00 0HLG8TS9C796N:00000007 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:55:59.7696948+02:00 0HLG8TS9C796N:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[FinishDate], [c].[Name], [c].[StartDate], [c].[Status]
+FROM [Cohorts] AS [c]" (0723d8ff)
+2018-08-23T13:55:59.7784180+02:00 0HLG8TS9C796N:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[Name], [c].[Status]
+FROM [Courses] AS [c]" (0723d8ff)
+2018-08-23T13:55:59.8302933+02:00 0HLG8TS9C796N:00000007 [INF] Executed DbCommand ("39"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[DepartmentId], [p].[Description], [p].[Name]
+FROM [Projects] AS [p]" (0723d8ff)
+2018-08-23T13:55:59.8500393+02:00 0HLG8TS9C796N:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Country], [e].[Email], [e].[Name], [e].[PhoneNumber], [e].[ZipNumber]
+FROM [Departments] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-23T13:55:59.8588622+02:00 0HLG8TS9C796N:00000007 [INF] Executing JsonResult, writing value "MemberService.Models.DataTransferObjects.DepartmentDTO". (7bb75e80)
+2018-08-23T13:55:59.8650815+02:00 0HLG8TS9C796N:00000007 [INF] Executed action "MemberService.Controllers.EducationControllers.DepartmentController.FindDepartment (MemberService)" in 115.3453ms (afa2e885)
+2018-08-23T13:55:59.8715387+02:00 0HLG8TS9C796N:00000007 [INF] Request finished in 134.3177ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:56:04.5770700+02:00 0HLG8TS9C796O:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/department/2   (ca22a1cb)
+2018-08-23T13:56:04.5818062+02:00 0HLG8TS9C796O:00000007 [INF] Executing action method "MemberService.Controllers.EducationControllers.DepartmentController.FindDepartment (MemberService)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:56:04.5891456+02:00 0HLG8TS9C796O:00000007 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:56:04.5955634+02:00 0HLG8TS9C796O:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[FinishDate], [c].[Name], [c].[StartDate], [c].[Status]
+FROM [Cohorts] AS [c]" (0723d8ff)
+2018-08-23T13:56:04.6018636+02:00 0HLG8TS9C796O:00000007 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[Name], [c].[Status]
+FROM [Courses] AS [c]" (0723d8ff)
+2018-08-23T13:56:04.6084529+02:00 0HLG8TS9C796O:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[DepartmentId], [p].[Description], [p].[Name]
+FROM [Projects] AS [p]" (0723d8ff)
+2018-08-23T13:56:04.6144028+02:00 0HLG8TS9C796O:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@__get_Item_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Address], [e].[Country], [e].[Email], [e].[Name], [e].[PhoneNumber], [e].[ZipNumber]
+FROM [Departments] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-23T13:56:04.6180977+02:00 0HLG8TS9C796O:00000007 [INF] Executing JsonResult, writing value "MemberService.Models.DataTransferObjects.DepartmentDTO". (7bb75e80)
+2018-08-23T13:56:04.6235670+02:00 0HLG8TS9C796O:00000007 [INF] Executed action "MemberService.Controllers.EducationControllers.DepartmentController.FindDepartment (MemberService)" in 40.9999ms (afa2e885)
+2018-08-23T13:56:04.6293454+02:00 0HLG8TS9C796O:00000007 [INF] Request finished in 53.5101ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:56:15.2755825+02:00 0HLG8TS9C796N:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/projects   (ca22a1cb)
+2018-08-23T13:56:15.3132272+02:00 0HLG8TS9C796N:00000008 [INF] Executing action method "MemberService.Controllers.HuliControllers.ProjectController.ListProjects (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:56:15.3308319+02:00 0HLG8TS9C796N:00000008 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:56:15.3414698+02:00 0HLG8TS9C796N:00000008 [WRN] The LINQ expression '"where Invoke(__SearchFromQuery_0, [p])"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-23T13:56:15.3504081+02:00 0HLG8TS9C796N:00000008 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[DepartmentId], [p].[Description], [p].[Name]
+FROM [Projects] AS [p]" (0723d8ff)
+2018-08-23T13:56:15.3569671+02:00 0HLG8TS9C796N:00000008 [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.Project,MemberService.Models.DataTransferObjects.ProjectDTO]". (7bb75e80)
+2018-08-23T13:56:15.3753887+02:00 0HLG8TS9C796N:00000008 [INF] Executed action "MemberService.Controllers.HuliControllers.ProjectController.ListProjects (MemberService)" in 87.1001ms (afa2e885)
+2018-08-23T13:56:15.3815810+02:00 0HLG8TS9C796N:00000008 [INF] Request finished in 112.6481ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:56:21.3980521+02:00 0HLG8TS9C796O:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/project/1   (ca22a1cb)
+2018-08-23T13:56:21.4153648+02:00 0HLG8TS9C796O:00000008 [INF] Executing action method "MemberService.Controllers.HuliControllers.ProjectController.FindProject (MemberService)" with arguments (["0"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:56:21.4239067+02:00 0HLG8TS9C796O:00000008 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:56:21.4298161+02:00 0HLG8TS9C796O:00000008 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Name], [t].[ProductOwnerId], [t].[ProjectId], [t].[ScrumMasterId]
+FROM [Teams] AS [t]" (0723d8ff)
+2018-08-23T13:56:21.4363686+02:00 0HLG8TS9C796O:00000008 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (0723d8ff)
+2018-08-23T13:56:21.4415680+02:00 0HLG8TS9C796O:00000008 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:56:21.4468547+02:00 0HLG8TS9C796O:00000008 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Address], [d].[Country], [d].[Email], [d].[Name], [d].[PhoneNumber], [d].[ZipNumber]
+FROM [Departments] AS [d]" (0723d8ff)
+2018-08-23T13:56:21.4586395+02:00 0HLG8TS9C796O:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Description], [e].[Name]
+FROM [Projects] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-23T13:56:21.5964075+02:00 0HLG8TS9C796O:00000008 [INF] Executed action "MemberService.Controllers.HuliControllers.ProjectController.FindProject (MemberService)" in 187.2561ms (afa2e885)
+2018-08-23T13:56:21.6329381+02:00 0HLG8TS9C796O:00000008 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+MemberService.Models.Exceptions.NotFoundException: Exception of type 'MemberService.Models.Exceptions.NotFoundException' was thrown.
+   at MemberService.Repositories.ProjectRepository.<SelectByIdAsync>d__3.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Repositories\ProjectRepository.cs:line 44
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Services.ProjectService.<GetByIdAsync>d__5.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Services\ProjectService.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Controllers.HuliControllers.ProjectController.<FindProject>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Controllers\HuliControllers\ProjectController.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:56:21.6793483+02:00 0HLG8TS9C796O:00000008 [INF] Request finished in 280.5452ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:56:27.8593219+02:00 0HLG8TS9C796N:00000009 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/teams   (ca22a1cb)
+2018-08-23T13:56:27.8726857+02:00 0HLG8TS9C796N:00000009 [INF] Executing action method "MemberService.Controllers.HuliControllers.TeamController.ListTeams (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:56:27.8828964+02:00 0HLG8TS9C796N:00000009 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:56:27.8915465+02:00 0HLG8TS9C796N:00000009 [WRN] The LINQ expression '"where Invoke(__SearchFromQuery_0, [t])"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-23T13:56:27.8995748+02:00 0HLG8TS9C796N:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Name], [t].[ProductOwnerId], [t].[ProjectId], [t].[ScrumMasterId]
+FROM [Teams] AS [t]" (0723d8ff)
+2018-08-23T13:56:27.9054914+02:00 0HLG8TS9C796N:00000009 [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.Team,MemberService.Models.DataTransferObjects.TeamDTO]". (7bb75e80)
+2018-08-23T13:56:27.9280240+02:00 0HLG8TS9C796N:00000009 [INF] Executed action "MemberService.Controllers.HuliControllers.TeamController.ListTeams (MemberService)" in 56.4309ms (afa2e885)
+2018-08-23T13:56:27.9334509+02:00 0HLG8TS9C796N:00000009 [INF] Request finished in 74.6763ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:56:31.4096112+02:00 0HLG8TS9C796O:00000009 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/team/8   (ca22a1cb)
+2018-08-23T13:56:31.4316853+02:00 0HLG8TS9C796O:00000009 [INF] Executing action method "MemberService.Controllers.HuliControllers.TeamController.FindTeam (MemberService)" with arguments (["8"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:56:31.4424049+02:00 0HLG8TS9C796O:00000009 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:56:31.4488231+02:00 0HLG8TS9C796O:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[DepartmentId], [p].[Description], [p].[Name]
+FROM [Projects] AS [p]" (0723d8ff)
+2018-08-23T13:56:31.4546191+02:00 0HLG8TS9C796O:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:56:31.4598844+02:00 0HLG8TS9C796O:00000009 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Name], [t].[ProductOwnerId], [t].[ProjectId], [t].[ScrumMasterId]
+FROM [Teams] AS [t]" (0723d8ff)
+2018-08-23T13:56:31.4658274+02:00 0HLG8TS9C796O:00000009 [INF] Executing JsonResult, writing value "MemberService.Models.DataTransferObjects.TeamDTO". (7bb75e80)
+2018-08-23T13:56:31.4706997+02:00 0HLG8TS9C796O:00000009 [INF] Executed action "MemberService.Controllers.HuliControllers.TeamController.FindTeam (MemberService)" in 42.8055ms (afa2e885)
+2018-08-23T13:56:31.4770683+02:00 0HLG8TS9C796O:00000009 [INF] Request finished in 67.7971ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:56:44.1664497+02:00 0HLG8TS9C796N:0000000A [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/attendance   (ca22a1cb)
+2018-08-23T13:56:44.1760210+02:00 0HLG8TS9C796N:0000000A [INF] Request finished in 7.0472ms 404  (791a596a)
+2018-08-23T13:56:52.2095973+02:00 0HLG8TS9C796O:0000000A [INF] Request starting HTTP/1.1 GET http://localhost:54102/attendance   (ca22a1cb)
+2018-08-23T13:56:52.2315527+02:00 0HLG8TS9C796O:0000000A [INF] Executed action "MemberService.Controllers.ProfileControllers.AttendanceController.GetAttendanceAsync (MemberService)" in 1.2906ms (afa2e885)
+2018-08-23T13:56:52.3236614+02:00 0HLG8TS9C796O:0000000A [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: Unable to resolve service for type 'MemberService.Models.Interfaces.ICrudService`2[MemberService.Models.DataTransferObjects.AttendanceInfoDTO,MemberService.Models.AttendanceInfo]' while attempting to activate 'MemberService.Controllers.ProfileControllers.AttendanceController'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:56:52.3641969+02:00 0HLG8TS9C796O:0000000A [INF] Request finished in 154.9392ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:57:14.3511596+02:00 0HLG8TS9C796N:0000000B [INF] Request starting HTTP/1.1 GET http://localhost:54102/attendance/   (ca22a1cb)
+2018-08-23T13:57:14.3586760+02:00 0HLG8TS9C796N:0000000B [INF] Executed action "MemberService.Controllers.ProfileControllers.AttendanceController.GetAttendanceAsync (MemberService)" in 1.4527ms (afa2e885)
+2018-08-23T13:57:14.3868699+02:00 0HLG8TS9C796N:0000000B [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: Unable to resolve service for type 'MemberService.Models.Interfaces.ICrudService`2[MemberService.Models.DataTransferObjects.AttendanceInfoDTO,MemberService.Models.AttendanceInfo]' while attempting to activate 'MemberService.Controllers.ProfileControllers.AttendanceController'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:57:14.4229831+02:00 0HLG8TS9C796N:0000000B [INF] Request finished in 72.2665ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:57:18.6105094+02:00 0HLG8TS9C796O:0000000B [INF] Request starting HTTP/1.1 GET http://localhost:54102/   (ca22a1cb)
+2018-08-23T13:57:18.6194743+02:00 0HLG8TS9C796O:0000000B [INF] Request finished in 5.5654ms 404  (791a596a)
+2018-08-23T13:57:26.8988576+02:00 0HLG8TS9C796N:0000000C [INF] Request starting HTTP/1.1 GET http://localhost:54102/5   (ca22a1cb)
+2018-08-23T13:57:26.9128885+02:00 0HLG8TS9C796N:0000000C [INF] Request finished in 7.4565ms 404  (791a596a)
+2018-08-23T13:57:30.7148175+02:00 0HLG8TS9C796O:0000000C [INF] Request starting HTTP/1.1 GET http://localhost:54102/1   (ca22a1cb)
+2018-08-23T13:57:30.7243297+02:00 0HLG8TS9C796O:0000000C [INF] Request finished in 6.6786ms 404  (791a596a)
+2018-08-23T13:57:49.7786169+02:00 0HLG8TS9C796N:0000000D [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/jobhistories   (ca22a1cb)
+2018-08-23T13:57:49.7930780+02:00 0HLG8TS9C796N:0000000D [INF] Executing action method "MemberService.Controllers.ProfileControllers.JobHistoryController.ListAll (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:57:49.8043198+02:00 0HLG8TS9C796N:0000000D [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:57:49.8213425+02:00 0HLG8TS9C796N:0000000D [WRN] The LINQ expression '"where Invoke(__SearchFromQuery_0, [j])"' could not be translated and will be evaluated locally. (011792c6)
+2018-08-23T13:57:49.9241178+02:00 0HLG8TS9C796N:0000000D [INF] Executed DbCommand ("93"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [j].[Id], [j].[Name], [j].[ProfileId]
+FROM [JobHistories] AS [j]" (0723d8ff)
+2018-08-23T13:57:49.9330177+02:00 0HLG8TS9C796N:0000000D [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.JobHistory,MemberService.Models.DataTransferObjects.JobHistoryDTO]". (7bb75e80)
+2018-08-23T13:57:49.9460846+02:00 0HLG8TS9C796N:0000000D [INF] Executed action "MemberService.Controllers.ProfileControllers.JobHistoryController.ListAll (MemberService)" in 154.8203ms (afa2e885)
+2018-08-23T13:57:49.9524704+02:00 0HLG8TS9C796N:0000000D [INF] Request finished in 174.2644ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:58:04.4633753+02:00 0HLG8TS9C796O:0000000D [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/jobhistory/1   (ca22a1cb)
+2018-08-23T13:58:04.4755357+02:00 0HLG8TS9C796O:0000000D [INF] Executing action method "MemberService.Controllers.ProfileControllers.JobHistoryController.FindJobHistory (MemberService)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:58:04.4875801+02:00 0HLG8TS9C796O:0000000D [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:58:04.4926097+02:00 0HLG8TS9C796O:0000000D [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:58:04.5041952+02:00 0HLG8TS9C796O:0000000D [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [j].[Id], [j].[Name], [j].[ProfileId]
+FROM [JobHistories] AS [j]" (0723d8ff)
+2018-08-23T13:58:04.5171545+02:00 0HLG8TS9C796O:0000000D [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[Name], [e].[ProfileId]
+FROM [JobHistories] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-08-23T13:58:04.6433100+02:00 0HLG8TS9C796O:0000000D [INF] Executed action "MemberService.Controllers.ProfileControllers.JobHistoryController.FindJobHistory (MemberService)" in 170.9753ms (afa2e885)
+2018-08-23T13:58:04.6816294+02:00 0HLG8TS9C796O:0000000D [ERR] An unhandled exception has occurred while executing the request (cf926119)
+MemberService.Models.Exceptions.NotFoundException: Exception of type 'MemberService.Models.Exceptions.NotFoundException' was thrown.
+   at MemberService.Repositories.JobHistoryRepository.<SelectByIdAsync>d__3.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Repositories\JobHistoryRepository.cs:line 46
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Services.JobHistoryService.<GetByIdAsync>d__5.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Services\JobHistoryService.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at MemberService.Controllers.ProfileControllers.JobHistoryController.<FindJobHistory>d__4.MoveNext() in C:\Users\Nora\Desktop\greenfox\húli\huli-marvin-backend\Member-API\MemberService\Controllers\ProfileControllers\JobHistoryController.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:58:04.7273806+02:00 0HLG8TS9C796O:0000000D [INF] Request finished in 264.7361ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:58:09.6638553+02:00 0HLG8TS9C796N:0000000E [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/jobhistories   (ca22a1cb)
+2018-08-23T13:58:09.6698869+02:00 0HLG8TS9C796N:0000000E [INF] Executing action method "MemberService.Controllers.ProfileControllers.JobHistoryController.ListAll (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:58:09.6762163+02:00 0HLG8TS9C796N:0000000E [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:58:09.6826336+02:00 0HLG8TS9C796N:0000000E [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [j].[Id], [j].[Name], [j].[ProfileId]
+FROM [JobHistories] AS [j]" (0723d8ff)
+2018-08-23T13:58:09.6903920+02:00 0HLG8TS9C796N:0000000E [INF] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[MemberService.Models.JobHistory,MemberService.Models.DataTransferObjects.JobHistoryDTO]". (7bb75e80)
+2018-08-23T13:58:09.6954072+02:00 0HLG8TS9C796N:0000000E [INF] Executed action "MemberService.Controllers.ProfileControllers.JobHistoryController.ListAll (MemberService)" in 26.4191ms (afa2e885)
+2018-08-23T13:58:09.7014631+02:00 0HLG8TS9C796N:0000000E [INF] Request finished in 37.7459ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:58:15.4315797+02:00 0HLG8TS9C796O:0000000E [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/jobhistory/3   (ca22a1cb)
+2018-08-23T13:58:15.4372115+02:00 0HLG8TS9C796O:0000000E [INF] Executing action method "MemberService.Controllers.ProfileControllers.JobHistoryController.FindJobHistory (MemberService)" with arguments (["3"]) - ModelState is Valid (ba7f4ac2)
+2018-08-23T13:58:15.4414739+02:00 0HLG8TS9C796O:0000000E [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:58:15.4545075+02:00 0HLG8TS9C796O:0000000E [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[AttendanceInfoId], [p].[ClassApprenticeId], [p].[CohortApprenticeId], [p].[DateOfBirth], [p].[Education], [p].[Email], [p].[Gender], [p].[GitHubUser], [p].[IsSigned], [p].[Level], [p].[LinkedIn], [p].[Name], [p].[Payment], [p].[Phase], [p].[PhoneNumber], [p].[Picture], [p].[ProjectId], [p].[SlackUser], [p].[TeamApprenticeId]
+FROM [Profiles] AS [p]" (0723d8ff)
+2018-08-23T13:58:15.4635165+02:00 0HLG8TS9C796O:0000000E [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [j].[Id], [j].[Name], [j].[ProfileId]
+FROM [JobHistories] AS [j]" (0723d8ff)
+2018-08-23T13:58:15.4694091+02:00 0HLG8TS9C796O:0000000E [INF] Executing JsonResult, writing value "MemberService.Models.DataTransferObjects.JobHistoryDTO". (7bb75e80)
+2018-08-23T13:58:15.4745811+02:00 0HLG8TS9C796O:0000000E [INF] Executed action "MemberService.Controllers.ProfileControllers.JobHistoryController.FindJobHistory (MemberService)" in 37.4564ms (afa2e885)
+2018-08-23T13:58:15.4870386+02:00 0HLG8TS9C796O:0000000E [INF] Request finished in 50.8201ms 200 application/json; charset=utf-8 (791a596a)
+2018-08-23T13:58:31.5152608+02:00 0HLG8TS9C796N:0000000F [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/profiles   (ca22a1cb)
+2018-08-23T13:58:31.5337333+02:00 0HLG8TS9C796N:0000000F [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:58:31.5424933+02:00 0HLG8TS9C796N:0000000F [INF] Executed action "MemberService.Controllers.ProfileControllers.ProfileController.ListProfiles (MemberService)" in 10.2093ms (afa2e885)
+2018-08-23T13:58:31.5792971+02:00 0HLG8TS9C796N:0000000F [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.WindowsAzure.Storage.CloudStorageAccount' while attempting to activate 'MemberService.Services.StorageService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, ISet`1 callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(Type serviceType, ServiceProvider serviceProvider)
+   at System.Collections.Concurrent.ConcurrentDictionaryExtensions.GetOrAdd[TKey,TValue,TArg](ConcurrentDictionary`2 dictionary, TKey key, Func`3 valueFactory, TArg arg)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:58:31.6226120+02:00 0HLG8TS9C796N:0000000F [INF] Request finished in 106.2838ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T13:58:46.5317254+02:00 0HLG8TS9C796O:0000000F [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/profile/1   (ca22a1cb)
+2018-08-23T13:58:46.5453971+02:00 0HLG8TS9C796O:0000000F [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T13:58:46.5543944+02:00 0HLG8TS9C796O:0000000F [INF] Executed action "MemberService.Controllers.ProfileControllers.ProfileController.FindProfile (MemberService)" in 11.6676ms (afa2e885)
+2018-08-23T13:58:46.5903576+02:00 0HLG8TS9C796O:0000000F [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.WindowsAzure.Storage.CloudStorageAccount' while attempting to activate 'MemberService.Services.StorageService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, ISet`1 callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(Type serviceType, ServiceProvider serviceProvider)
+   at System.Collections.Concurrent.ConcurrentDictionaryExtensions.GetOrAdd[TKey,TValue,TArg](ConcurrentDictionary`2 dictionary, TKey key, Func`3 valueFactory, TArg arg)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-23T13:58:46.6477743+02:00 0HLG8TS9C796O:0000000F [INF] Request finished in 113.6817ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-23T15:07:16.1863658+02:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-23T15:07:22.0306355+02:00  [INF] Executed DbCommand ("344"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-08-23T15:07:22.0320001+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-08-23T15:07:22.1052041+02:00  [INF] Executed DbCommand ("71"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
