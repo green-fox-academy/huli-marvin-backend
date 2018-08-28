@@ -22,6 +22,7 @@ namespace MemberService
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("0.0.0.0:2792")
                 .Build();
     }
 }

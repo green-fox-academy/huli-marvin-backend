@@ -1,13 +1,19 @@
-FROM microsoft/aspnetcore-build:2.0.5-2.1.4 AS build
+FROM microsoft/aspnetcore:2.0-nanoserver-1709 AS base
 WORKDIR /app
+EXPOSE 80
 
-COPY *.csproj ./
-RUN dotnet restore
+FROM microsoft/aspnetcore-build:2.0-nanoserver-1709 AS build
+WORKDIR /src
+COPY MemberService/MemberService.csproj MemberService/
+RUN dotnet restore MemberService/MemberService.csproj
+COPY . .
+WORKDIR /src/MemberService
+RUN dotnet build MemberService.csproj -c Release -o /app
 
-COPY . ./
-RUN dotnet publish -c Release -o out
+FROM build AS publish
+RUN dotnet publish MemberService.csproj -c Release -o /app
 
-FROM microsoft/aspnetcore:2.0
+FROM base AS final
 WORKDIR /app
-COPY --from=build /app/out .
-ENTRYPOINT ["dotnet", "MemberServiceAPI.dll"]
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "MemberService.dll"]

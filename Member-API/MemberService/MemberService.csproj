@@ -4,6 +4,7 @@
     <DebugType>Full</DebugType>
     <StartupObject>MemberService.Program</StartupObject>
     <UserSecretsId>0d3fee5c-13db-4238-92a6-4ed60f55111d</UserSecretsId>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />

@@ -1,0 +1,280 @@
+2018-08-22T13:14:03.2034138+02:00 0HLG841ETISR3:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:54102/  0 (ca22a1cb)
+2018-08-22T13:14:03.2034138+02:00 0HLG841ETISR2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/   (ca22a1cb)
+2018-08-22T13:14:03.4152941+02:00 0HLG841ETISR3:00000001 [INF] Request finished in 380.9843ms 200  (791a596a)
+2018-08-22T13:14:04.6620125+02:00 0HLG841ETISR2:00000001 [INF] Request finished in 1588.5272ms 404  (791a596a)
+2018-08-22T13:15:02.5618649+02:00 0HLG841ETISR3:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/profiles   (ca22a1cb)
+2018-08-22T13:15:04.7819527+02:00 0HLG841ETISR3:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-22T13:15:04.7988179+02:00 0HLG841ETISR3:00000002 [INF] Executed action "MemberService.Controllers.ProfileControllers.ProfileController.ListProfiles (MemberService)" in 839.0884ms (afa2e885)
+2018-08-22T13:15:05.1093882+02:00 0HLG841ETISR3:00000002 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.WindowsAzure.Storage.CloudStorageAccount' while attempting to activate 'MemberService.Services.StorageService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, ISet`1 callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(Type serviceType, ServiceProvider serviceProvider)
+   at System.Collections.Concurrent.ConcurrentDictionaryExtensions.GetOrAdd[TKey,TValue,TArg](ConcurrentDictionary`2 dictionary, TKey key, Func`3 valueFactory, TArg arg)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-22T13:15:05.2056246+02:00 0HLG841ETISR3:00000002 [INF] Request finished in 2645.4909ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-22T13:15:05.5287292+02:00 0HLG841ETISR3:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:54102/favicon.ico   (ca22a1cb)
+2018-08-22T13:15:05.5402334+02:00 0HLG841ETISR3:00000003 [INF] Request finished in 9.8572ms 404  (791a596a)
+2018-08-22T13:17:13.3610503+02:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-22T13:17:42.8486583+02:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-22T13:17:54.4077835+02:00 0HLG843JTDUB7:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/   (ca22a1cb)
+2018-08-22T13:17:54.4077835+02:00 0HLG843JTDUB8:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:54102/  0 (ca22a1cb)
+2018-08-22T13:17:54.5133316+02:00 0HLG843JTDUB8:00000001 [INF] Request finished in 221.1865ms 200  (791a596a)
+2018-08-22T13:17:54.6819499+02:00 0HLG843JTDUB7:00000001 [INF] Request finished in 399.2915ms 404  (791a596a)
+2018-08-22T13:18:02.9855227+02:00 0HLG843JTDUB8:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/profiles   (ca22a1cb)
+2018-08-22T13:18:03.3551541+02:00 0HLG843JTDUB8:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-08-22T13:18:03.3712105+02:00 0HLG843JTDUB8:00000002 [INF] Executed action "MemberService.Controllers.ProfileControllers.ProfileController.ListProfiles (MemberService)" in 302.9477ms (afa2e885)
+2018-08-22T13:18:03.4771746+02:00 0HLG843JTDUB8:00000002 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.WindowsAzure.Storage.CloudStorageAccount' while attempting to activate 'MemberService.Services.StorageService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, ISet`1 callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(Type serviceType, ServiceProvider serviceProvider)
+   at System.Collections.Concurrent.ConcurrentDictionaryExtensions.GetOrAdd[TKey,TValue,TArg](ConcurrentDictionary`2 dictionary, TKey key, Func`3 valueFactory, TArg arg)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-08-22T13:18:03.6268007+02:00 0HLG843JTDUB8:00000002 [INF] Request finished in 638.737ms 500 text/html; charset=utf-8 (791a596a)
+2018-08-22T13:18:04.6568408+02:00 0HLG843JTDUB7:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/favicon.ico   (ca22a1cb)
+2018-08-22T13:18:04.6655866+02:00 0HLG843JTDUB7:00000002 [INF] Request finished in 9.7544ms 404  (791a596a)
+2018-08-22T13:18:06.9199531+02:00  [INF] Executed DbCommand ("288"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""CREATE DATABASE [Members];" (0723d8ff)
+2018-08-22T13:18:07.7174631+02:00  [INF] Executed DbCommand ("796"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [Members] SET READ_COMMITTED_SNAPSHOT ON;');" (0723d8ff)
+2018-08-22T13:18:07.8008446+02:00  [INF] Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);" (0723d8ff)
+2018-08-22T13:18:07.8208759+02:00  [INF] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-08-22T13:18:07.8459342+02:00  [INF] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2018-08-22T13:18:07.8505964+02:00  [INF] Applying migration '"20180816064152_initdb"'. (0e2ac64d)
+2018-08-22T13:18:07.9413702+02:00  [INF] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Attendances] (
+    [Id] bigint NOT NULL IDENTITY,
+    [DayOff] int NOT NULL,
+    [Late] int NOT NULL,
+    [SickUnverified] int NOT NULL,
+    [SickVerified] int NOT NULL,
+    CONSTRAINT [PK_Attendances] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2018-08-22T13:18:07.9440393+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Departments] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Address] nvarchar(max) NULL,
+    [Country] nvarchar(max) NULL,
+    [Email] nvarchar(max) NULL,
+    [Name] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [ZipNumber] nvarchar(max) NULL,
+    CONSTRAINT [PK_Departments] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2018-08-22T13:18:07.9576686+02:00  [INF] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Cohorts] (
+    [Id] bigint NOT NULL IDENTITY,
+    [DepartmentId] bigint NULL,
+    [FinishDate] datetime2 NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [StartDate] datetime2 NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Cohorts] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Cohorts_Departments_DepartmentId] FOREIGN KEY ([DepartmentId]) REFERENCES [Departments] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-08-22T13:18:07.9591361+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Courses] (
+    [Id] bigint NOT NULL IDENTITY,
+    [DepartmentId] bigint NULL,
+    [Name] nvarchar(max) NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Courses] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Courses_Departments_DepartmentId] FOREIGN KEY ([DepartmentId]) REFERENCES [Departments] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-08-22T13:18:07.9610918+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Projects] (
+    [Id] bigint NOT NULL IDENTITY,
+    [DepartmentId] bigint NULL,
+    [Description] nvarchar(max) NULL,
+    [Name] nvarchar(max) NULL,
+    CONSTRAINT [PK_Projects] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Projects_Departments_DepartmentId] FOREIGN KEY ([DepartmentId]) REFERENCES [Departments] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-08-22T13:18:07.9651717+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Profiles] (
+    [Id] bigint NOT NULL IDENTITY,
+    [AttendanceInfoId] bigint NULL,
+    [ClassApprenticeId] bigint NULL,
+    [CohortApprenticeId] bigint NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [Education] int NOT NULL,
+    [Email] nvarchar(max) NULL,
+    [Gender] int NOT NULL,
+    [GitHubUser] nvarchar(max) NULL,
+    [IsSigned] bit NOT NULL,
+    [Level] int NOT NULL,
+    [LinkedIn] nvarchar(max) NULL,
+    [Name] nvarchar(max) NULL,
+    [Payment] int NOT NULL,
+    [Phase] int NOT NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [Picture] nvarchar(max) NULL,
+    [ProjectId] bigint NULL,
+    [SlackUser] nvarchar(max) NULL,
+    [TeamApprenticeId] bigint NULL,
+    CONSTRAINT [PK_Profiles] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Profiles_Attendances_AttendanceInfoId] FOREIGN KEY ([AttendanceInfoId]) REFERENCES [Attendances] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Profiles_Cohorts_CohortApprenticeId] FOREIGN KEY ([CohortApprenticeId]) REFERENCES [Cohorts] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Profiles_Projects_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Projects] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-08-22T13:18:08.0048329+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Classes] (
+    [Id] bigint NOT NULL IDENTITY,
+    [CalendarId] bigint NOT NULL,
+    [ClassAdminId] bigint NULL,
+    [ClassLeadId] bigint NULL,
+    [CohortId] bigint NULL,
+    [Color] nvarchar(max) NULL,
+    [CourseId] bigint NULL,
+    [Name] nvarchar(max) NULL,
+    [SlackChannelId] bigint NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Classes] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Classes_Profiles_ClassAdminId] FOREIGN KEY ([ClassAdminId]) REFERENCES [Profiles] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Classes_Profiles_ClassLeadId] FOREIGN KEY ([ClassLeadId]) REFERENCES [Profiles] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Classes_Cohorts_CohortId] FOREIGN KEY ([CohortId]) REFERENCES [Cohorts] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Classes_Courses_CourseId] FOREIGN KEY ([CourseId]) REFERENCES [Courses] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-08-22T13:18:08.0062927+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [JobHistories] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [ProfileId] bigint NULL,
+    CONSTRAINT [PK_JobHistories] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_JobHistories_Profiles_ProfileId] FOREIGN KEY ([ProfileId]) REFERENCES [Profiles] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-08-22T13:18:08.0093920+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Teams] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [ProductOwnerId] bigint NULL,
+    [ProjectId] bigint NULL,
+    [ScrumMasterId] bigint NULL,
+    CONSTRAINT [PK_Teams] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Teams_Profiles_ProductOwnerId] FOREIGN KEY ([ProductOwnerId]) REFERENCES [Profiles] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Teams_Projects_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Projects] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Teams_Profiles_ScrumMasterId] FOREIGN KEY ([ScrumMasterId]) REFERENCES [Profiles] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-08-22T13:18:08.1107205+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [ClassProfile] (
+    [ClassId] bigint NOT NULL,
+    [ProfileId] bigint NOT NULL,
+    CONSTRAINT [PK_ClassProfile] PRIMARY KEY ([ClassId], [ProfileId]),
+    CONSTRAINT [FK_ClassProfile_Classes_ClassId] FOREIGN KEY ([ClassId]) REFERENCES [Classes] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ClassProfile_Profiles_ProfileId] FOREIGN KEY ([ProfileId]) REFERENCES [Profiles] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2018-08-22T13:18:08.1120545+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Classes_ClassAdminId] ON [Classes] ([ClassAdminId]);" (0723d8ff)
+2018-08-22T13:18:08.1130481+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Classes_ClassLeadId] ON [Classes] ([ClassLeadId]);" (0723d8ff)
+2018-08-22T13:18:08.1139017+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Classes_CohortId] ON [Classes] ([CohortId]);" (0723d8ff)
+2018-08-22T13:18:08.1150900+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Classes_CourseId] ON [Classes] ([CourseId]);" (0723d8ff)
+2018-08-22T13:18:08.1539302+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_ClassProfile_ProfileId] ON [ClassProfile] ([ProfileId]);" (0723d8ff)
+2018-08-22T13:18:08.1548323+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Cohorts_DepartmentId] ON [Cohorts] ([DepartmentId]);" (0723d8ff)
+2018-08-22T13:18:08.1557096+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Courses_DepartmentId] ON [Courses] ([DepartmentId]);" (0723d8ff)
+2018-08-22T13:18:08.1565478+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_JobHistories_ProfileId] ON [JobHistories] ([ProfileId]);" (0723d8ff)
+2018-08-22T13:18:08.1574344+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Profiles_AttendanceInfoId] ON [Profiles] ([AttendanceInfoId]);" (0723d8ff)
+2018-08-22T13:18:08.1582115+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Profiles_ClassApprenticeId] ON [Profiles] ([ClassApprenticeId]);" (0723d8ff)
+2018-08-22T13:18:08.1590005+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Profiles_CohortApprenticeId] ON [Profiles] ([CohortApprenticeId]);" (0723d8ff)
+2018-08-22T13:18:08.1597253+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Profiles_ProjectId] ON [Profiles] ([ProjectId]);" (0723d8ff)
+2018-08-22T13:18:08.1606092+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Profiles_TeamApprenticeId] ON [Profiles] ([TeamApprenticeId]);" (0723d8ff)
+2018-08-22T13:18:08.1616177+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Projects_DepartmentId] ON [Projects] ([DepartmentId]);" (0723d8ff)
+2018-08-22T13:18:08.2091080+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Teams_ProductOwnerId] ON [Teams] ([ProductOwnerId]);" (0723d8ff)
+2018-08-22T13:18:08.2099582+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Teams_ProjectId] ON [Teams] ([ProjectId]);" (0723d8ff)
+2018-08-22T13:18:08.2107245+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Teams_ScrumMasterId] ON [Teams] ([ScrumMasterId]);" (0723d8ff)
+2018-08-22T13:18:08.2216391+02:00  [INF] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Profiles] ADD CONSTRAINT [FK_Profiles_Classes_ClassApprenticeId] FOREIGN KEY ([ClassApprenticeId]) REFERENCES [Classes] ([Id]) ON DELETE NO ACTION;" (0723d8ff)
+2018-08-22T13:18:08.2226920+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Profiles] ADD CONSTRAINT [FK_Profiles_Teams_TeamApprenticeId] FOREIGN KEY ([TeamApprenticeId]) REFERENCES [Teams] ([Id]) ON DELETE NO ACTION;" (0723d8ff)
+2018-08-22T13:18:08.2552437+02:00  [INF] Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20180816064152_initdb', N'2.0.1-rtm-125');" (0723d8ff)
+2018-08-22T13:18:08.2573295+02:00  [INF] Applying migration '"20180822111713_InitDBforMemberService"'. (0e2ac64d)
+2018-08-22T13:18:08.2718173+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20180822111713_InitDBforMemberService', N'2.0.1-rtm-125');" (0723d8ff)
