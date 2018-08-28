@@ -47,25 +47,13 @@ namespace ScheduleAPI.Controllers
         [HttpPost("api/events")]
         public IActionResult PostEvent([FromBody]Event occurrence)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            else
-            {
-                eventRepository.Update(occurrence);
-                return Created("DB Updated", occurrence);
-            }
+            eventRepository.Update(occurrence);
+            return Created("DB Updated", occurrence);
         }
 
         [HttpPut("api/events/{id}")]
         public IActionResult AddEvent(int id, [FromBody]Event occurrence)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             if (id != occurrence.EventId)
             {
                 return BadRequest();
