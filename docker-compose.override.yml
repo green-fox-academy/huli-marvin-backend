@@ -5,9 +5,12 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "80"
+      - "54102"
 
-networks:
-  default:
-    external:
-      name: nat
+
+  scheduleapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "50916"
+

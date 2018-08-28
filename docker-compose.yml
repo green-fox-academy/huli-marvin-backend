@@ -5,9 +5,12 @@ services:
     image: ${DOCKER_REGISTRY}memberservice
     build:
       context: .
-      dockerfile: MemberService\Dockerfile
+      dockerfile: Member-API/MemberService/Dockerfile
+
+
   scheduleapi:
-    image: ${DOCKER_REGISTRY}scheduleservice
+    image: ${DOCKER_REGISTRY}scheduleapi
     build:
       context: .
-      dockerfile: Schedule-API\Schedule-API\Dockerfile 
+      dockerfile: Schedule-API/Schedule-API/Dockerfile
+
