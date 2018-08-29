@@ -10,6 +10,7 @@
     <PackageReference Include="AspNetCore.HealthChecks" Version="1.0.0" />
     <PackageReference Include="coverlet.msbuild" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.HealthChecks" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.HealthChecks.AzureStorage" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.HealthChecks.SqlServer" Version="1.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />

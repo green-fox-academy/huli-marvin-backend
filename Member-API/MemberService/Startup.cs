@@ -4,6 +4,7 @@ using MemberService.Extensions;
 using MemberService.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,6 +44,11 @@ namespace MemberService
 
             services.AddDbContext<MemberContext>(options => options.BuildConnection(Configuration));
             services.AddAuth(Configuration);
+
+            services.AddHealthChecks(checks =>
+            {
+                checks.AddSqlCheck("MarvinDB", Configuration["ConnectionString"]);
+            });
         }
 
         public void ConfigureTestingServices(IServiceCollection services)
@@ -78,6 +84,13 @@ namespace MemberService
 
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+            app.Map("/HealthCheck", a =>
+            {
+                a.Run(async context =>
+                {
+                    await context.Response.WriteAsync($"{env.ApplicationName} is alive in {env.EnvironmentName}");
+                });
+            });
         }
     }
 }
