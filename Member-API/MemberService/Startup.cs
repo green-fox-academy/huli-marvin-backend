@@ -42,13 +42,13 @@ namespace MemberService
                 c.SwaggerDoc("v1", new Info { Title = "Marvin API", Version = "v1" });
             });
 
-            services.AddDbContext<MemberContext>(options => options.BuildConnection(Configuration));
-            services.AddAuth(Configuration);
-
             services.AddHealthChecks(checks =>
             {
-                checks.AddSqlCheck("MarvinDB", Configuration["ConnectionString"]);
+                checks.AddSqlCheck("MarvinDB", Configuration.GetConnectionString("connStringLocal"));
             });
+
+            services.AddDbContext<MemberContext>(options => options.BuildConnection(Configuration));
+            services.AddAuth(Configuration);
         }
 
         public void ConfigureTestingServices(IServiceCollection services)
@@ -84,13 +84,6 @@ namespace MemberService
 
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
-            app.Map("/HealthCheck", a =>
-            {
-                a.Run(async context =>
-                {
-                    await context.Response.WriteAsync($"{env.ApplicationName} is alive in {env.EnvironmentName}");
-                });
-            });
         }
     }
 }
