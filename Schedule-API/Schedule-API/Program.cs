@@ -20,7 +20,7 @@ namespace Schedule_API
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseHealthChecks("/hc")
+                .UseHealthChecks("/healthcheck")
                 .Build();
     }
 }

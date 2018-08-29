@@ -19,7 +19,7 @@ namespace MemberService
             WebHost.CreateDefaultBuilder(args)
                 .UseKestrel()
                 .UseApplicationInsights()
-                .UseHealthChecks("/hc")
+                .UseHealthChecks("/healthcheck")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
