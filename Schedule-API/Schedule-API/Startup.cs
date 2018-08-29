@@ -10,6 +10,7 @@ using ScheduleAPI.Repositories;
 using ScheduleAPI.Services;
 using ScheduleAPI.ViewModels;
 using Swashbuckle.AspNetCore.Swagger;
+using System.Threading.Tasks;
 
 namespace Schedule_API
 {
@@ -49,7 +50,7 @@ namespace Schedule_API
 
             services.AddHealthChecks(checks =>
             {
-                checks.AddSqlCheck("MarvinDB", Configuration["connectionStringToDoDB"]);
+                checks.AddSqlCheck("MarvinDB", connectionStringToDoDB);
             });
         }
 
@@ -66,6 +67,7 @@ namespace Schedule_API
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "MarvinEvent V1");
+                c.RoutePrefix = string.Empty;   
             });
 
             app.UseStaticFiles();
