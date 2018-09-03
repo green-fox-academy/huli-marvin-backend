@@ -24,9 +24,9 @@ namespace ScheduleAPI.Controllers
         }
 
         [HttpGet("api/events")]
-        public IActionResult GetAllEvents()
+        public IActionResult GetAllEvents([FromQuery]int pageSize = 8 , [FromQuery]int pageIndex = 0)
         {
-            return Json(eventRepository.GetAll());
+            return Json(eventService.GetEventsPagination(pageSize, pageIndex));
         }
 
         [HttpGet("api/events/{id}")]
