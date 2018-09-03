@@ -17,28 +17,28 @@ namespace ScheduleAPI.Services
         public List<Event> GetEventsPagination(int pageSize, int pageIndex)
         {
             List<Event> result = new List<Event>();
-            List<Event> allEvents = eventRepository.GetAll();
+            List<Event> allItems = eventRepository.GetAll();
 
-            if (ParameterValidation(pageIndex, pageSize, allEvents.Count))
+            if (ParameterValidation(pageIndex, pageSize, allItems.Count))
             {
-                for (int i = pageIndex * pageSize; i < CalcLastEventOfPage(pageIndex, pageSize, allEvents.Count); i++)
+                for (int i = pageIndex * pageSize; i < CalcLastItemOfPage(pageIndex, pageSize, allItems.Count); i++)
                 {
-                    result.Add(allEvents[i]);
+                    result.Add(allItems[i]);
                 }
             }
             return result;
         }
 
-        private bool ParameterValidation(int pageIndex, int pageSize, int eventCount)
+        private bool ParameterValidation(int pageIndex, int pageSize, int itemCount)
         {
-            if (pageSize * (pageIndex) < eventCount)
+            if (pageSize * (pageIndex) < itemCount)
             {
                 return true;
             }
             return false;
         }
 
-        private int CalcLastEventOfPage(int pageIndex, int pageSize, int count)
+        private int CalcLastItemOfPage(int pageIndex, int pageSize, int count)
         {
             if ((pageIndex + 1) * pageSize < count)
             {
