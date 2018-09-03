@@ -21,7 +21,7 @@ namespace ScheduleAPI.Services
 
             if (ParameterValidation(pageIndex, pageSize, allEvents.Count))
             {
-                for (int i = (pageIndex+1)* pageSize; i < allEvents.Count; i++)
+                for (int i = pageIndex * pageSize; i < CalcLastEventOfPage(pageIndex, pageSize, allEvents.Count); i++)
                 {
                     result.Add(allEvents[i]);
                 }
@@ -36,6 +36,15 @@ namespace ScheduleAPI.Services
                 return true;
             }
             return false;
+        }
+
+        private int CalcLastEventOfPage(int pageIndex, int pageSize, int count)
+        {
+            if ((pageIndex + 1) * pageSize < count)
+            {
+                return (pageIndex + 1) * pageSize;
+            }
+            return count;
         }
     }
 }
