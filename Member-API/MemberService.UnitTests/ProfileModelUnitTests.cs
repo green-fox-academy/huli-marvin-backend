@@ -5,7 +5,7 @@ using Xunit;
 
 namespace MemberService.UnitTests
 {
-    public class ProfileModelTests
+    public class ProfileModelUnitTests
     {
         [Fact]
         public void GetTeamApprenticeId_WithValidId_ShouldReturnId()

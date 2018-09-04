@@ -16,7 +16,7 @@ namespace MemberService.Controllers
             this.authService = authService;
         }
 
-        [Route("auth")]
+        [HttpGet("auth")]
         public IActionResult GetToken([FromQuery]string redirect)
         {
             string email = User.FindFirstValue(ClaimTypes.Email);

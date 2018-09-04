@@ -8,7 +8,7 @@ namespace MemberService.Extensions
     {
         public static void BuildConnection(this DbContextOptionsBuilder options, IConfigurationRoot Configuration)
         {
-            options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Members;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            options.UseSqlServer(Configuration.GetConnectionString("connStringLocal"));
         }
     }
 }

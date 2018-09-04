@@ -14,7 +14,7 @@ using Xunit;
 
 namespace MemberService.UnitTests
 {
-    public class ClassServiceTests
+    public class ClassServiceUnitTests
     {
         private readonly Class testClass = (Class)ModelFactory.Creator<Class>();
         private readonly ClassDTO testClassDTO = (ClassDTO)ModelFactory.Creator<ClassDTO>();
@@ -22,7 +22,7 @@ namespace MemberService.UnitTests
         private readonly IEnumerable<Class> classes;
         private readonly Mock<ICrudRepository<Class>> mockClassRepo = new Mock<ICrudRepository<Class>>();
 
-        public ClassServiceTests()
+        public ClassServiceUnitTests()
         {
             classes = new List<Class>() { testClass };
 
