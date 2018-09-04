@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: Member-API/MemberService/Dockerfile
+    ports:
+      - 8080:80
 
 
   scheduleapi:
@@ -13,4 +15,5 @@ services:
     build:
       context: .
       dockerfile: Schedule-API/Schedule-API/Dockerfile
-
+    ports:
+      - 8081:80
