@@ -4,9 +4,11 @@ using MemberService.Extensions;
 using MemberService.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.HealthChecks;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -38,6 +40,11 @@ namespace MemberService
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Marvin API", Version = "v1" });
+            });
+
+            services.AddHealthChecks(checks =>
+            {
+                checks.AddSqlCheck("MarvinDB", Configuration.GetConnectionString("connStringLocal"));
             });
 
             services.AddDbContext<MemberContext>(options => options.BuildConnection(Configuration));
