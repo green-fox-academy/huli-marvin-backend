@@ -21,12 +21,7 @@ namespace Schedule_API
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
-
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseHealthChecks("/healthcheck")
-                .Build();
+                .UseHealthChecks("/healthcheck");
     }
 }

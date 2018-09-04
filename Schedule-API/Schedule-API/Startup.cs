@@ -10,7 +10,6 @@ using ScheduleAPI.Repositories;
 using ScheduleAPI.Services;
 using ScheduleAPI.ViewModels;
 using Swashbuckle.AspNetCore.Swagger;
-using System.Threading.Tasks;
 
 namespace Schedule_API
 {
