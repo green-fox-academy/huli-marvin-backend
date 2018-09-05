@@ -3,6 +3,7 @@ using ScheduleAPI.Models;
 using ScheduleAPI.Repositories;
 using ScheduleAPI.Services;
 using ScheduleAPI.ViewModels;
+using System.Collections.Generic;
 
 namespace ScheduleAPI.Controllers
 {
@@ -11,14 +12,14 @@ namespace ScheduleAPI.Controllers
         private EventViewModel eventViewModel;
         private EventRepository eventRepository;
         private EventTemplateRepository eventTemplateRepository;
-        private EventService eventService;
+        private PaginationService<Event> paginationService;
 
-        public EventController(EventViewModel eventViewModel, EventRepository eventRepository, EventTemplateRepository eventTemplateRepository, EventService eventService)
+        public EventController(EventViewModel eventViewModel, EventRepository eventRepository, EventTemplateRepository eventTemplateRepository, PaginationService<Event> paginationService)
         {
             this.eventViewModel = eventViewModel;
             this.eventRepository = eventRepository;
             this.eventTemplateRepository = eventTemplateRepository;
-            this.eventService = eventService;
+            this.paginationService = paginationService;
             eventViewModel.Events = eventRepository.GetAll();
             eventViewModel.EventTemplates = eventTemplateRepository.GetAll();
         }
@@ -26,7 +27,8 @@ namespace ScheduleAPI.Controllers
         [HttpGet("api/events")]
         public IActionResult GetAllEvents([FromQuery]int pageSize = 8 , [FromQuery]int pageIndex = 0)
         {
-            return Json(eventService.GetEventsPagination(pageSize, pageIndex));
+            ICollection<Event> allItems = eventRepository.GetAll();
+            return Json(paginationService.GetEventsPagination(allItems, pageSize, pageIndex));
         }
 
         [HttpGet("api/events/{id}")]

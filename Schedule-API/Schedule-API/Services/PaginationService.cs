@@ -1,28 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ScheduleAPI.Models;
-using ScheduleAPI.Repositories;
+using System.Threading.Tasks;
 
 namespace ScheduleAPI.Services
 {
-    public class EventService
+    public class PaginationService<T>
     {
-        private EventRepository eventRepository;
-
-        public EventService(EventRepository eventRepository)
+        public IEnumerable<T> GetEventsPagination(ICollection<T> allItems, int pageSize, int pageIndex)
         {
-            this.eventRepository = eventRepository;
-        }
-
-        public IEnumerable<Event> GetEventsPagination(int pageSize, int pageIndex)
-        {
-            IEnumerable<Event> result = new List<Event>();
-            ICollection<Event> allItems = eventRepository.GetAll();
+            IEnumerable<T> result = new List<T>();
 
             if (ParameterValidation(pageIndex, pageSize, allItems.Count))
             {
-
                 return allItems.Skip(pageIndex * pageSize).Take(CalcNumberOfItemsOnPage(pageIndex, pageSize, allItems.Count));
             }
             return result;
