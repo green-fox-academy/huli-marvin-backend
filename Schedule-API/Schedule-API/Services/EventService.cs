@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ScheduleAPI.Models;
 using ScheduleAPI.Repositories;
 
@@ -14,17 +15,15 @@ namespace ScheduleAPI.Services
             this.eventRepository = eventRepository;
         }
 
-        public List<Event> GetEventsPagination(int pageSize, int pageIndex)
+        public IEnumerable<Event> GetEventsPagination(int pageSize, int pageIndex)
         {
-            List<Event> result = new List<Event>();
-            List<Event> allItems = eventRepository.GetAll();
+            IEnumerable<Event> result = new List<Event>();
+            ICollection<Event> allItems = eventRepository.GetAll();
 
             if (ParameterValidation(pageIndex, pageSize, allItems.Count))
             {
-                for (int i = pageIndex * pageSize; i < CalcLastItemOfPage(pageIndex, pageSize, allItems.Count); i++)
-                {
-                    result.Add(allItems[i]);
-                }
+
+                return allItems.Skip(pageIndex * pageSize).Take(CalcNumberOfItemsOnPage(pageIndex, pageSize, allItems.Count));
             }
             return result;
         }
@@ -38,13 +37,13 @@ namespace ScheduleAPI.Services
             return false;
         }
 
-        private int CalcLastItemOfPage(int pageIndex, int pageSize, int count)
+        private int CalcNumberOfItemsOnPage(int pageIndex, int pageSize, int itemCount)
         {
-            if ((pageIndex + 1) * pageSize < count)
+            if ((pageIndex + 1) * pageSize > itemCount)
             {
-                return (pageIndex + 1) * pageSize;
+                return itemCount - (pageSize * (pageIndex));
             }
-            return count;
+            return pageSize;
         }
     }
 }
