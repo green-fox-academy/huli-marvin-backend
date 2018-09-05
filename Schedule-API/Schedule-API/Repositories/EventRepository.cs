@@ -1,4 +1,5 @@
 ﻿using ScheduleAPI.Models;
+using ScheduleAPI.Services;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,10 +8,12 @@ namespace ScheduleAPI.Repositories
     public class EventRepository : IGenericRepository<Event>
     {
         private EventContext eventContext;
+        private PaginationService<Event> paginationService;
 
-        public EventRepository(EventContext eventContext)
+        public EventRepository(EventContext eventContext, PaginationService<Event> paginationService)
         {
             this.eventContext = eventContext;
+            this.paginationService = paginationService;
         }
 
         public void Create(Event occurrence)
@@ -42,9 +45,10 @@ namespace ScheduleAPI.Repositories
             return eventContext.Events.ToList().FirstOrDefault(x => x.EventId == id);
         }
 
-        public List<Event> GetAll()
+        public IEnumerable<Event> GetAll(int pageSize, int pageIndex)
         {
-            return eventContext.Events.ToList();
+            IEnumerable<Event> allItems = eventContext.Events.ToList();
+            return paginationService.GetEventsPagination(allItems, pageSize, pageIndex);
         }
     }
 }

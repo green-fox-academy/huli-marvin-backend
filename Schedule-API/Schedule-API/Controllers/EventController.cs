@@ -20,15 +20,12 @@ namespace ScheduleAPI.Controllers
             this.eventRepository = eventRepository;
             this.eventTemplateRepository = eventTemplateRepository;
             this.paginationService = paginationService;
-            eventViewModel.Events = eventRepository.GetAll();
-            eventViewModel.EventTemplates = eventTemplateRepository.GetAll();
         }
 
         [HttpGet("api/events")]
         public IActionResult GetAllEvents([FromQuery]int pageSize = 8 , [FromQuery]int pageIndex = 0)
         {
-            ICollection<Event> allItems = eventRepository.GetAll();
-            return Json(paginationService.GetEventsPagination(allItems, pageSize, pageIndex));
+            return Json(eventRepository.GetAll(pageSize, pageIndex));
         }
 
         [HttpGet("api/events/{id}")]

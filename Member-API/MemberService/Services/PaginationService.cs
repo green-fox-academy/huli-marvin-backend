@@ -7,14 +7,13 @@ namespace ScheduleAPI.Services
 {
     public class PaginationService<T>
     {
-        public IEnumerable<T> GetEventsPagination(IEnumerable<T> allItems, int pageSize, int pageIndex)
+        public IEnumerable<T> GetEventsPagination(ICollection<T> allItems, int pageSize, int pageIndex)
         {
             IEnumerable<T> result = new List<T>();
-            int itemCount = allItems.ToList().Count;
 
-            if (ParameterValidation(pageIndex, pageSize, itemCount))
+            if (ParameterValidation(pageIndex, pageSize, allItems.Count))
             {
-                return allItems.Skip(pageIndex * pageSize).Take(CalcNumberOfItemsOnPage(pageIndex, pageSize, itemCount));
+                return allItems.Skip(pageIndex * pageSize).Take(CalcNumberOfItemsOnPage(pageIndex, pageSize, allItems.Count));
             }
             return result;
         }
