@@ -5,21 +5,9 @@ using System.Threading.Tasks;
 
 namespace ScheduleAPI.Services
 {
-    public class PaginationService<T>
+    public class PaginationService
     {
-        public IEnumerable<T> GetEventsPagination(IEnumerable<T> allItems, int pageSize, int pageIndex)
-        {
-            IEnumerable<T> result = new List<T>();
-            int itemCount = allItems.ToList().Count;
-
-            if (ParameterValidation(pageIndex, pageSize, itemCount))
-            {
-                return allItems.Skip(pageIndex * pageSize).Take(CalcNumberOfItemsOnPage(pageIndex, pageSize, itemCount));
-            }
-            return result;
-        }
-
-        private bool ParameterValidation(int pageIndex, int pageSize, int itemCount)
+        public bool ParameterValidation(int pageIndex, int pageSize, int itemCount)
         {
             if (pageSize * (pageIndex) < itemCount)
             {
@@ -28,7 +16,7 @@ namespace ScheduleAPI.Services
             return false;
         }
 
-        private int CalcNumberOfItemsOnPage(int pageIndex, int pageSize, int itemCount)
+        public int CalcNumberOfItemsOnPage(int pageIndex, int pageSize, int itemCount)
         {
             if ((pageIndex + 1) * pageSize > itemCount)
             {

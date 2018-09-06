@@ -8,9 +8,9 @@ namespace ScheduleAPI.Repositories
     public class EventRepository : IGenericRepository<Event>
     {
         private EventContext eventContext;
-        private PaginationService<Event> paginationService;
+        private PaginationService paginationService;
 
-        public EventRepository(EventContext eventContext, PaginationService<Event> paginationService)
+        public EventRepository(EventContext eventContext, PaginationService paginationService)
         {
             this.eventContext = eventContext;
             this.paginationService = paginationService;
@@ -44,11 +44,16 @@ namespace ScheduleAPI.Repositories
         {
             return eventContext.Events.ToList().FirstOrDefault(x => x.EventId == id);
         }
-
         public IEnumerable<Event> GetAll(int pageSize, int pageIndex)
         {
-            IEnumerable<Event> allItems = eventContext.Events.ToList();
-            return paginationService.GetEventsPagination(allItems, pageSize, pageIndex);
+            int itemCount = eventContext.Events.Count();
+
+            if (paginationService.ParameterValidation(pageIndex, pageSize, itemCount))
+            {
+                return eventContext.Events.Skip(pageIndex * pageSize).Take(paginationService.CalcNumberOfItemsOnPage(
+                    pageIndex, pageSize, itemCount));
+            }
+            return null;
         }
     }
 }

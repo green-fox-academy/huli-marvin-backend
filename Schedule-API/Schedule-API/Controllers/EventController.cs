@@ -12,9 +12,9 @@ namespace ScheduleAPI.Controllers
         private EventViewModel eventViewModel;
         private EventRepository eventRepository;
         private EventTemplateRepository eventTemplateRepository;
-        private PaginationService<Event> paginationService;
+        private PaginationService paginationService;
 
-        public EventController(EventViewModel eventViewModel, EventRepository eventRepository, EventTemplateRepository eventTemplateRepository, PaginationService<Event> paginationService)
+        public EventController(EventViewModel eventViewModel, EventRepository eventRepository, EventTemplateRepository eventTemplateRepository, PaginationService paginationService)
         {
             this.eventViewModel = eventViewModel;
             this.eventRepository = eventRepository;
