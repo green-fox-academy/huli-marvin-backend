@@ -39,14 +39,14 @@ namespace ScheduleAPI.Repositories
             eventContext.SaveChanges();
         }
 
-        public EventTemplate GetItemById(int id)
+        public async Task<EventTemplate> GetItemById(int id)
         {
-            return eventContext.EventTemplates.ToList().FirstOrDefault(xItem => xItem.EventTemplateId == id);
+            return await eventContext.EventTemplates.FindAsync(id);
         }
 
-        public List<EventTemplate> GetAll()
-        {
-            return eventContext.EventTemplates.ToList();
-        }
+        //public async List<EventTemplate> GetAll()
+        //{
+        //    return eventContext.EventTemplates.tol
+        //}
     }
 }

@@ -11,6 +11,6 @@ namespace ScheduleAPI.Repositories
         void Create(Object key);
         void Update(Object key);
         void Delete(int id);
-        Object GetItemById(int id);
+        Task<Object> GetItemById(int id);
     }
 }

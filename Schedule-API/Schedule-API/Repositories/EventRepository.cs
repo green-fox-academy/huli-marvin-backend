@@ -2,6 +2,7 @@
 using ScheduleAPI.Services;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ScheduleAPI.Repositories
 {
@@ -40,13 +41,15 @@ namespace ScheduleAPI.Repositories
             eventContext.SaveChanges();
         }
 
-        public Event GetItemById(int id)
+        public async Task<Event> GetItemById(int id)
         {
-            return eventContext.Events.ToList().FirstOrDefault(x => x.EventId == id);
+            return await eventContext.Events.FindAsync(id);
         }
-        public IEnumerable<Event> GetAll(int pageSize, int pageIndex)
+
+        public async Task<IEnumerable<Event>> GetAllAsync(int pageSize, int pageIndex)
         {
             int itemCount = eventContext.Events.Count();
+            Task<IEnumerable<Event>> result;
 
             if (paginationService.ParameterValidation(pageIndex, pageSize, itemCount))
             {
