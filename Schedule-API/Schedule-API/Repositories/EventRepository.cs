@@ -17,39 +17,33 @@ namespace ScheduleAPI.Repositories
             this.paginationService = paginationService;
         }
 
-        public void Create(Event occurrence)
+        public async Task CreateAsync(Event occurrence)
         {
             eventContext.Add(occurrence);
-            eventContext.SaveChanges();
+            await eventContext.SaveChangesAsync();
         }
 
-        public List<Event> Read()
-        {
-            return eventContext.Events.ToList();
-        }
-
-        public void Update(Event occurrence)
+        public async Task UpdateAsync(Event occurrence)
         {
             eventContext.Update(occurrence);
-            eventContext.SaveChanges();
+            await eventContext.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            var removable = eventContext.Events.ToList().FirstOrDefault(x => x.EventId == id);
+            var removable = GetItemByIdAsync(id);
             eventContext.Remove(removable);
-            eventContext.SaveChanges();
+            await eventContext.SaveChangesAsync();
         }
 
-        public async Task<Event> GetItemById(int id)
+        public async Task<Event> GetItemByIdAsync(int id)
         {
             return await eventContext.Events.FindAsync(id);
         }
 
         public async Task<IEnumerable<Event>> GetAllAsync(int pageSize, int pageIndex)
         {
-            int itemCount = eventContext.Events.Count();
-            Task<IEnumerable<Event>> result;
+            private int itemCount = eventContext.Events.Count();
 
             if (paginationService.ParameterValidation(pageIndex, pageSize, itemCount))
             {
