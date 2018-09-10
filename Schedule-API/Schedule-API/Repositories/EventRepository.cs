@@ -1,4 +1,5 @@
-﻿using ScheduleAPI.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using ScheduleAPI.Models;
 using ScheduleAPI.Services;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,12 +44,13 @@ namespace ScheduleAPI.Repositories
 
         public async Task<IEnumerable<Event>> GetAllAsync(int pageSize, int pageIndex)
         {
-            private int itemCount = eventContext.Events.Count();
+            Task<int> itemCount = eventContext.Events.CountAsync();
 
             if (paginationService.ParameterValidation(pageIndex, pageSize, itemCount))
             {
-                return eventContext.Events.Skip(pageIndex * pageSize).Take(paginationService.CalcNumberOfItemsOnPage(
-                    pageIndex, pageSize, itemCount));
+                return eventContext.Events.FindAsync()
+            //Events.Skip(pageIndex * pageSize).Take(paginationService.CalcNumberOfItemsOnPage(
+            //        pageIndex, pageSize, itemCount));
             }
             return null;
         }
