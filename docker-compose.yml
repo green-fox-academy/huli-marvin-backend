@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  memberservice:
+    image: ${DOCKER_REGISTRY}memberservice
+    build:
+      context: .
+      dockerfile: Member-API/MemberService/Dockerfile
+    ports:
+      - 8080:80
+
+
+  scheduleapi:
+    image: ${DOCKER_REGISTRY}scheduleapi
+    build:
+      context: .
+      dockerfile: Schedule-API/Schedule-API/Dockerfile
+    ports:
+      - 8081:80
