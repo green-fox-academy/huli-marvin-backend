@@ -7,7 +7,7 @@ namespace ScheduleAPI.Services
 {
     public class PaginationService
     {
-        public bool ParameterValidation(int pageIndex, int pageSize, Task<int> itemCount)
+        public bool ParameterValidation(int pageIndex, int pageSize, int itemCount)
         {
             if (pageSize * (pageIndex) < itemCount)
             {

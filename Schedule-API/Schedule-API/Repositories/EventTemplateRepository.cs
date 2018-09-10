@@ -1,4 +1,5 @@
-﻿using ScheduleAPI.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using ScheduleAPI.Models;
 using ScheduleAPI.Services;
 using System;
 using System.Collections.Generic;
@@ -42,9 +43,9 @@ namespace ScheduleAPI.Repositories
             return await eventContext.EventTemplates.FindAsync(id);
         }
 
-        public async Task<IEnumerable<EventTemplate>> GetAllAsync(int pageIndex, int pageSize, int itemCount)
+        public async Task<IEnumerable<EventTemplate>> GetAllAsync(int pageIndex, int pageSize)
         {
-            private int itemCount = eventContext.EventTemplates.Count();
+            int itemCount = await eventContext.EventTemplates.CountAsync();
 
             if (paginationService.ParameterValidation(pageIndex, pageSize, itemCount))
             {

@@ -44,13 +44,12 @@ namespace ScheduleAPI.Repositories
 
         public async Task<IEnumerable<Event>> GetAllAsync(int pageSize, int pageIndex)
         {
-            Task<int> itemCount = eventContext.Events.CountAsync();
+            int itemCount = await eventContext.Events.CountAsync();
 
             if (paginationService.ParameterValidation(pageIndex, pageSize, itemCount))
             {
-                return eventContext.Events.FindAsync()
-            //Events.Skip(pageIndex * pageSize).Take(paginationService.CalcNumberOfItemsOnPage(
-            //        pageIndex, pageSize, itemCount));
+                return eventContext.Events.Skip(pageIndex * pageSize).Take(paginationService.CalcNumberOfItemsOnPage(
+                    pageIndex, pageSize, itemCount));
             }
             return null;
         }
