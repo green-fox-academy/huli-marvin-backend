@@ -12,14 +12,21 @@ namespace ScheduleAPI.Models
         {
         }
 
-        public void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder
-                .Properties()
-                .Where(p => p.Name == p.DeclaringType.Name + "_ID")
-                .Configure(p => p.IsKey());
+            modelBuilder.Entity<EventTemplate>().HasData(
+                new { EventTemplateId = 1, EventTemplateName = "t0" },
+                new { EventTemplateId = 2, EventTemplateName = "t1" },
+                new { EventTemplateId = 3, EventTemplateName = "t2" }
+            );
 
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Event>().HasData(
+                new { EventId = 1, EventTypes = "Social", EventTemplateId = 0 },
+                new { EventId = 2, EventTypes = "Social", EventTemplateId = 0 },
+                new { EventId = 3, EventTypes = "Meeting", EventTemplateId = 1 },
+                new { EventId = 4, EventTypes = "Social", EventTemplateId = 1 },
+                new { EventId = 5, EventTypes = "Meeting", EventTemplateId = 2 }
+            );
         }
     }
 }
