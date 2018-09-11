@@ -21,11 +21,11 @@ namespace ScheduleAPI.Models
             );
 
             modelBuilder.Entity<Event>().HasData(
-                new { EventId = 1, EventTypes = "Social", EventTemplateId = 0 },
-                new { EventId = 2, EventTypes = "Social", EventTemplateId = 0 },
-                new { EventId = 3, EventTypes = "Meeting", EventTemplateId = 1 },
-                new { EventId = 4, EventTypes = "Social", EventTemplateId = 1 },
-                new { EventId = 5, EventTypes = "Meeting", EventTemplateId = 2 }
+                new { EventId = 1, EventType = "Social", EventTemplateId = 1 },
+                new { EventId = 2, EventType = "Social", EventTemplateId = 1 },
+                new { EventId = 3, EventType = "Meeting", EventTemplateId = 2 },
+                new { EventId = 4, EventType = "Social", EventTemplateId = 3 },
+                new { EventId = 5, EventType = "Meeting", EventTemplateId = 2 }
             );
         }
     }
