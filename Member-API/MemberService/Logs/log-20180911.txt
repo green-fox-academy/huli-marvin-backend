@@ -1,0 +1,271 @@
+2018-09-11T11:36:54.6485733+02:00 0HLGNP8DU9TNT:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:54102/  0 (ca22a1cb)
+2018-09-11T11:36:54.6485865+02:00 0HLGNP8DU9TNS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/   (ca22a1cb)
+2018-09-11T11:36:54.9335995+02:00 0HLGNP8DU9TNS:00000001 [INF] Request finished in 295.0263ms 301  (791a596a)
+2018-09-11T11:36:54.9336040+02:00 0HLGNP8DU9TNT:00000001 [INF] Request finished in 276.9682ms 200  (791a596a)
+2018-09-11T11:36:55.0014579+02:00 0HLGNP8DU9TNU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/index.html   (ca22a1cb)
+2018-09-11T11:36:55.0592018+02:00 0HLGNP8DU9TNU:00000001 [INF] Request finished in 46.0538ms 200 text/html (791a596a)
+2018-09-11T11:36:55.1633637+02:00 0HLGNP8DU9TNU:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/swagger-ui.css   (ca22a1cb)
+2018-09-11T11:36:55.1920862+02:00 0HLGNP8DU9TNV:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/swagger-ui-standalone-preset.js   (ca22a1cb)
+2018-09-11T11:36:55.1960681+02:00 0HLGNP8DU9TO0:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/swagger-ui-bundle.js   (ca22a1cb)
+2018-09-11T11:36:55.2449057+02:00 0HLGNP8DU9TNV:00000001 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"' (27b0a520)
+2018-09-11T11:36:55.2448996+02:00 0HLGNP8DU9TO0:00000001 [INF] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"' (27b0a520)
+2018-09-11T11:36:55.2449219+02:00 0HLGNP8DU9TNU:00000002 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2018-09-11T11:36:55.3208831+02:00 0HLGNP8DU9TNV:00000001 [INF] Request finished in 151.9689ms 200 application/javascript (791a596a)
+2018-09-11T11:36:55.3324691+02:00 0HLGNP8DU9TNU:00000002 [INF] Request finished in 189.7492ms 200 text/css (791a596a)
+2018-09-11T11:36:55.3820858+02:00 0HLGNP8DU9TO0:00000001 [INF] Request finished in 186.1766ms 200 application/javascript (791a596a)
+2018-09-11T11:36:56.0044043+02:00 0HLGNP8DU9TNU:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:54102/swagger/v1/swagger.json   (ca22a1cb)
+2018-09-11T11:36:56.8416682+02:00 0HLGNP8DU9TNU:00000003 [INF] Request finished in 835.8956ms 200 application/json;charset=utf-8 (791a596a)
+2018-09-11T11:36:56.8477492+02:00 0HLGNP8DU9TNV:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/favicon-32x32.png   (ca22a1cb)
+2018-09-11T11:36:56.8510980+02:00 0HLGNP8DU9TNV:00000002 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2018-09-11T11:36:56.8541290+02:00 0HLGNP8DU9TNV:00000002 [INF] Request finished in 6.3702ms 200 image/png (791a596a)
+2018-09-11T11:36:57.3221396+02:00 0HLGNP8DU9TO0:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/favicon-16x16.png   (ca22a1cb)
+2018-09-11T11:36:57.3262087+02:00 0HLGNP8DU9TO0:00000002 [INF] Sending file. Request path: '"/favicon-16x16.png"'. Physical path: '"N/A"' (27b0a520)
+2018-09-11T11:36:57.3313033+02:00 0HLGNP8DU9TO0:00000002 [INF] Request finished in 9.1931ms 200 image/png (791a596a)
+2018-09-11T11:38:28.5261078+02:00 0HLGNP8DU9TO1:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/classes   (ca22a1cb)
+2018-09-11T11:38:31.0820331+02:00 0HLGNP8DU9TO1:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-11T11:38:31.1255737+02:00 0HLGNP8DU9TO1:00000001 [INF] Executing action method "MemberService.Controllers.EducationControllers.ClassController.ListClasses (MemberService)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-09-11T11:38:31.4840012+02:00 0HLGNP8DU9TO1:00000001 [WRN] The LINQ expression '"where Invoke(__SearchFromQuery_0, [c])"' could not be translated and will be evaluated locally. (011792c6)
+2018-09-11T11:38:54.0772130+02:00 0HLGNP8DU9TO1:00000001 [ERR] Failed executing DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CalendarId], [c].[ClassAdminId], [c].[ClassLeadId], [c].[CohortId], [c].[Color], [c].[CourseId], [c].[Name], [c].[SlackChannelId], [c].[Status]
+FROM [Classes] AS [c]" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Classes'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__108_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:20eadc5c-0071-413a-839e-751cae5d894c
+Error Number:208,State:1,Class:16
+2018-09-11T11:38:54.1909312+02:00 0HLGNP8DU9TO1:00000001 [ERR] An exception occurred in the database while iterating the results of a query for context type '"MemberService.Entities.MemberContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Classes'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__108_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.WhereSelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:20eadc5c-0071-413a-839e-751cae5d894c
+Error Number:208,State:1,Class:16" (64e2593c)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Classes'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__108_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.WhereSelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:20eadc5c-0071-413a-839e-751cae5d894c
+Error Number:208,State:1,Class:16
+2018-09-11T11:38:55.3101090+02:00 0HLGNP8DU9TO1:00000001 [INF] Executed action "MemberService.Controllers.EducationControllers.ClassController.ListClasses (MemberService)" in 25786.2482ms (afa2e885)
+2018-09-11T11:38:55.3887011+02:00 0HLGNP8DU9TO1:00000001 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Classes'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__108_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.WhereSelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at MemberService.Repositories.ClassRepository.SelectAllAsync(IQueryCollection query) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Repositories\ClassRepository.cs:line 30
+   at MemberService.Services.ClassService.GetAllAsync(IQueryCollection query) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Services\ClassService.cs:line 31
+   at MemberService.Controllers.EducationControllers.ClassController.ListClasses() in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\ClassController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:20eadc5c-0071-413a-839e-751cae5d894c
+Error Number:208,State:1,Class:16
+2018-09-11T11:38:55.9886603+02:00 0HLGNP8DU9TO1:00000001 [INF] Request finished in 27478.1406ms 500 text/html; charset=utf-8 (791a596a)
+2018-09-11T11:38:58.6146846+02:00 0HLGNP8DU9TO1:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:54102/favicon.ico   (ca22a1cb)
+2018-09-11T11:38:58.6294584+02:00 0HLGNP8DU9TO1:00000002 [INF] Request finished in 15.0311ms 404  (791a596a)
+2018-09-11T11:40:18.2914150+02:00 0HLGNP8DU9TO2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:54102/v1/class/%7B4%7D   (ca22a1cb)
+2018-09-11T11:40:18.6766875+02:00 0HLGNP8DU9TO2:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-11T11:40:18.8575251+02:00 0HLGNP8DU9TO2:00000001 [INF] Executing action method "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2018-09-11T11:40:19.0051760+02:00 0HLGNP8DU9TO2:00000001 [ERR] Failed executing DbCommand ("77"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[DepartmentId], [c].[FinishDate], [c].[Name], [c].[StartDate], [c].[Status]
+FROM [Cohorts] AS [c]" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Cohorts'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__108_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:20eadc5c-0071-413a-839e-751cae5d894c
+Error Number:208,State:1,Class:16
+2018-09-11T11:40:19.0324919+02:00 0HLGNP8DU9TO2:00000001 [ERR] An exception occurred in the database while iterating the results of a query for context type '"MemberService.Entities.MemberContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Cohorts'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__108_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:20eadc5c-0071-413a-839e-751cae5d894c
+Error Number:208,State:1,Class:16" (64e2593c)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Cohorts'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__108_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:20eadc5c-0071-413a-839e-751cae5d894c
+Error Number:208,State:1,Class:16
+2018-09-11T11:40:19.3076714+02:00 0HLGNP8DU9TO2:00000001 [INF] Executed action "MemberService.Controllers.EducationControllers.ClassController.FindClass (MemberService)" in 910.0096ms (afa2e885)
+2018-09-11T11:40:19.3315072+02:00 0HLGNP8DU9TO2:00000001 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Cohorts'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__108_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.LoadAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at MemberService.Repositories.ClassRepository.LoadContextAsync() in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Repositories\ClassRepository.cs:line 52
+   at MemberService.Repositories.ClassRepository.SelectByIdAsync(Int64 id) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Repositories\ClassRepository.cs:line 41
+   at MemberService.Services.ClassService.GetByIdAsync(Int64 id) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Services\ClassService.cs:line 42
+   at MemberService.Controllers.EducationControllers.ClassController.FindClass(Int64 classId) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\ClassController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:20eadc5c-0071-413a-839e-751cae5d894c
+Error Number:208,State:1,Class:16
+2018-09-11T11:40:19.3774916+02:00 0HLGNP8DU9TO2:00000001 [INF] Request finished in 1123.2104ms 500 text/html; charset=utf-8 (791a596a)
+2018-09-11T11:42:13.1051479+02:00 0HLGNP8DU9TO3:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:54102/v1/class/1 application/json-patch+json 8456 (ca22a1cb)
+2018-09-11T11:42:13.1141286+02:00 0HLGNP8DU9TO3:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-11T11:42:52.7404024+02:00 0HLGNP8DU9TO3:00000001 [INF] Executing action method "MemberService.Controllers.EducationControllers.ClassController.UpdateClass (MemberService)" with arguments (["1", ""]) - ModelState is Invalid (ba7f4ac2)
+2018-09-11T11:42:53.0579323+02:00 0HLGNP8DU9TO3:00000001 [INF] Executed action "MemberService.Controllers.EducationControllers.ClassController.UpdateClass (MemberService)" in 39943.6038ms (afa2e885)
+2018-09-11T11:42:53.0645556+02:00 0HLGNP8DU9TO3:00000001 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at MemberService.Services.ClassService.UpdateAsync(Int64 id, Class updatedClass) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Services\ClassService.cs:line 48
+   at MemberService.Controllers.EducationControllers.ClassController.UpdateClass(Int64 classId, Class updatedClass) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\ClassController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-11T11:42:53.0912393+02:00 0HLGNP8DU9TO3:00000001 [INF] Request finished in 39986.1188ms 500 text/html; charset=utf-8 (791a596a)
+2018-09-11T11:43:10.8885661+02:00 0HLGNP8DU9TO3:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:54102/v1/cohorts application/json-patch+json 6528 (ca22a1cb)
+2018-09-11T11:43:30.0121800+02:00 0HLGNP8DU9TO3:00000002 [INF] Executing action method "MemberService.Controllers.EducationControllers.CohortController.CreateCohort (MemberService)" with arguments ([""]) - ModelState is Invalid (ba7f4ac2)
+2018-09-11T11:43:30.4440730+02:00 0HLGNP8DU9TO3:00000002 [INF] Executed action "MemberService.Controllers.EducationControllers.CohortController.CreateCohort (MemberService)" in 19544.5111ms (afa2e885)
+2018-09-11T11:43:30.4514460+02:00 0HLGNP8DU9TO3:00000002 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: entity
+   at Microsoft.EntityFrameworkCore.Utilities.Check.NotNull[T](T value, String parameterName)
+   at Microsoft.EntityFrameworkCore.DbContext.AddAsync[TEntity](TEntity entity, CancellationToken cancellationToken)
+   at MemberService.Repositories.CohortRepository.InsertAsync(Cohort cohortToAdd) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Repositories\CohortRepository.cs:line 56
+   at MemberService.Services.CohortService.AddAsync(Cohort cohort) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Services\CohortService.cs:line 37
+   at MemberService.Controllers.EducationControllers.CohortController.CreateCohort(Cohort newCohort) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\CohortController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-11T11:43:30.5339647+02:00 0HLGNP8DU9TO3:00000002 [INF] Request finished in 19643.4219ms 500 text/html; charset=utf-8 (791a596a)
+2018-09-11T11:44:05.5437453+02:00 0HLGNP8DU9TO3:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:54102/v1/course/1?id=1 application/json-patch+json 7457 (ca22a1cb)
+2018-09-11T11:47:25.9591876+02:00 0HLGNP8DU9TO3:00000003 [INF] Executing action method "MemberService.Controllers.EducationControllers.CourseController.UpdateCourse (MemberService)" with arguments (["", "1"]) - ModelState is Invalid (ba7f4ac2)
+2018-09-11T11:47:26.0520418+02:00 0HLGNP8DU9TO3:00000003 [INF] Executed action "MemberService.Controllers.EducationControllers.CourseController.UpdateCourse (MemberService)" in 200497.2869ms (afa2e885)
+2018-09-11T11:47:26.0575293+02:00 0HLGNP8DU9TO3:00000003 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at MemberService.Services.CourseService.UpdateAsync(Int64 id, Course course) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Services\CourseService.cs:line 48
+   at MemberService.Controllers.EducationControllers.CourseController.UpdateCourse(Course updateCourse, Int64 id) in D:\greenfox\Húli\huli-marvin-backend\Member-API\MemberService\Controllers\EducationControllers\CourseController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-11T11:47:26.1040457+02:00 0HLGNP8DU9TO3:00000003 [INF] Request finished in 200561.6286ms 500 text/html; charset=utf-8 (791a596a)
+2018-09-11T11:47:44.9018297+02:00 0HLGNP8DU9TO3:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:54102/v1/course/1?id=1 application/json-patch+json 7457 (ca22a1cb)
