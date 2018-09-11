@@ -8,6 +8,9 @@ RUN cd /src/huli-marvin-backend && git pull && git checkout sprint06
 WORKDIR /src/huli-marvin-backend/Member-API/MemberService
 RUN dotnet restore MemberService.csproj
 RUN dotnet build MemberService.csproj -c Release -o /app
+EXPOSE 80/tcp
+RUN chmod +x ./entrypoint.sh
+CMD /bin/bash ./entrypoint.sh
 
 FROM build AS publish
 RUN dotnet publish MemberService.csproj -c Release -o /app
