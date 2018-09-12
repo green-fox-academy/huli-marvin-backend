@@ -40,21 +40,29 @@ namespace MemberService.Services
         public async Task<ClassDTO> GetByIdAsync(long id)
         {
             var currentClass = await classRepository.SelectByIdAsync(id);
-            return mapper.Map<ClassDTO>(currentClass);
+            return new ClassDTO()
+            {
+                Id = currentClass.Id,
+                Name = currentClass.Name,
+                Color = currentClass.Color,
+                Status = currentClass.Status,
+                CalendarId = currentClass.CalendarId,
+                SlackChannelId = currentClass.SlackChannelId,
+            };
         }
 
         public async Task UpdateAsync(long id, Class updatedClass)
-        {
-            if (updatedClass.Id != id)
             {
-                throw new BadRequestException();
+                if (updatedClass.Id != id)
+                {
+                    throw new BadRequestException();
+                }
+                await classRepository.UpdateAsync(updatedClass);
             }
-            await classRepository.UpdateAsync(updatedClass);
-        }
 
-        public async Task RemoveByIdAsync(long id)
-        {
-            await classRepository.DeleteByIdAsync(id);
+            public async Task RemoveByIdAsync(long id)
+            {
+                await classRepository.DeleteByIdAsync(id);
+            }
         }
     }
-}
