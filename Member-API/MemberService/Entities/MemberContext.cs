@@ -26,6 +26,99 @@ namespace MemberService.Entities
             DepartmentRelationBuilder(modelBuilder);
             ProfileRelationBuilder(modelBuilder);
             TeamRelationBuilder(modelBuilder);
+
+            //modelBuilder.Entity<Class>().HasData(
+            //    new { Id = 1, Name = "Ocelot", Color = "red", Status = "Active", CalendarId = 2, SlackChannelId = 7 },
+            //    new { Id = 2, Name = "Secret", Color = "blue", Status = "Custom", CalendarId = 1, SlackChannelId = 2 },
+            //    new { Id = 3, Name = "Raptor", Color = "green", Status = "Inactive", CalendarId = 3, SlackChannelId = 5 },
+            //    new { Id = 4, Name = "Lasers", Color = "yellow", Status = "Active", CalendarId = 4, SlackChannelId = 1 },
+            //    new { Id = 5, Name = "BadBoi", Color = "purple", Status = "Active", CalendarId = 5, SlackChannelId = 6 },
+            //    new { Id = 6, Name = "Seagal", Color = "orange", Status = "Inactive", CalendarId = 7, SlackChannelId = 4 },
+            //    new { Id = 7, Name = "Teapot", Color = "black", Status = "Custom", CalendarId = 6, SlackChannelId = 3 }
+            //);
+
+            //modelBuilder.Entity<Cohort>().HasData(
+            //    new { Id =1, Name = "Ace", Color = "red", Status = "Active", CalendarId =5, SlackChannelId =},
+            //    new { Id =2, Name = "Alopex", Color = "green", Status = "Inactive", CalendarId =4, SlackChannelId =},
+            //    new { Id =3, Name = "Macrotis", Color = "blue", Status = "Inactive", CalendarId =2, SlackChannelId =},
+            //    new { Id =4, Name = "Fulvipes", Color = "black", Status = "Custom", CalendarId =3, SlackChannelId =}
+            //);
+
+            //modelBuilder.Entity<Course>().HasData(
+            //    new { Id = , Name = "Standard", Status = "Active", Department = ""},
+            //    new { Id = , Name = "Accenture Girls", Status = "Inactive", Department = "" },
+            //    new { Id = , Name = "Super Mommies", Status = "Custom", Department = "" }
+            //);
+
+            //modelBuilder.Entity<Department>().HasData(
+            //    new { Id = 1, Name = "HR", Email = "hr@gf.com", PhoneNumber = "36701234567", Country = "HU", ZipNumber = "1000", Address = "Andrassy 66."},
+            //    new { Id = 2, Name = "Mentors", Email = "mentors@gf.com", PhoneNumber = "36701234568", Country = "HU", ZipNumber = "1000", Address = "Andrassy 66." },
+            //    new { Id = 3, Name = "Partner Management", Email = "partnermgmt@gf.com", PhoneNumber = "36701234569", Country = "HU", ZipNumber = "1000", Address = "Andrassy 66." }
+            //);
+
+            //modelBuilder.Entity<JobHistory>().HasData(
+            //    new { Id = 1, Name = "", Profile = ""}
+            //);
+
+            //modelBuilder.Entity<Profile>().HasData(
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { }
+            //);
+
+            //modelBuilder.Entity<Project>().HasData(
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { }
+            //);
+
+            //modelBuilder.Entity<ClassProfile>().HasData(
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { }
+            //);
+
+            //modelBuilder.Entity<Team>().HasData(
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { }
+            //);
+
+            //modelBuilder.Entity<AttendanceInfo>().HasData(
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { }
+            //);
+
+            //modelBuilder.Entity<>().HasData(
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { },
+            //    new { }
+            //);
         }
 
         private static void ClassRelationBuilder(ModelBuilder modelBuilder)
