@@ -53,13 +53,13 @@ namespace MemberService
 
         public void ConfigureTestingServices(IServiceCollection services)
         {
+            var connection = @"Server=member.data;Database=memberDb;UserId=sa;Password=asdasd";
+
             services.AddMvc();
             services.AddServices();
             services.AddRepositories();
             services.AddMapper();
-
-            services.AddDbContext<MemberContext>(options =>
-            options.UseInMemoryDatabase("testdatabase"));
+            services.AddDbContext<MemberContext>(options => options.UseSqlServer(connection));
         }
 
         public void Configure(IApplicationBuilder app,

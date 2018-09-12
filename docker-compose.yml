@@ -1,15 +1,19 @@
-version: '3'
+version: '3.4'
 
 services:
-  memberservice:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - 8080:80
-    depends_on:
-      - db
-  db:
-    image: "microsoft/mssql-server-linux"
-      environment:
-        SA_PASSWORD: "Asd132!!"
-        ACCEPT_EULA: "Y"
+    memberservice:
+        build: .
+        environment:
+            - ConnectionString=Server=member.data;Database=memberDb;UserId=sa;Password=asdasd
+        ports:
+            - 8080:80
+        depends_on:
+            -member.data
+    member.data:
+        image: "microsoft/mssql-server-linux"
+        environment:
+            - MSSQL_SA_PASSWORD=asdasd
+            - ACCEPT_EULA=Y
+            - MSSQL_PID=Developer
+        ports:
+            -"5434:1433"

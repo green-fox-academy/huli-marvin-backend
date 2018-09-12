@@ -1,16 +1,13 @@
-FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
+FROM microsoft/dotnet:2.1-runtime AS base
 WORKDIR /app
 
-FROM microsoft/dotnet:2.1-sdk AS build
+FROM microsoft/dotnet:2.1-aspnetcore-sdk AS build
 WORKDIR /src
 RUN git clone https://github.com/green-fox-academy/huli-marvin-backend.git
-RUN cd /src/huli-marvin-backend && git pull && git checkout sprint06
+RUN cd /src/huli-marvin-backend && git pull && git checkout DockerDiffEnvs
 WORKDIR /src/huli-marvin-backend/Member-API/MemberService
 RUN dotnet restore MemberService.csproj
 RUN dotnet build MemberService.csproj -c Release -o /app
-EXPOSE 80/tcp
-RUN chmod +x ./entrypoint.sh
-CMD /bin/bash ./entrypoint.sh
 
 FROM build AS publish
 RUN dotnet publish MemberService.csproj -c Release -o /app
