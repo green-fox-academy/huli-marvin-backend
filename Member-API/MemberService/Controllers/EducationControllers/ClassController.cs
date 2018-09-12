@@ -37,7 +37,7 @@ namespace MemberService.Controllers.EducationControllers
             return Json(result);
         }
 
-        [HttpPost("class/{classId}")]
+        [HttpPut("class/{classId}")]
         public async Task<IActionResult> UpdateClass(long classId, [FromBody] Class updatedClass)
         {
             await classService.UpdateAsync(classId, updatedClass);
