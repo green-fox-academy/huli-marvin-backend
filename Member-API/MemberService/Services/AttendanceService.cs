@@ -20,7 +20,17 @@ namespace MemberService.Services
         public async Task<IEnumerable<AttendanceInfoDTO>> GetAllAsync(IQueryCollection q)
         {
             var profiles = await profileRepository.SelectAllAsync(q);
-            return CreateAttendanceDTOs(profiles);
+            return profiles.Select(profile => new AttendanceInfoDTO
+            {
+                Id = profile.Id,
+                Name = profile.Name,
+                Late = profile.AttendanceInfo.Late,
+                DayOff = profile.AttendanceInfo.DayOff,
+                SickVerified = profile.AttendanceInfo.SickVerified,
+                SickUnverified = profile.AttendanceInfo.SickUnverified,
+                Class = profile.ClassApprentice.Name,
+                Cohort = profile.CohortApprentice.Name
+            }).ToList();
         }
 
         public async Task<AttendanceInfoDTO> GetByIdAsync(long id)

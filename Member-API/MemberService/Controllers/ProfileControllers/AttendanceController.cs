@@ -6,28 +6,28 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MemberService.Controllers.ProfileControllers
 {
-    [Route("attendance")]
+    [Route("v1")]
     public class AttendanceController : Controller
     {
-        private readonly ICrudService<AttendanceInfoDTO, AttendanceInfo> attendanceService;
+        private readonly IReadService<AttendanceInfoDTO> attendanceService;
 
-        public AttendanceController(ICrudService<AttendanceInfoDTO, AttendanceInfo> attendanceService)
+        public AttendanceController(IReadService<AttendanceInfoDTO> attendanceService)
         {
             this.attendanceService = attendanceService;
         }
 
-        [HttpGet("")]
-        public async Task<IActionResult> GetAttendanceAsync()
+        [HttpGet("attendances")]
+        public async Task<IActionResult> ListAttendances()
         {
-            var result = await attendanceService.GetAllAsync(Request.Query);
-            return Json(result);
+            var attendances = await attendanceService.GetAllAsync(Request.Query);
+            return Json(attendances);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAttendanceSummaryAsync([FromRoute] int id, [FromBody] AttendanceSummaryDTO attendanceSummary)
         {
             var attendanceInfo = new AttendanceInfo(attendanceSummary);
-            await attendanceService.UpdateAsync(id, attendanceInfo);
+            //await attendanceService.UpdateAsync(id, attendanceInfo);
             return Json("ok");
         }
     }
