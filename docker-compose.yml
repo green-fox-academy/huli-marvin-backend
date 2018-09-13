@@ -4,7 +4,8 @@ services:
     memberservice:
         build: .
         environment:
-            - ConnectionString=Server=member.data;Database=memberDb;UserId=sa;Password=asdasd
+            - 
+ConnectionString=Server=member.data;Database=memberDb;UserId=sa;Password=123456789
         ports:
             - 8080:80
         depends_on:
