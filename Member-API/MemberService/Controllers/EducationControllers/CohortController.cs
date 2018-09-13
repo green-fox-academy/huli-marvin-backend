@@ -37,7 +37,7 @@ namespace MemberService.Controllers.EducationControllers
             return Json(cohort);
         }
 
-        [HttpPost("cohort/{cohortId}")]
+        [HttpPut("cohort/{cohortId}")]
         public async Task<IActionResult> UpdateCohort(long cohortId, [FromBody]Cohort cohort)
         {
             await cohortService.UpdateAsync(cohortId, cohort);

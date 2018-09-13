@@ -37,7 +37,7 @@ namespace MemberService.Controllers.HuliControllers
             return Json(teams);
         }
 
-        [HttpPost("team/{teamId}")]
+        [HttpPut("team/{teamId}")]
         public async Task<IActionResult> UpdateTeam(long teamId, [FromBody] Team updateTeam)
         {
             await teamService.UpdateAsync(teamId,updateTeam);

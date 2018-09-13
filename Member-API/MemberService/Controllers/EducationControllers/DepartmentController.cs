@@ -37,7 +37,7 @@ namespace MemberService.Controllers.EducationControllers
             return Json(departments);
         }
 
-        [HttpPost("department/{departmentId}")]
+        [HttpPut("department/{departmentId}")]
         public async Task<IActionResult> UpdateDepartment(long departmentId, [FromBody]Department updateDepartment)
         {
             await departmentService.UpdateAsync(departmentId, updateDepartment);

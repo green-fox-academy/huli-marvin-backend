@@ -37,7 +37,7 @@ namespace MemberService.Controllers.ProfileControllers
             return Json(jobHistory);
         }
 
-        [HttpPost("jobhistory/{jobhistoryId}")]
+        [HttpPut("jobhistory/{jobhistoryId}")]
         public async Task<IActionResult> UpdateJobHistory(long jobHistoryId, [FromBody]JobHistory jobHistory)
         {
             await jobHistoryService.UpdateAsync(jobHistoryId, jobHistory);

@@ -37,7 +37,7 @@ namespace MemberService.Controllers.HuliControllers
             return Json(projectId);
         }
 
-        [HttpPost("project/{projectId}")]
+        [HttpPut("project/{projectId}")]
         public async Task<IActionResult> UpdateProject([FromBody] Project updateProject, long id)
         {
             await projectService.UpdateAsync(id, updateProject);

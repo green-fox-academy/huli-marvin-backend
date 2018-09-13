@@ -41,7 +41,7 @@ namespace MemberService.Controllers.ProfileControllers
             return Json(profile);
         }
 
-        [HttpPost("profile/{profileId}")]
+        [HttpPut("profile/{profileId}")]
         public async Task<IActionResult> UpdateProfile(long profileId, [FromBody]Profile updateProfile)
         {
             await profileService.UpdateAsync(profileId, updateProfile);
