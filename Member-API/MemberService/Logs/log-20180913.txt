@@ -1,0 +1,186 @@
+2018-09-13T12:52:21.9804490+02:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-13T12:52:57.1563376+02:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"MemberContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2018-09-13T12:53:24.0806175+02:00  [INF] Executed DbCommand ("189"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""CREATE DATABASE [Members];" (0723d8ff)
+2018-09-13T12:53:24.5040743+02:00  [INF] Executed DbCommand ("418"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [Members] SET READ_COMMITTED_SNAPSHOT ON;');" (0723d8ff)
+2018-09-13T12:53:24.6438320+02:00  [INF] Executed DbCommand ("47"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);" (0723d8ff)
+2018-09-13T12:53:24.7730507+02:00  [INF] Executed DbCommand ("128"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'__EFMigrationsHistory');" (0723d8ff)
+2018-09-13T12:53:24.7767684+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2018-09-13T12:53:24.7835384+02:00  [INF] Applying migration '"20180816064152_initdb"'. (0e2ac64d)
+2018-09-13T12:53:25.0173696+02:00  [INF] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Attendances] (
+    [Id] bigint NOT NULL IDENTITY,
+    [DayOff] int NOT NULL,
+    [Late] int NOT NULL,
+    [SickUnverified] int NOT NULL,
+    [SickVerified] int NOT NULL,
+    CONSTRAINT [PK_Attendances] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2018-09-13T12:53:25.0395878+02:00  [INF] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Departments] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Address] nvarchar(max) NULL,
+    [Country] nvarchar(max) NULL,
+    [Email] nvarchar(max) NULL,
+    [Name] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [ZipNumber] nvarchar(max) NULL,
+    CONSTRAINT [PK_Departments] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2018-09-13T12:53:25.0460475+02:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Cohorts] (
+    [Id] bigint NOT NULL IDENTITY,
+    [DepartmentId] bigint NULL,
+    [FinishDate] datetime2 NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [StartDate] datetime2 NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Cohorts] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Cohorts_Departments_DepartmentId] FOREIGN KEY ([DepartmentId]) REFERENCES [Departments] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-09-13T12:53:25.0505214+02:00  [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Courses] (
+    [Id] bigint NOT NULL IDENTITY,
+    [DepartmentId] bigint NULL,
+    [Name] nvarchar(max) NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Courses] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Courses_Departments_DepartmentId] FOREIGN KEY ([DepartmentId]) REFERENCES [Departments] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-09-13T12:53:25.0542110+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Projects] (
+    [Id] bigint NOT NULL IDENTITY,
+    [DepartmentId] bigint NULL,
+    [Description] nvarchar(max) NULL,
+    [Name] nvarchar(max) NULL,
+    CONSTRAINT [PK_Projects] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Projects_Departments_DepartmentId] FOREIGN KEY ([DepartmentId]) REFERENCES [Departments] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-09-13T12:53:25.2943598+02:00  [INF] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Profiles] (
+    [Id] bigint NOT NULL IDENTITY,
+    [AttendanceInfoId] bigint NULL,
+    [ClassApprenticeId] bigint NULL,
+    [CohortApprenticeId] bigint NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [Education] int NOT NULL,
+    [Email] nvarchar(max) NULL,
+    [Gender] int NOT NULL,
+    [GitHubUser] nvarchar(max) NULL,
+    [IsSigned] bit NOT NULL,
+    [Level] int NOT NULL,
+    [LinkedIn] nvarchar(max) NULL,
+    [Name] nvarchar(max) NULL,
+    [Payment] int NOT NULL,
+    [Phase] int NOT NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [Picture] nvarchar(max) NULL,
+    [ProjectId] bigint NULL,
+    [SlackUser] nvarchar(max) NULL,
+    [TeamApprenticeId] bigint NULL,
+    CONSTRAINT [PK_Profiles] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Profiles_Attendances_AttendanceInfoId] FOREIGN KEY ([AttendanceInfoId]) REFERENCES [Attendances] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Profiles_Cohorts_CohortApprenticeId] FOREIGN KEY ([CohortApprenticeId]) REFERENCES [Cohorts] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Profiles_Projects_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Projects] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-09-13T12:53:25.3001567+02:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Classes] (
+    [Id] bigint NOT NULL IDENTITY,
+    [CalendarId] bigint NOT NULL,
+    [ClassAdminId] bigint NULL,
+    [ClassLeadId] bigint NULL,
+    [CohortId] bigint NULL,
+    [Color] nvarchar(max) NULL,
+    [CourseId] bigint NULL,
+    [Name] nvarchar(max) NULL,
+    [SlackChannelId] bigint NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Classes] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Classes_Profiles_ClassAdminId] FOREIGN KEY ([ClassAdminId]) REFERENCES [Profiles] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Classes_Profiles_ClassLeadId] FOREIGN KEY ([ClassLeadId]) REFERENCES [Profiles] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Classes_Cohorts_CohortId] FOREIGN KEY ([CohortId]) REFERENCES [Cohorts] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Classes_Courses_CourseId] FOREIGN KEY ([CourseId]) REFERENCES [Courses] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-09-13T12:53:26.6354880+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [JobHistories] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [ProfileId] bigint NULL,
+    CONSTRAINT [PK_JobHistories] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_JobHistories_Profiles_ProfileId] FOREIGN KEY ([ProfileId]) REFERENCES [Profiles] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-09-13T12:53:26.7015587+02:00  [INF] Executed DbCommand ("65"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Teams] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [ProductOwnerId] bigint NULL,
+    [ProjectId] bigint NULL,
+    [ScrumMasterId] bigint NULL,
+    CONSTRAINT [PK_Teams] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Teams_Profiles_ProductOwnerId] FOREIGN KEY ([ProductOwnerId]) REFERENCES [Profiles] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Teams_Projects_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Projects] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Teams_Profiles_ScrumMasterId] FOREIGN KEY ([ScrumMasterId]) REFERENCES [Profiles] ([Id]) ON DELETE NO ACTION
+);" (0723d8ff)
+2018-09-13T12:53:27.8225976+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [ClassProfile] (
+    [ClassId] bigint NOT NULL,
+    [ProfileId] bigint NOT NULL,
+    CONSTRAINT [PK_ClassProfile] PRIMARY KEY ([ClassId], [ProfileId]),
+    CONSTRAINT [FK_ClassProfile_Classes_ClassId] FOREIGN KEY ([ClassId]) REFERENCES [Classes] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ClassProfile_Profiles_ProfileId] FOREIGN KEY ([ProfileId]) REFERENCES [Profiles] ([Id]) ON DELETE CASCADE
+);" (0723d8ff)
+2018-09-13T12:53:27.8243978+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Classes_ClassAdminId] ON [Classes] ([ClassAdminId]);" (0723d8ff)
+2018-09-13T12:53:27.8257311+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Classes_ClassLeadId] ON [Classes] ([ClassLeadId]);" (0723d8ff)
+2018-09-13T12:53:27.8269791+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Classes_CohortId] ON [Classes] ([CohortId]);" (0723d8ff)
+2018-09-13T12:53:27.8281099+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Classes_CourseId] ON [Classes] ([CourseId]);" (0723d8ff)
+2018-09-13T12:53:27.8301057+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_ClassProfile_ProfileId] ON [ClassProfile] ([ProfileId]);" (0723d8ff)
+2018-09-13T12:53:27.8333722+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Cohorts_DepartmentId] ON [Cohorts] ([DepartmentId]);" (0723d8ff)
+2018-09-13T12:53:27.8351253+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Courses_DepartmentId] ON [Courses] ([DepartmentId]);" (0723d8ff)
+2018-09-13T12:53:28.7563249+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_JobHistories_ProfileId] ON [JobHistories] ([ProfileId]);" (0723d8ff)
+2018-09-13T12:53:28.7579563+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Profiles_AttendanceInfoId] ON [Profiles] ([AttendanceInfoId]);" (0723d8ff)
+2018-09-13T12:53:28.7592677+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Profiles_ClassApprenticeId] ON [Profiles] ([ClassApprenticeId]);" (0723d8ff)
+2018-09-13T12:53:28.7603994+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Profiles_CohortApprenticeId] ON [Profiles] ([CohortApprenticeId]);" (0723d8ff)
+2018-09-13T12:53:28.7615279+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Profiles_ProjectId] ON [Profiles] ([ProjectId]);" (0723d8ff)
+2018-09-13T12:53:28.7626354+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Profiles_TeamApprenticeId] ON [Profiles] ([TeamApprenticeId]);" (0723d8ff)
+2018-09-13T12:53:28.7637247+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Projects_DepartmentId] ON [Projects] ([DepartmentId]);" (0723d8ff)
+2018-09-13T12:53:28.7648690+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Teams_ProductOwnerId] ON [Teams] ([ProductOwnerId]);" (0723d8ff)
+2018-09-13T12:53:28.7687998+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Teams_ProjectId] ON [Teams] ([ProjectId]);" (0723d8ff)
+2018-09-13T12:53:29.8516898+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Teams_ScrumMasterId] ON [Teams] ([ScrumMasterId]);" (0723d8ff)
+2018-09-13T12:53:29.8557871+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Profiles] ADD CONSTRAINT [FK_Profiles_Classes_ClassApprenticeId] FOREIGN KEY ([ClassApprenticeId]) REFERENCES [Classes] ([Id]) ON DELETE NO ACTION;" (0723d8ff)
+2018-09-13T12:53:29.8574278+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Profiles] ADD CONSTRAINT [FK_Profiles_Teams_TeamApprenticeId] FOREIGN KEY ([TeamApprenticeId]) REFERENCES [Teams] ([Id]) ON DELETE NO ACTION;" (0723d8ff)
+2018-09-13T12:53:29.9319341+02:00  [INF] Executed DbCommand ("74"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20180816064152_initdb', N'2.0.1-rtm-125');" (0723d8ff)
+2018-09-13T12:53:29.9338005+02:00  [INF] Applying migration '"20180913105222_ToLocale"'. (0e2ac64d)
+2018-09-13T12:53:29.9594391+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20180913105222_ToLocale', N'2.0.1-rtm-125');" (0723d8ff)

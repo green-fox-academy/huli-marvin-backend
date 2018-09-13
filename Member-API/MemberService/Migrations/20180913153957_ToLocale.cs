@@ -1,26 +1,41 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
 
 namespace MemberService.Migrations
 {
-    public partial class LocalInitialisation : Migration
+    public partial class ToLocale : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Attendances",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Late = table.Column<int>(nullable: false),
+                    DayOff = table.Column<int>(nullable: false),
+                    SickVerified = table.Column<int>(nullable: false),
+                    SickUnverified = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Attendances", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Departments",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    Address = table.Column<string>(nullable: true),
-                    Country = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
-                    ZipNumber = table.Column<string>(nullable: true)
+                    Country = table.Column<string>(nullable: true),
+                    ZipNumber = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -32,12 +47,12 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    DepartmentId = table.Column<long>(nullable: true),
-                    FinishDate = table.Column<DateTime>(nullable: false),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     StartDate = table.Column<DateTime>(nullable: false),
-                    Status = table.Column<int>(nullable: false)
+                    FinishDate = table.Column<DateTime>(nullable: false),
+                    Status = table.Column<int>(nullable: false),
+                    DepartmentId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -55,10 +70,10 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    DepartmentId = table.Column<long>(nullable: true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
-                    Status = table.Column<int>(nullable: false)
+                    Status = table.Column<int>(nullable: false),
+                    DepartmentId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -76,10 +91,10 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    DepartmentId = table.Column<long>(nullable: true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    DepartmentId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -93,41 +108,52 @@ namespace MemberService.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClassProfile",
-                columns: table => new
-                {
-                    ClassId = table.Column<long>(nullable: false),
-                    ProfileId = table.Column<long>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ClassProfile", x => new { x.ClassId, x.ProfileId });
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Profiles",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    ClassApprenticeId = table.Column<long>(nullable: true),
-                    DateOfBirth = table.Column<DateTime>(nullable: false),
-                    Education = table.Column<int>(nullable: false),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    Level = table.Column<int>(nullable: false),
                     Email = table.Column<string>(nullable: true),
                     Gender = table.Column<int>(nullable: false),
-                    GitHubUser = table.Column<string>(nullable: true),
-                    IsSigned = table.Column<bool>(nullable: false),
-                    Level = table.Column<int>(nullable: false),
-                    LinkedIn = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    Payment = table.Column<int>(nullable: false),
                     PhoneNumber = table.Column<string>(nullable: true),
+                    DateOfBirth = table.Column<DateTime>(nullable: false),
+                    GitHubUser = table.Column<string>(nullable: true),
                     SlackUser = table.Column<string>(nullable: true),
+                    LinkedIn = table.Column<string>(nullable: true),
+                    Education = table.Column<int>(nullable: false),
+                    IsSigned = table.Column<bool>(nullable: false),
+                    Payment = table.Column<int>(nullable: false),
+                    Phase = table.Column<int>(nullable: false),
+                    AttendanceInfoId = table.Column<long>(nullable: true),
+                    ProjectId = table.Column<long>(nullable: true),
+                    Picture = table.Column<string>(nullable: true),
+                    CohortApprenticeId = table.Column<long>(nullable: true),
+                    ClassApprenticeId = table.Column<long>(nullable: true),
                     TeamApprenticeId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Profiles", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Profiles_Attendances_AttendanceInfoId",
+                        column: x => x.AttendanceInfoId,
+                        principalTable: "Attendances",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Profiles_Cohorts_CohortApprenticeId",
+                        column: x => x.CohortApprenticeId,
+                        principalTable: "Cohorts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Profiles_Projects_ProjectId",
+                        column: x => x.ProjectId,
+                        principalTable: "Projects",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -135,16 +161,16 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    CalendarId = table.Column<long>(nullable: false),
-                    ClassAdminId = table.Column<long>(nullable: true),
-                    ClassLeadId = table.Column<long>(nullable: true),
-                    CohortId = table.Column<long>(nullable: true),
-                    Color = table.Column<string>(nullable: true),
-                    CourseId = table.Column<long>(nullable: true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
+                    Color = table.Column<string>(nullable: true),
+                    Status = table.Column<int>(nullable: false),
+                    CalendarId = table.Column<long>(nullable: false),
                     SlackChannelId = table.Column<long>(nullable: false),
-                    Status = table.Column<int>(nullable: false)
+                    CourseId = table.Column<long>(nullable: true),
+                    CohortId = table.Column<long>(nullable: true),
+                    ClassLeadId = table.Column<long>(nullable: true),
+                    ClassAdminId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -180,7 +206,7 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     ProfileId = table.Column<long>(nullable: true)
                 },
@@ -200,10 +226,10 @@ namespace MemberService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
-                    ProductOwnerId = table.Column<long>(nullable: true),
                     ProjectId = table.Column<long>(nullable: true),
+                    ProductOwnerId = table.Column<long>(nullable: true),
                     ScrumMasterId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
@@ -227,6 +253,75 @@ namespace MemberService.Migrations
                         principalTable: "Profiles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClassProfile",
+                columns: table => new
+                {
+                    ClassId = table.Column<long>(nullable: false),
+                    ProfileId = table.Column<long>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClassProfile", x => new { x.ClassId, x.ProfileId });
+                    table.ForeignKey(
+                        name: "FK_ClassProfile_Classes_ClassId",
+                        column: x => x.ClassId,
+                        principalTable: "Classes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ClassProfile_Profiles_ProfileId",
+                        column: x => x.ProfileId,
+                        principalTable: "Profiles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Classes",
+                columns: new[] { "Id", "CalendarId", "ClassAdminId", "ClassLeadId", "CohortId", "Color", "CourseId", "Name", "SlackChannelId", "Status" },
+                values: new object[,]
+                {
+                    { 1L, 2L, null, null, null, "red", null, "Ocelot", 7L, 0 },
+                    { 2L, 1L, null, null, null, "blue", null, "Secret", 2L, 2 },
+                    { 3L, 3L, null, null, null, "green", null, "Raptor", 5L, 1 },
+                    { 4L, 4L, null, null, null, "yellow", null, "Lasers", 1L, 0 },
+                    { 5L, 5L, null, null, null, "purple", null, "BadBoi", 6L, 0 },
+                    { 6L, 7L, null, null, null, "orange", null, "Seagal", 4L, 1 },
+                    { 7L, 6L, null, null, null, "black", null, "Teapot", 3L, 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Cohorts",
+                columns: new[] { "Id", "DepartmentId", "FinishDate", "Name", "StartDate", "Status" },
+                values: new object[,]
+                {
+                    { 4L, null, new DateTime(2018, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Fulvipes", new DateTime(2018, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2 },
+                    { 3L, null, new DateTime(2018, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Macrotis", new DateTime(2017, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 },
+                    { 2L, null, new DateTime(2017, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Alopex", new DateTime(2017, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 },
+                    { 1L, null, new DateTime(2017, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ace", new DateTime(2017, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Courses",
+                columns: new[] { "Id", "DepartmentId", "Name", "Status" },
+                values: new object[,]
+                {
+                    { 1L, null, "Standard", 0 },
+                    { 2L, null, "Accenture Girls", 1 },
+                    { 3L, null, "Super Mommies", 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Departments",
+                columns: new[] { "Id", "Address", "Country", "Email", "Name", "PhoneNumber", "ZipNumber" },
+                values: new object[,]
+                {
+                    { 1L, "Andrassy 66.", "HU", "hr@gf.com", "HR", "36701234567", "1000" },
+                    { 2L, "Andrassy 66.", "HU", "mentors@gf.com", "Mentors", "36701234568", "1000" },
+                    { 3L, "Andrassy 66.", "HU", "partnermgmt@gf.com", "Partner Management", "36701234569", "1000" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -270,9 +365,24 @@ namespace MemberService.Migrations
                 column: "ProfileId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Profiles_AttendanceInfoId",
+                table: "Profiles",
+                column: "AttendanceInfoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Profiles_ClassApprenticeId",
                 table: "Profiles",
                 column: "ClassApprenticeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Profiles_CohortApprenticeId",
+                table: "Profiles",
+                column: "CohortApprenticeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Profiles_ProjectId",
+                table: "Profiles",
+                column: "ProjectId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Profiles_TeamApprenticeId",
@@ -298,22 +408,6 @@ namespace MemberService.Migrations
                 name: "IX_Teams_ScrumMasterId",
                 table: "Teams",
                 column: "ScrumMasterId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_ClassProfile_Profiles_ProfileId",
-                table: "ClassProfile",
-                column: "ProfileId",
-                principalTable: "Profiles",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_ClassProfile_Classes_ClassId",
-                table: "ClassProfile",
-                column: "ClassId",
-                principalTable: "Classes",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Profiles_Classes_ClassApprenticeId",
@@ -358,6 +452,9 @@ namespace MemberService.Migrations
 
             migrationBuilder.DropTable(
                 name: "Profiles");
+
+            migrationBuilder.DropTable(
+                name: "Attendances");
 
             migrationBuilder.DropTable(
                 name: "Classes");
