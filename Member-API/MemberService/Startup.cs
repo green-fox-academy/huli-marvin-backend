@@ -44,7 +44,7 @@ namespace MemberService
 
             services.AddHealthChecks(checks =>
             {
-                checks.AddSqlCheck("MarvinDB", Configuration.GetConnectionString("connStringLocal"));
+                checks.AddSqlCheck("member.data", Configuration.GetConnectionString("connStringRemote"));
             });
 
             services.AddDbContext<MemberContext>(options => options.BuildConnection(Configuration));
@@ -53,13 +53,11 @@ namespace MemberService
 
         public void ConfigureTestingServices(IServiceCollection services)
         {
-            var connection = @"Server=member.data;Database=memberDb;UserId=sa;Password=asdasd";
-
             services.AddMvc();
             services.AddServices();
             services.AddRepositories();
             services.AddMapper();
-            services.AddDbContext<MemberContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<MemberContext>(options => options.UseSqlServer("connStringRemote"));
         }
 
         public void Configure(IApplicationBuilder app,
