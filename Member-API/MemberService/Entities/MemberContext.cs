@@ -39,12 +39,76 @@ namespace MemberService.Entities
                 new { Id = (long)7, Name = "Teapot", Color = "black", Status = Status.Custom, CalendarId = (long)6, SlackChannelId = (long)3 }
             );
 
+            modelBuilder.Entity<Profile>().HasData(
+                new
+                {
+                    Id = (long)1,
+                    Name = "Adam",
+                    Level = Level.Administrator,
+                    Email = "x",
+                    Gender = Gender.Female,
+                    PhoneNumber = "x",
+                    DateOfBirth = new DateTime(2017, 1, 1),
+                    GitHubUser = "x",
+                    SlackUser = "x",
+                    LinkedIn = "x",
+                    Education = Education.Bachelor,
+                    IsSigned = true,
+                    Payment = Payment.Postpaid,
+                    Phase = Phase.Foundation,
+                    Picture = "x",
+                },
+
+                new
+                {
+                    Id = (long)2,
+                    Name = "Eva",
+                    Level = Level.Candidate,
+                    Email = "x",
+                    Gender = Gender.Female,
+                    PhoneNumber = "x",
+                    DateOfBirth = new DateTime(2017, 1, 2),
+                    GitHubUser = "x",
+                    SlackUser = "x",
+                    LinkedIn = "x",
+                    Education = Education.Doctoral,
+                    IsSigned = true,
+                    Payment = Payment.Postpaid,
+                    Phase = Phase.Foundation,
+                    Picture = "x",
+                },
+
+                new
+                {
+                    Id = (long)3,
+                    Name = "Janos",
+                    Level = Level.Apprentice,
+                    Email = "x",
+                    Gender = Gender.Male,
+                    PhoneNumber = "x",
+                    DateOfBirth = new DateTime(2017, 1, 3),
+                    GitHubUser = "x",
+                    SlackUser = "x",
+                    LinkedIn = "x",
+                    Education = Education.Upper,
+                    IsSigned = true,
+                    Payment = Payment.Prepaid,
+                    Phase = Phase.Orientation,
+                    Picture = "x",
+                }
+            );
+
+            modelBuilder.Entity<ClassProfile>().HasData(
+                new { ClassId = (long)1, ProfileId = (long)2 },
+                new { ClassId = (long)2, ProfileId = (long)1 },
+                new { ClassId = (long)3, ProfileId = (long)3 }
+            );
+
             modelBuilder.Entity<Cohort>().HasData(
                 new { Id = (long)1, Name = "Ace", StartDate = new DateTime(2017,1,1), FinishDate = new DateTime(2017, 4, 1), Status = Status.Custom },
                 new { Id = (long)2, Name = "Alopex", StartDate = new DateTime(2017, 5, 1), FinishDate = new DateTime(2017, 9, 1), Status = Status.Active },
                 new { Id = (long)3, Name = "Macrotis", StartDate = new DateTime(2017, 10, 1), FinishDate = new DateTime(2018, 2, 1), Status = Status.Active },
                 new { Id = (long)4, Name = "Fulvipes", StartDate = new DateTime(2018, 3, 1), FinishDate = new DateTime(2018, 7, 1), Status = Status.Custom }
-
             );
 
             modelBuilder.Entity<Course>().HasData(
@@ -65,59 +129,11 @@ namespace MemberService.Entities
                 new { Id = (long)3, Name = "Psychologist" }
             );
 
-            //modelBuilder.Entity<Profile>().HasData(
-            //    new
-            //    {
-            //        Id = (long)1,
-            //        Name = "Adam",
-            //        Email = "",
-            //        PhoneNumber = "",
-            //        DateOfBirth = new DateTime(2017, 1, 1),
-            //        GitHubUser = "",
-            //        SlackUser = "",
-            //        LinkedIn = "",
-            //        IsSigned = true,
-            //        Picture = ""
-            //    },
-            //    new
-            //    {
-            //        Id = (long)2,
-            //        Name = "Eva",
-            //        Email = "x",
-            //        PhoneNumber = "x",
-            //        DateOfBirth = new DateTime(2017, 1, 2),
-            //        GitHubUser = "x",
-            //        SlackUser = "x",
-            //        LinkedIn = "x",
-            //        IsSigned = true,
-            //        Picture = "x"
-            //    },
-            //    new
-            //    {
-            //        Id = (long)3,
-            //        Name = "Janos",
-            //        Email = "x",
-            //        PhoneNumber = "x",
-            //        DateOfBirth = new DateTime(2017, 1, 3),
-            //        GitHubUser = "x",
-            //        SlackUser = "x",
-            //        LinkedIn = "x",
-            //        IsSigned = true,
-            //        Picture = "x"
-            //    }
-            //);
-
             modelBuilder.Entity<Project>().HasData(
                 new { Id = (long)1, Name = "Marvin", Description = "Csharp"},
-                new { Id = (long)2, Name = "Szera", Description = "JAVA" },
-                new { Id = (long)3, Name = "Malachite", Description = "Python, DevOps" }
+                new { Id = (long)2, Name = "Szera", Description = "JAVA"},
+                new { Id = (long)3, Name = "Malachite", Description = "Python, DevOps"}
             );
-
-            //modelBuilder.Entity<ClassProfile>().HasData(
-            //    new { ClassId = (long)1, ProfileId = (long)2 },
-            //    new { ClassId = (long)2, ProfileId = (long)1 },
-            //    new { ClassId = (long)3, ProfileId = (long)3 }
-            //);
 
             modelBuilder.Entity<Team>().HasData(
                 new { Id = (long)1, Name = "Amazonite" },
