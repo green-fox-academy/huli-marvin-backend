@@ -54,6 +54,5 @@ namespace ScheduleAPI.Repositories
             }
             return null;
         }
-
     }
 }
