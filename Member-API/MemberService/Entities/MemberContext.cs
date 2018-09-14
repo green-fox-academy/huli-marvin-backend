@@ -65,47 +65,47 @@ namespace MemberService.Entities
                 new { Id = (long)3, Name = "Psychologist" }
             );
 
-            modelBuilder.Entity<Profile>().HasData(
-                new
-                {
-                    Id = (long)1,
-                    Name = "Adam",
-                    Email = "",
-                    PhoneNumber = "",
-                    DateOfBirth = new DateTime(2017, 1, 1),
-                    GitHubUser = "",
-                    SlackUser = "",
-                    LinkedIn = "",
-                    IsSigned = true,
-                    Picture = ""
-                },
-                new
-                {
-                    Id = (long)2,
-                    Name = "Eva",
-                    Email = "x",
-                    PhoneNumber = "x",
-                    DateOfBirth = new DateTime(2017, 1, 2),
-                    GitHubUser = "x",
-                    SlackUser = "x",
-                    LinkedIn = "x",
-                    IsSigned = true,
-                    Picture = "x"
-                },
-                new
-                {
-                    Id = (long)3,
-                    Name = "Janos",
-                    Email = "x",
-                    PhoneNumber = "x",
-                    DateOfBirth = new DateTime(2017, 1, 3),
-                    GitHubUser = "x",
-                    SlackUser = "x",
-                    LinkedIn = "x",
-                    IsSigned = true,
-                    Picture = "x"
-                }
-            );
+            //modelBuilder.Entity<Profile>().HasData(
+            //    new
+            //    {
+            //        Id = (long)1,
+            //        Name = "Adam",
+            //        Email = "",
+            //        PhoneNumber = "",
+            //        DateOfBirth = new DateTime(2017, 1, 1),
+            //        GitHubUser = "",
+            //        SlackUser = "",
+            //        LinkedIn = "",
+            //        IsSigned = true,
+            //        Picture = ""
+            //    },
+            //    new
+            //    {
+            //        Id = (long)2,
+            //        Name = "Eva",
+            //        Email = "x",
+            //        PhoneNumber = "x",
+            //        DateOfBirth = new DateTime(2017, 1, 2),
+            //        GitHubUser = "x",
+            //        SlackUser = "x",
+            //        LinkedIn = "x",
+            //        IsSigned = true,
+            //        Picture = "x"
+            //    },
+            //    new
+            //    {
+            //        Id = (long)3,
+            //        Name = "Janos",
+            //        Email = "x",
+            //        PhoneNumber = "x",
+            //        DateOfBirth = new DateTime(2017, 1, 3),
+            //        GitHubUser = "x",
+            //        SlackUser = "x",
+            //        LinkedIn = "x",
+            //        IsSigned = true,
+            //        Picture = "x"
+            //    }
+            //);
 
             modelBuilder.Entity<Project>().HasData(
                 new { Id = (long)1, Name = "Marvin", Description = "Csharp"},
@@ -113,22 +113,21 @@ namespace MemberService.Entities
                 new { Id = (long)3, Name = "Malachite", Description = "Python, DevOps" }
             );
 
-            modelBuilder.Entity<ClassProfile>().HasData(
-                new { ClassId = (long)1, ProfileId = (long)2 },
-                new { ClassId = (long)2, ProfileId = (long)1 },
-                new { ClassId = (long)3, ProfileId = (long)3 }
-            );
+            //modelBuilder.Entity<ClassProfile>().HasData(
+            //    new { ClassId = (long)1, ProfileId = (long)2 },
+            //    new { ClassId = (long)2, ProfileId = (long)1 },
+            //    new { ClassId = (long)3, ProfileId = (long)3 }
+            //);
 
             modelBuilder.Entity<Team>().HasData(
-                new { Id = (long)1, Name = "Amazonite"},
-                new { Id = (long)2, Name = "Malachite"}
+                new { Id = (long)1, Name = "Amazonite" },
+                new { Id = (long)2, Name = "Malachite" }
             );
 
             modelBuilder.Entity<AttendanceInfo>().HasData(
-                new { Id = (long)1, Late = 1, DayOff = 0, SickVerified = 0, SickUnverified = 1},
-                new { Id = (long)2, Late = 14, DayOff = 0, SickVerified = 2, SickUnverified = 2},
-                new { Id = (long)3, Late = 5, DayOff = 2, SickVerified = 0, SickUnverified = 1}
-
+                new { Id = (long)1, Late = 1, DayOff = 0, SickVerified = 0, SickUnverified = 1 },
+                new { Id = (long)2, Late = 14, DayOff = 0, SickVerified = 2, SickUnverified = 2 },
+                new { Id = (long)3, Late = 5, DayOff = 2, SickVerified = 0, SickUnverified = 1 }
             );
         }
 
