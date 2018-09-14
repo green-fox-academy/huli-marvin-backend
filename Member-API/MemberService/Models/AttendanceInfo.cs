@@ -16,6 +16,15 @@ namespace MemberService.Models
         [Required]
         public int SickUnverified { get; set; }
 
+        public AttendanceInfo(long id, int late, int dayOff, int sickVerified, int sickUnverified)
+        {
+            Id = id;
+            Late = late;
+            DayOff = dayOff;
+            SickVerified = sickVerified;
+            SickUnverified = sickUnverified;
+        }
+
         public AttendanceInfo(AttendanceSummaryDTO entity)
         {
             CreateFromAttendanceSummary(entity);
