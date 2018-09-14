@@ -10,8 +10,8 @@ using ScheduleAPI.Models;
 namespace ScheduleAPI.Migrations
 {
     [DbContext(typeof(EventContext))]
-    [Migration("20180812140057_AddDBToLocal")]
-    partial class AddDBToLocal
+    [Migration("20180911095144_TestSeed")]
+    partial class TestSeed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,13 +29,21 @@ namespace ScheduleAPI.Migrations
 
                     b.Property<int?>("EventTemplateId");
 
-                    b.Property<int>("EventType");
+                    b.Property<string>("EventType");
 
                     b.HasKey("EventId");
 
                     b.HasIndex("EventTemplateId");
 
                     b.ToTable("Events");
+
+                    b.HasData(
+                        new { EventId = 1, EventTemplateId = 1, EventType = "Social" },
+                        new { EventId = 2, EventTemplateId = 1, EventType = "Social" },
+                        new { EventId = 3, EventTemplateId = 2, EventType = "Meeting" },
+                        new { EventId = 4, EventTemplateId = 3, EventType = "Social" },
+                        new { EventId = 5, EventTemplateId = 2, EventType = "Meeting" }
+                    );
                 });
 
             modelBuilder.Entity("ScheduleAPI.Models.EventTemplate", b =>
@@ -49,6 +57,12 @@ namespace ScheduleAPI.Migrations
                     b.HasKey("EventTemplateId");
 
                     b.ToTable("EventTemplates");
+
+                    b.HasData(
+                        new { EventTemplateId = 1, EventTemplateName = "t0" },
+                        new { EventTemplateId = 2, EventTemplateName = "t1" },
+                        new { EventTemplateId = 3, EventTemplateName = "t2" }
+                    );
                 });
 
             modelBuilder.Entity("ScheduleAPI.Models.Event", b =>
