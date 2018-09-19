@@ -7,10 +7,10 @@ namespace ScheduleAPI.Repositories
 {
     public interface IGenericRepository<Object>
     {
-        List<Object> Read();
-        void Create(Object key);
-        void Update(Object key);
-        void Delete(int id);
-        Object GetItemById(int id);
+        Task CreateAsync(Object key);
+        Task UpdateAsync(Object key);
+        Task DeleteAsync(int id);
+        Task<Object> GetItemByIdAsync(int id);
+        Task<IEnumerable<Object>> GetAllAsync(int pageSize, int pageIndex);
     }
 }

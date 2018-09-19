@@ -34,7 +34,7 @@ namespace Schedule_API
             services.AddTransient<EventContext>();
             services.AddTransient<EventRepository>();
             services.AddTransient<EventTemplateRepository>();
-            services.AddTransient<EventService>();
+            services.AddTransient<PaginationService>();
             services.AddTransient<EventViewModel>();
 
             services.AddSwaggerGen(c =>

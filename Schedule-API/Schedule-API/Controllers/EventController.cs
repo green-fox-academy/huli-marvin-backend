@@ -3,6 +3,8 @@ using ScheduleAPI.Models;
 using ScheduleAPI.Repositories;
 using ScheduleAPI.Services;
 using ScheduleAPI.ViewModels;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ScheduleAPI.Controllers
 {
@@ -11,28 +13,26 @@ namespace ScheduleAPI.Controllers
         private EventViewModel eventViewModel;
         private EventRepository eventRepository;
         private EventTemplateRepository eventTemplateRepository;
-        private EventService eventService;
+        private PaginationService paginationService;
 
-        public EventController(EventViewModel eventViewModel, EventRepository eventRepository, EventTemplateRepository eventTemplateRepository, EventService eventService)
+        public EventController(EventViewModel eventViewModel, EventRepository eventRepository, EventTemplateRepository eventTemplateRepository, PaginationService paginationService)
         {
             this.eventViewModel = eventViewModel;
             this.eventRepository = eventRepository;
             this.eventTemplateRepository = eventTemplateRepository;
-            this.eventService = eventService;
-            eventViewModel.Events = eventRepository.GetAll();
-            eventViewModel.EventTemplates = eventTemplateRepository.GetAll();
+            this.paginationService = paginationService;
         }
 
         [HttpGet("api/events")]
-        public IActionResult GetAllEvents()
+        public IActionResult GetAllEvents([FromQuery]int pageSize = 8 , [FromQuery]int pageIndex = 0)
         {
-            return Json(eventRepository.GetAll());
+            return Json(eventRepository.GetAllAsync(pageSize, pageIndex));
         }
 
         [HttpGet("api/events/{id}")]
-        public IActionResult GetEvent(int id)
+        public async Task<IActionResult> GetEvent(int id)
         {
-            Event occurrence = eventRepository.GetItemById(id);
+            Event occurrence = await eventRepository.GetItemByIdAsync(id);
 
             if (occurrence == null)
             {
@@ -45,10 +45,17 @@ namespace ScheduleAPI.Controllers
         }
 
         [HttpPost("api/events")]
-        public IActionResult PostEvent([FromBody]Event occurrence)
+        public async Task<IActionResult> PostEvent([FromBody]Event occurrence)
         {
-            eventRepository.Update(occurrence);
-            return Created("DB Updated", occurrence);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            else
+            {
+                await eventRepository.UpdateAsync(occurrence);
+                return Created("DB Updated", occurrence);
+            }
         }
 
         [HttpPut("api/events/{id}")]
@@ -61,7 +68,7 @@ namespace ScheduleAPI.Controllers
 
             try
             {
-                eventRepository.Update(occurrence);
+                eventRepository.UpdateAsync(occurrence);
             }
             catch (System.Exception)
             {
@@ -72,9 +79,9 @@ namespace ScheduleAPI.Controllers
         }
 
         [HttpDelete("api/events/{id}")]
-        public IActionResult DeleteEvent(int id)
+        public async Task<IActionResult> DeleteEventAsync(int id)
         {
-            Event occurrence = eventRepository.GetItemById(id);
+            Event occurrence = await eventRepository.GetItemByIdAsync(id);
 
             if (occurrence == null)
             {
@@ -82,7 +89,7 @@ namespace ScheduleAPI.Controllers
             }
             else
             {
-                eventRepository.Delete(id);
+                eventRepository.DeleteAsync(id);
                 return Ok("Event deleted...");
             }
         }

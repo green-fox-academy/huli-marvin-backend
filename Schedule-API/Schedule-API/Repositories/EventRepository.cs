@@ -1,50 +1,57 @@
-﻿using ScheduleAPI.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using ScheduleAPI.Models;
+using ScheduleAPI.Services;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ScheduleAPI.Repositories
 {
     public class EventRepository : IGenericRepository<Event>
     {
         private EventContext eventContext;
+        private PaginationService paginationService;
 
-        public EventRepository(EventContext eventContext)
+        public EventRepository(EventContext eventContext, PaginationService paginationService)
         {
             this.eventContext = eventContext;
+            this.paginationService = paginationService;
         }
 
-        public void Create(Event occurrence)
+        public async Task CreateAsync(Event occurrence)
         {
             eventContext.Add(occurrence);
-            eventContext.SaveChanges();
+            await eventContext.SaveChangesAsync();
         }
 
-        public List<Event> Read()
-        {
-            return eventContext.Events.ToList();
-        }
-
-        public void Update(Event occurrence)
+        public async Task UpdateAsync(Event occurrence)
         {
             eventContext.Update(occurrence);
-            eventContext.SaveChanges();
+            await eventContext.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            var removable = eventContext.Events.ToList().FirstOrDefault(x => x.EventId == id);
+            var removable = GetItemByIdAsync(id);
             eventContext.Remove(removable);
-            eventContext.SaveChanges();
+            await eventContext.SaveChangesAsync();
         }
 
-        public Event GetItemById(int id)
+        public async Task<Event> GetItemByIdAsync(int id)
         {
-            return eventContext.Events.ToList().FirstOrDefault(x => x.EventId == id);
+            return await eventContext.Events.FindAsync(id);
         }
 
-        public List<Event> GetAll()
+        public async Task<IEnumerable<Event>> GetAllAsync(int pageSize, int pageIndex)
         {
-            return eventContext.Events.ToList();
+            int itemCount = await eventContext.Events.CountAsync();
+
+            if (paginationService.ParameterValidation(pageIndex, pageSize, itemCount))
+            {
+                return eventContext.Events.Skip(pageIndex * pageSize).Take(paginationService.CalcNumberOfItemsOnPage(
+                    pageIndex, pageSize, itemCount));
+            }
+            return null;
         }
     }
 }
