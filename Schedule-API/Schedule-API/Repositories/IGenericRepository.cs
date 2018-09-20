@@ -11,6 +11,6 @@ namespace ScheduleAPI.Repositories
         Task UpdateAsync(Object key);
         Task DeleteAsync(int id);
         Task<Object> GetItemByIdAsync(int id);
-        Task<IEnumerable<Object>> GetAllAsync(int pageSize, int pageIndex);
+        IEnumerable<Object> GetAll(int pageSize, int pageIndex);
     }
 }

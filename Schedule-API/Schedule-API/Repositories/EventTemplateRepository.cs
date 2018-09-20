@@ -43,9 +43,9 @@ namespace ScheduleAPI.Repositories
             return await eventContext.EventTemplates.FindAsync(id);
         }
 
-        public async Task<IEnumerable<EventTemplate>> GetAllAsync(int pageIndex, int pageSize)
+        public IEnumerable<EventTemplate> GetAll(int pageIndex, int pageSize)
         {
-            int itemCount = await eventContext.EventTemplates.CountAsync();
+            int itemCount = eventContext.EventTemplates.Count();
 
             if (paginationService.ParameterValidation(pageIndex, pageSize, itemCount))
             {

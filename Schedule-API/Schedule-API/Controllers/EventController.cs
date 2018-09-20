@@ -3,7 +3,6 @@ using ScheduleAPI.Models;
 using ScheduleAPI.Repositories;
 using ScheduleAPI.Services;
 using ScheduleAPI.ViewModels;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ScheduleAPI.Controllers
@@ -26,7 +25,7 @@ namespace ScheduleAPI.Controllers
         [HttpGet("api/events")]
         public IActionResult GetAllEvents([FromQuery]int pageSize = 8 , [FromQuery]int pageIndex = 0)
         {
-            return Json(eventRepository.GetAllAsync(pageSize, pageIndex));
+            return Json(eventRepository.GetAll(pageSize, pageIndex));
         }
 
         [HttpGet("api/events/{id}")]
@@ -59,7 +58,7 @@ namespace ScheduleAPI.Controllers
         }
 
         [HttpPut("api/events/{id}")]
-        public IActionResult AddEvent(int id, [FromBody]Event occurrence)
+        public async Task<IActionResult> AddEvent(int id, [FromBody]Event occurrence)
         {
             if (id != occurrence.EventId)
             {
@@ -68,7 +67,7 @@ namespace ScheduleAPI.Controllers
 
             try
             {
-                eventRepository.UpdateAsync(occurrence);
+                await eventRepository.UpdateAsync(occurrence);
             }
             catch (System.Exception)
             {
@@ -89,7 +88,7 @@ namespace ScheduleAPI.Controllers
             }
             else
             {
-                eventRepository.DeleteAsync(id);
+                await eventRepository.DeleteAsync(id);
                 return Ok("Event deleted...");
             }
         }
