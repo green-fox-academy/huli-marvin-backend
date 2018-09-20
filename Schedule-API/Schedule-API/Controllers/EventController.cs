@@ -13,13 +13,11 @@ namespace ScheduleAPI.Controllers
         private EventRepository eventRepository;
         private EventTemplateRepository eventTemplateRepository;
         private PaginationService paginationService;
+        private readonly IGenericRepository<Event> eventService;
 
-        public EventController(EventViewModel eventViewModel, EventRepository eventRepository, EventTemplateRepository eventTemplateRepository, PaginationService paginationService)
+        public EventController(IGenericRepository<Event> eventService)
         {
-            this.eventViewModel = eventViewModel;
-            this.eventRepository = eventRepository;
-            this.eventTemplateRepository = eventTemplateRepository;
-            this.paginationService = paginationService;
+            this.eventService = eventService;
         }
 
         [HttpGet("api/events")]
@@ -31,16 +29,14 @@ namespace ScheduleAPI.Controllers
         [HttpGet("api/events/{id}")]
         public async Task<IActionResult> GetEvent(int id)
         {
-            Event occurrence = await eventRepository.GetItemByIdAsync(id);
+            Event occurrence = await eventService.GetItemByIdAsync(id);
 
-            if (occurrence == null)
-            {
-                return NotFound("No item found for your id...");
-            }
-            else
-            {
-                return Json(occurrence);
-            }
+            //if (occurrence == null)
+            //{
+            //    return NotFound("No item found for your id...");
+            //}
+            
+            return Json(occurrence);
         }
 
         [HttpPost("api/events")]
