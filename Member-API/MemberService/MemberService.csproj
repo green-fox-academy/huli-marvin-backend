@@ -39,12 +39,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.1.3" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.0.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
-=======
     <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.1.1" />
->>>>>>> dbSeed-MemberAPI
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.1.1" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
   </ItemGroup>
