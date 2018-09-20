@@ -10,8 +10,8 @@ using ScheduleAPI.Models;
 namespace ScheduleAPI.Migrations
 {
     [DbContext(typeof(EventContext))]
-    [Migration("20180920113021_TestSeed")]
-    partial class TestSeed
+    [Migration("20180920115525_initdbd")]
+    partial class initdbd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
