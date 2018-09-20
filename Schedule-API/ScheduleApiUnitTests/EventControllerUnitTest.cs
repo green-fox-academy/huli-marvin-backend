@@ -10,8 +10,9 @@ namespace ScheduleApiUnitTests
 {
     public class EventControllerUnitTest
     {
+        private EventController eventController;
         private readonly Event events;
-        private readonly EventController eventController;
+        //private readonly EventController eventController;
 
         public EventControllerUnitTest()
         {
@@ -27,10 +28,24 @@ namespace ScheduleApiUnitTests
         [Fact]
         public async Task GetEvent_Should_ReturnEvent_InJson()
         {
+            //eventController = new EventController(eventViewModel: null, eventRepository: null, eventTemplateRepository: null, paginationService: null);
+
+            //int testSessionId = 1;
+            //var mockRepo = new Mock<EventRepository>();
+            //mockRepo.Setup(repo => repo.GetItemByIdAsync(testSessionId))
+            //    .ReturnsAsync((BrainstormSession)null);
+            //var controller = new SessionController(mockRepo.Object);
+
             var result = await eventController.GetEvent(events.EventId);
             var jsonResult = result as JsonResult;
 
             Assert.IsAssignableFrom<JsonResult>(jsonResult);
+        }
+
+        [Fact]
+        public void PassingTest()
+        {
+            Assert.Equal(4, 2+2);
         }
     }
 }
